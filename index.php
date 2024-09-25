@@ -59,7 +59,8 @@
 				  <ul class="center-aligned">
 					<li><a href="#banner">Home</a></li>
 					<li><a href="#companies">What We Hold</a></li>
-					<li><a href="#georgia">About Georgia</a></li>
+					<li><a href="#about">About Georgia</a></li>
+					<li><a href="#investment">Investment</a></li>
 					<li><a href="#contact">Contact</a></li>
 				  </ul>
 				</nav>	  
@@ -216,25 +217,21 @@
 										<img src="images/companies/iran-georgia-business-development-centre.jpg" alt="Iran – Georgia Business Development Centre" />
 										<h4>Iran Georgia Business Development Centre</h4>
 										<p>ID : <span>404899366</span></p>
-										<a class="bttn site has-top-margin" href="javascript:void(0)">view more</a>
 									</li>
 									<li>
 										<img src="images/companies/iran-georgia-auto-motor-sports-club.png" alt="Iran – Georgia Auto-Motor Sports Club" />
 									    <h4>Iran Georgia Auto-Motor Sports Club</h4>
 										<p>ID : <span>404899366</span></p>
-										<a class="bttn site site has-top-margin" href="http://www.igamsc.com">view more</a>
 								    </li>
 									<li>
 										<img src="images/companies/georgian-nabnoosh-int.jpg" alt="Georgian Nab Noosh Int’l LLC" />
 										<h4>Georgian Nab Noosh Int’l LLC</h4>
 										<p>ID : <span>404899366</span></p>
-										<a class="bttn site site has-top-margin" href="javascript:void(0)">view more</a>
 									</li>
 									<li>
-										<img src="images/companies/llc-rest-time.jpg" alt="LLC Rest Time" />
-										<h4>LLC Rest Time</h4>
-										<p>ID : <span>404899366</span></p>
-										<a class="bttn site site has-top-margin" href="javascript:void(0)">view more</a>
+										<img src="images/companies/health-line.jpg" alt="Health Line" />
+										<h4>HealthLine</h4>
+										<p>ID : <span>402119603</span></p>
 									</li>
 								</ul>
 							</div><!-- companies end -->
@@ -261,7 +258,7 @@
 					</div><!-- parallax end -->	
 				</section><!-- companies end -->
 
-				<section id="georgia">
+				<section id="about">
 					<div class="content has-top-border site-bg">
 						<div class="frame small">
 							<h2 class="white-color center-aligned">About Georgia</h2>
@@ -284,6 +281,64 @@
 							</div><!-- mini-section end -->
 						</div><!-- frame small end -->
 					</div><!-- content end -->
+				</section><!-- about end -->
+				<section id="investment">
+					<div class="content has-top-border dark-bg">
+						<div class="frame small">
+							<h2 class="white-color center-aligned">The best investment in Georgia</h2>
+							<div class="context-section white-color has-top-margin">
+								<p>The best investment in Georgia, like in any country, can vary depending on your
+								financial goals, risk tolerance, and investment horizon. Georgia has been attracting
+								foreign investors in recent years due to its business-friendly environment, strategic
+								location, and opportunities in various sectors. Here are some of the investment
+								options that have been attractive in Georgia:</p>
+								<ul>
+									<li>
+										Real Estate: The real estate market in Georgia, particularly in the capital city of
+										Tbilisi, has seen significant growth. Many investors have found success in
+										buying and holding properties for rental income or capital appreciation.
+										Georgia offers a simple and transparent property registration process for
+										foreign investors.
+									</li>
+									<li>
+										Tourism and Hospitality: Georgia has become a popular tourist destination,
+										and investments in hotels, resorts, and hospitality services can be lucrative,
+										especially in areas like Tbilisi, Batumi, and the wine regions.
+									</li>
+									<li>
+										Agriculture: Agriculture is a key sector in Georgia, and there are opportunities
+										for investments in the cultivation of crops, vineyards, and the production of
+										wine and other agricultural products. The country has a favorable climate for
+										agriculture.
+									</li>
+									<li>
+										Energy: Georgia has been investing in its energy infrastructure, including
+										hydropower and renewable energy projects. Investing in energy production
+										and distribution can be a profitable venture.
+									</li>
+									<li>
+										Technology and Startups: Georgia has a growing tech ecosystem, and
+										investments in tech startups and IT services have been on the rise. Tbilisi, in
+										particular, has a vibrant startup community.
+									</li>
+									<li>
+										Free Industrial Zones: Georgia has several free industrial zones that offer tax
+										incentives and a favorable business environment for manufacturing and
+										export-oriented industries.
+									</li>
+									<li>
+										Stock Market: Georgia has a stock exchange where you can invest in publicly
+										traded companies. It&#39;s important to conduct thorough research and consult
+										with financial experts before investing in individual stocks.
+									</li>
+									<li>
+										Bank Deposits and Bonds: Traditional investment options like bank deposits and government bonds can provide stability and predictable returns.
+									</li>
+								</ul>
+								<p>Before making any investment in Georgia or any other country, it&#39;s crucial to conduct due diligence, understand the local regulations, and seek advice from financial professionals. Consider your risk tolerance, investment horizon, and diversification strategy when making investment decisions. Additionally, it&#39;s wise to stay updated on the economic and political developments in the country to make informed investment choices. Consulting with a local attorney or investment advisor can also be beneficial.</p>
+							</div><!-- mini-section end -->
+						</div><!-- frame small end -->
+					</div><!-- content end -->
 					<div class="gallery has-top-border">
 						<ul>
 							<li><img src="images/georgia/georgia-1.jpg" alt="Georgia Tblisi" /></li>
@@ -292,7 +347,7 @@
 							<li><img src="images/georgia/georgia-4.jpg" alt="Georgia Tblisi" /></li>
 						</ul>
 					</div><!-- gallery end -->
-				</section><!-- georgia end -->
+				</section><!-- investment end -->
 					
 			</main><!-- body end -->
 
@@ -338,7 +393,7 @@
 							<a href="http://www.gi-hub.com"><span class="icon-globe">www.gi-hub.com</span>	</a>				
 						</div><!-- footer-top end -->
 						<div class="copyright">
-							Copyright © 2016 GI-Hub * All Rights Reserved | Created By <a href="http://www.samanrashidi.com" target="_blank" title="Saman Rashidi">Saman Rashidi</a>
+							Copyright © 2024 GI-Hub * All Rights Reserved | Created By <a href="http://www.samanrashidi.com" target="_blank" title="Saman Rashidi">Saman Rashidi</a>
 						</div><!-- copyright end -->
 					</section>
 				</footer>	

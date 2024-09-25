@@ -51,6 +51,11 @@
 
 @media only screen and (max-width:640px){
 
+	.navigation{
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
 	.navigation ul li a{
 		min-width: 80px;
 		font-size: 11px;
@@ -60,6 +65,12 @@
 
 	.navigation{padding-top:4px;}
 	.navigation.sticky{top:-10px;}
+
+	.navigation.sticky ul li a:hover, .navigation.sticky ul li a.active:not(.btt){
+		-webkit-transform: translateY(-2px);
+		-moz-transform: translateY(-2px);
+		transform: translateY(-2px);
+	}
 
 	.companies li{
 		float: none;

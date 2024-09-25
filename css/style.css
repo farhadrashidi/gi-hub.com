@@ -51,6 +51,20 @@
 	transform:translateY(6px);
 }
 
+.context-section{
+	font-size: 16px;
+}
+
+.context-section ul{
+	list-style: disc;
+	padding-left: 1.5rem;
+	margin:30px 0;
+}
+
+.context-section ul li{
+	margin: 5px 0;
+}
+
 .tp-banner-container{
 	position:relative;
 	width:100%;

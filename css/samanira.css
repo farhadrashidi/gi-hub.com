@@ -273,10 +273,10 @@ address{font-style: normal;}
 
 input:not([type="submit"]):focus,
 textarea:focus,
-select:focus{border-color:#61bd61;}
+select:focus{border-color:#e56262;}
 
 input[type="submit"]:hover,
-input[type="submit"]:focus{background-color: #61bd61;}
+input[type="submit"]:focus{background-color: #e56262;}
 
 /* -- _Validation -- */
 
@@ -727,6 +727,7 @@ a.close:hover{opacity: .8;}
 .yellow-bg{background-color:#e4d257;}
 .orange-bg{background-color:#ef9200;}
 .grey-bg{background-color:#e8e8e8;}
+.dark-bg{background-color:#1e1e1e;}
 .black-bg{background-color:#000000;}
 .white-bg{background-color:#ffffff;}
 .pattern-bg{background: url(../images/assets/pattern.jpg);}
