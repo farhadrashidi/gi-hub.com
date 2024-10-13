@@ -172,9 +172,6 @@
 
 .quote-buttons span.active{background-color:#000000;}
 
-.mini-section blockquote::before{content:url(../images/icons/quote.png);}
-.mini-section blockquote::after{content:url(../images/icons/quote2.png);}
-
 .gallery{
 	width:100%;
 	overflow:hidden;
@@ -279,4 +276,49 @@
 .video-wrapper{
 	overflow: hidden;
 	border-radius: 5px;
+}
+
+.services {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	column-gap: 40px;
+	row-gap: 60px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.services .service {
+	max-width: 250px;
+	text-align: center;
+}
+
+.services p {
+	font-size: 16px;
+}
+
+.advantages {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	column-gap: 40px;
+	row-gap: 60px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.advantages .intro {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.advantages .advantage {
+	max-width: 250px;
+	text-align: center;
+}
+
+.advantages p {
+	font-size: 16px;
 }
