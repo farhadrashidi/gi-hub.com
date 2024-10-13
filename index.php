@@ -24,7 +24,7 @@
 		<link rel="stylesheet" type="text/css" href="css/extralayers.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="css/media.css" media="screen" /> 
+		<link rel="stylesheet" type="text/css" href="css/media.css" media="screen" />
 
 		<!-- **** JavaScript Files **** -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -63,15 +63,15 @@
 					<li><a href="#investment">Investment</a></li>
 					<li><a href="#contact">Contact</a></li>
 				  </ul>
-				</nav>	  
+				</nav>
 			</header><!-- navigation end -->
 
 			<main class="body">
 
 				<section id="banner" class="tp-banner-container">
 					<div class="tp-banner" >
-						<ul>	
-							<!-- SLIDE NUMBER 1  -->										
+						<ul>
+							<!-- SLIDE NUMBER 1  -->
 							<li data-transition="fadetobottomfadefromtop" data-slotamount="7" data-masterspeed="1500" data-thumb=""  data-saveperformance="on"  data-title="First Slide">
 								<!-- MAIN IMAGE -->
 								<img src="images/slider/dummy.png"  alt="Slide 1 Background" data-lazyload="images/slider/slide1bg.jpg" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power2.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
@@ -108,20 +108,20 @@
 									data-endelementdelay="0.1"
 									style="z-index: 2; max-width: auto; max-height: auto; line-height:2em; color:#000000; white-space: nowrap;">Georgian <span class="site-color">Investors</span> Hub
 								</div>
-											
+
 							</li>
 
 							<!-- SLIDE NUMBER 2  -->
 
 							<li data-transition="fadetobottomfadefromtop" data-slotamount="7" data-masterspeed="1500" data-thumb=""  data-saveperformance="on"  data-title="Second Slide">
 								<!-- MAIN IMAGE -->
-								<img src="images/slider/dummy.png"  alt="Slide 2 Background" data-lazyload="images/slider/slide2bg.jpg" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power2.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">	
+								<img src="images/slider/dummy.png"  alt="Slide 2 Background" data-lazyload="images/slider/slide2bg.jpg" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power2.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
 								<!-- LAYERS -->
 
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption white_heavy_60 customin tp-resizeme rs-parallaxlevel-0"
 									data-x="center"
-									data-y="center" 
+									data-y="center"
 									data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 									data-speed="500"
 									data-start="1350"
@@ -131,8 +131,8 @@
 									data-elementdelay="0.1"
 									data-endelementdelay="0.1"
 									style="z-index: 2; max-width: auto; max-height: auto; line-height:2em; color:#ffffff; white-space: nowrap; text-align:center; text-shadow:0px 0 5px #121212"><span class="site-color">Touring</span> and <span class="site-color">Tourist</span> services<br /> in Georgia country
-								</div>	
-							</li>		
+								</div>
+							</li>
 
 							<!-- SLIDE NUMBER 3  -->
 
@@ -144,7 +144,7 @@
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption white_heavy_60 customin tp-resizeme rs-parallaxlevel-0"
 									data-x="center"
-									data-y="center" 
+									data-y="center"
 									data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 									data-speed="500"
 									data-start="1350"
@@ -154,11 +154,11 @@
 									data-elementdelay="0.1"
 									data-endelementdelay="0.1"
 									style="z-index: 2; max-width: auto; max-height: auto; line-height:2em; color:#ffffff; white-space: nowrap; text-align:center; text-shadow:0px 0 5px #121212"><span class="site-color">Commerce</span> services and <span class="site-color">Purchase</span><br /> foreign goods
-								</div>						
+								</div>
 							</li>
 
 							<!-- SLIDE NUMBER 4  -->
-							
+
 							<li data-transition="fadetobottomfadefromtop" data-slotamount="7" data-masterspeed="1500" data-thumb="" data-delay="10000"  data-saveperformance="on"  data-title="Third Slide">
 								<!-- MAIN IMAGE -->
 								<img src="images/slider/dummy.png"  alt="Slide 4 Background" data-lazyload="images/slider/slide4bg.jpg" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
@@ -167,7 +167,7 @@
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption white_heavy_60 customin tp-resizeme rs-parallaxlevel-0"
 									data-x="center"
-									data-y="center" 
+									data-y="center"
 									data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 									data-speed="500"
 									data-start="1350"
@@ -177,11 +177,11 @@
 									data-elementdelay="0.1"
 									data-endelementdelay="0.1"
 									style="z-index: 2; max-width: auto; max-height: auto; line-height:2em; color:#ffffff; white-space: nowrap; text-align:center; text-shadow:0px 0 5px #121212">Industrial and capital investment <span class="site-color">Advisor</span><br /> in Georgia country
-								</div>							
-							</li>	
+								</div>
+							</li>
 
 							<!-- SLIDE NUMBER 5  -->
-							
+
 							<li data-transition="fadetobottomfadefromtop" data-slotamount="7" data-masterspeed="1500" data-thumb="" data-delay="10000"  data-saveperformance="on"  data-title="Third Slide">
 								<!-- MAIN IMAGE -->
 								<img src="images/slider/dummy.png"  alt="Slide 5 Background" data-lazyload="images/slider/slide5bg.jpg" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
@@ -190,7 +190,7 @@
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption white_heavy_60 customin tp-resizeme rs-parallaxlevel-0"
 									data-x="center"
-									data-y="center" 
+									data-y="center"
 									data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 									data-speed="500"
 									data-start="1350"
@@ -200,8 +200,8 @@
 									data-elementdelay="0.1"
 									data-endelementdelay="0.1"
 									style="z-index: 2; max-width: auto; max-height: auto; line-height:2em; color:#ffffff; font-weight:600; white-space: nowrap; text-align:center; text-shadow:0px 0 5px #121212">Marketing all of your <span class="site-color">Export Products</span><br /> in Georgia and Qafqaz area
-								</div>							
-							</li>	
+								</div>
+							</li>
 						</ul>
 						<div class="tp-bannertimer"></div><!-- tp-bannertimer end -->
 					</div><!-- tp-banner end -->
@@ -255,7 +255,7 @@
 								</div><!-- table-cell-display end -->
 							</div><!-- table-display end -->
 						</div><!-- video-layer end -->
-					</div><!-- parallax end -->	
+					</div><!-- parallax end -->
 				</section><!-- companies end -->
 
 				<section id="about">
@@ -264,7 +264,7 @@
 							<h2 class="white-color center-aligned">About Georgia</h2>
 							<div class="mini-section white-color has-top-margin">
 								<div class="relative-position">
-									<blockquote class="firstQuote active"><span>G</span>eorgia a little piece of living history sits on the crossroads of Europe and Asia. Georgia is a rapidly modernizing country with ancient traditions of hospitality that welcomes you!!! 
+									<blockquote class="firstQuote active"><span>G</span>eorgia a little piece of living history sits on the crossroads of Europe and Asia. Georgia is a rapidly modernizing country with ancient traditions of hospitality that welcomes you!!!
 									Few nations in the world offer such diversity as Georgia. Within its small boundaries, Georgia has the highest mountains in Europe and a total of 12 peaks higher than Mont Blank. From glaciers to beaches, alpine meadows to semi-desert and nearly 40 percent of her land covered with forest; Georgia truly has a diverse landscape.
 									Everywhere you look in Georgia you see the mountain top churches , castles, and ancient wine cellars. Georgia is the cradle of wine culture: here eight thousand years ago, mankind discovered the art of wine making, and today, is the home of over 500 grape varieties. Georgians still use the ancient traditions of wine making- the Kvevri; a huge clay vessel buried in the ground and many Georgian wines have won international awards and recognition. </blockquote>
 
@@ -277,7 +277,7 @@
 								<div class="quote-buttons has-top-margin center-aligned">
 									<span id="firstQuote-button" class="active">&nbsp;</span>
 									<span id="secondQuote-button">&nbsp;</span>
-								</div><!-- quote-buttons end -->			
+								</div><!-- quote-buttons end -->
 							</div><!-- mini-section end -->
 						</div><!-- frame small end -->
 					</div><!-- content end -->
@@ -348,7 +348,7 @@
 						</ul>
 					</div><!-- gallery end -->
 				</section><!-- investment end -->
-					
+
 			</main><!-- body end -->
 
 			<section id="contact">
@@ -390,16 +390,16 @@
 							<a href="tel:+995558987032"><span class="icon-phone">+995 558 987 032</span></a>
 							<a href="tel:+989363896761"><span class="icon-phone">+98 936 389 67 61</span></a>
 							<a href="mailto:info@gi-hub.com"><span class="icon-mail">info@gi-hub.com</span></a>
-							<a href="http://www.gi-hub.com"><span class="icon-globe">www.gi-hub.com</span>	</a>				
+							<a href="http://www.gi-hub.com"><span class="icon-globe">www.gi-hub.com</span>	</a>
 						</div><!-- footer-top end -->
 						<div class="copyright">
 							Copyright © 2024 GI-Hub * All Rights Reserved | Created By <a href="http://www.samanrashidi.com" target="_blank" title="Saman Rashidi">Saman Rashidi</a>
 						</div><!-- copyright end -->
 					</section>
-				</footer>	
-			</section><!-- contact end -->	
+				</footer>
+			</section><!-- contact end -->
 
 		</div><!-- wrapper end -->
-<script type="text/javascript" src="js/project.js"></script>	
+<script type="text/javascript" src="js/project.js"></script>
 	</body>
 </html>
