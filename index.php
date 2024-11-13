@@ -273,46 +273,35 @@
 									<li>
 										<img src="images/companies/iran-georgia-business-development-centre.jpg" alt="Iran – Georgia Business Development Centre" />
 										<h4>Iran Georgia Business Development Centre</h4>
-										<p>ID : <span>404899366</span></p>
+										<p>Iran-Georgia Development Centre is dedicated to fostering economic collaboration and cultural exchange between Iran and Georgia. Our mission is to create a platform for businesses, investors, and entrepreneurs from both countries to explore and develop mutually beneficial opportunities.</p>
+										<p>Through our network of partners and comprehensive resources, we facilitate cross-border trade, investment, and joint ventures in sectors such as energy, agriculture, tourism, and technology. We are committed to driving sustainable development and enhancing economic ties between these two vibrant nations.</p>
+										<p>ID: <span>404899366</span></p>
 									</li>
 									<li>
 										<img src="images/companies/iran-georgia-auto-motor-sports-club.png" alt="Iran – Georgia Auto-Motor Sports Club" />
-									    <h4>Iran Georgia Auto-Motor Sports Club</h4>
-										<p>ID : <span>404899366</span></p>
-								    </li>
+									  <h4>Iran Georgia Auto-Motor Sports Club</h4>
+										<p>Iran-Georgia Auto-Moto Sports Club (IGAMSC) offers advanced training in both car and motorcycle racing in Georgia. Our programs include a comprehensive blend of theoretical and practical courses, covering a variety of road surfaces such as asphalt, concrete, wet, frozen, and snowy conditions. </p>
+										<p>With expert instruction and hands-on exercises, participants gain essential skills for competitive racing. Upon successful completion, participants receive an official certificate, marking their readiness for high-level auto and motor sports events.</p>
+										<p>ID: <span>404899366</span></p>
+								  </li>
 									<li>
 										<img src="images/companies/georgian-nabnoosh-int.jpg" alt="Georgian Nab Noosh Int’l LLC" />
 										<h4>Georgian Nab Noosh Int’l LLC</h4>
-										<p>ID : <span>404899366</span></p>
+										<p>Georgian Nab Noosh Int’l is an Iranian company based in Georgia, specializing in export and import services. With a strong network among merchants, manufacturers, industries, and service providers across both Iran and Georgia, Georgian Nab Noosh Int’l is well-positioned to expand your market reach and enhance awareness of the competitive advantages within both regions.</p>
+										<p>We are committed to acting as a reliable sales representative for your products, backed by extensive experience in customer-focused services. Our team is dedicated to supporting your business growth and demonstrating our value as a trusted partner in these markets.</p>
+										<p>ID: <span>404899366</span></p>
 									</li>
 									<li>
 										<img src="images/companies/health-line.jpg" alt="Health Line" />
 										<h4>HealthLine</h4>
-										<p>ID : <span>402119603</span></p>
+										<p>Health Line is a Georgia-registered company dedicated to advancing health and wellness solutions. With a focus on high-quality products and services, Health Line serves as a reliable partner in the healthcare industry, fostering connections between Georgia and international markets.</p>
+										<p>Our commitment to excellence and customer-centered care positions us as a valuable resource for innovative health services and products.</p>
+										<p>ID: <span>402119603</span></p>
 									</li>
 								</ul>
 							</div><!-- companies end -->
 						</div><!-- frame end -->
 					</div><!-- content end -->
-					<div class="parallax has-top-border">
-						<video muted preload="auto" loop autoplay>
-							<source type="video/mp4" src="videos/homepage.mp4" />
-						</video>
-						<div class="video-layer center-aligned">
-							<div class="table-display">
-								<div class="table-cell-display vertical-aligned">
-									<div class="frame">
-										<h3 class="white-color">Iran Georgia Auto-Motor Sports Club (IGAMSC) will provide you with a high level of training in theoretical and practical courses.
-										The course includes exercises on the asphalt, concrete, wet, frozen or snowy road surface. After completing the course, the certificate is issued.</h3>
-										<div class="button-holder">
-											<a class="bttn transparent" href="http://www.igamsc.com">Read More</a>
-											<a class="bttn transparent video-overlay-bttn" href="javascript:void(0)">Watch Full Video</a>
-										</div><!-- button-holder end -->
-									</div><!-- frame end -->
-								</div><!-- table-cell-display end -->
-							</div><!-- table-display end -->
-						</div><!-- video-layer end -->
-					</div><!-- parallax end -->
 				</section><!-- companies end -->
 
 				<section id="about">
