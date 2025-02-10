@@ -1,0 +1,14 @@
+{
+  "name": "gi-hub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss --input ./src/assets/stylesheets/main.css --output ./src/assets/stylesheets/index.css --minify",
+    "build": "npm run build:css",
+    "watch:css": "tailwindcss --input ./src/assets/stylesheets/main.css --output ./src/assets/stylesheets/index.css --minify --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "4.0.5",
+    "tailwindcss": "4.0.5"
+  }
+}
