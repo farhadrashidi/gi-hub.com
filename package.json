@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss --input ./src/assets/stylesheets/main.css --output ./src/assets/stylesheets/index.css --minify",
-    "build": "npm run build:css",
-    "watch:css": "tailwindcss --input ./src/assets/stylesheets/main.css --output ./src/assets/stylesheets/index.css --minify --watch"
+    "build:css": "tailwindcss --input ./src/assets/stylesheets/index.css --output ./out/assets/stylesheets/index.css --minify",
+    "build:copy": "cp -r ./src ./out",
+    "build": "npm run build:copy && npm run build:css",
+    "clean": "rm -rf ./out"
   },
   "dependencies": {
     "@tailwindcss/cli": "4.0.5",
