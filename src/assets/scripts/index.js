@@ -2,50 +2,63 @@ const heroIconGroups = document.querySelectorAll("[data-hero-icons]");
 
 heroIconGroups.forEach((group) => {
   const icons = Array.from(group.querySelectorAll("[data-hero-icon]"));
+  const sections = icons.reduce((sectionList, icon) => {
+    const section = document.getElementById(icon.dataset.sectionTarget);
+
+    if (section) {
+      sectionList.push(section);
+    }
+
+    return sectionList;
+  }, []);
 
   if (icons.length === 0) {
     return;
   }
 
-  let activeIndex = 0;
-  let isPaused = false;
-
-  const activateIcon = (index) => {
-    icons.forEach((icon, iconIndex) => {
-      icon.dataset.active = String(iconIndex === index);
+  const activateIcon = (targetId) => {
+    icons.forEach((icon) => {
+      const isActive = icon.dataset.sectionTarget === targetId;
+      icon.dataset.active = String(isActive);
+      icon.setAttribute("aria-current", isActive ? "true" : "false");
     });
   };
 
-  activateIcon(activeIndex);
+  activateIcon(icons[0].dataset.sectionTarget);
 
-  icons.forEach((icon, index) => {
-    icon.addEventListener("mouseenter", () => {
-      isPaused = true;
-      activeIndex = index;
-      activateIcon(activeIndex);
-    });
-
-    icon.addEventListener("mouseleave", () => {
-      isPaused = false;
-    });
-
-    icon.addEventListener("focusin", () => {
-      isPaused = true;
-      activeIndex = index;
-      activateIcon(activeIndex);
-    });
-
-    icon.addEventListener("focusout", () => {
-      isPaused = false;
+  icons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      activateIcon(icon.dataset.sectionTarget);
     });
   });
 
-  window.setInterval(() => {
-    if (isPaused) {
-      return;
-    }
+  if (!("IntersectionObserver" in window) || sections.length === 0) {
+    return;
+  }
 
-    activeIndex = (activeIndex + 1) % icons.length;
-    activateIcon(activeIndex);
-  }, 1800);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleEntry = entries.reduce((currentEntry, entry) => {
+        if (!entry.isIntersecting) {
+          return currentEntry;
+        }
+
+        if (!currentEntry || entry.intersectionRatio > currentEntry.intersectionRatio) {
+          return entry;
+        }
+
+        return currentEntry;
+      }, null);
+
+      if (visibleEntry) {
+        activateIcon(visibleEntry.target.id);
+      }
+    },
+    {
+      rootMargin: "-30% 0px -45% 0px",
+      threshold: [0.1, 0.25, 0.5, 0.75],
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
 });

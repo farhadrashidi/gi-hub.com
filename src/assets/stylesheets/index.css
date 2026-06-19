@@ -4,6 +4,14 @@ body {
   @apply font-semibold;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 1.5rem;
+}
+
 .hero-icon {
   position: relative;
   transform: translateY(0) scale(1);
@@ -34,6 +42,8 @@ body {
   color: #ffffff;
   transform: translateY(-0.35rem) scale(1.08);
   box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.22);
+  outline: 2px solid rgb(255 255 255 / 0.65);
+  outline-offset: 0.2rem;
 }
 
 .hero-icon[data-active="true"]::after,
