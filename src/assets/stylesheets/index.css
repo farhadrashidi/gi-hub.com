@@ -4,6 +4,52 @@ body {
   @apply font-semibold;
 }
 
+.hero-icon {
+  position: relative;
+  transform: translateY(0) scale(1);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.hero-icon::after {
+  border: 1px solid rgb(255 255 255 / 0.75);
+  border-radius: inherit;
+  content: "";
+  inset: -0.35rem;
+  opacity: 0;
+  position: absolute;
+  transform: scale(0.85);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.hero-icon[data-active="true"],
+.hero-icon:hover,
+.hero-icon:focus-visible {
+  background-color: #991b1b;
+  color: #ffffff;
+  transform: translateY(-0.35rem) scale(1.08);
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.22);
+}
+
+.hero-icon[data-active="true"]::after,
+.hero-icon:hover::after,
+.hero-icon:focus-visible::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-icon,
+  .hero-icon::after {
+    transition: none;
+  }
+}
+
 body > div:not(:first-child) > div > div:first-child h2,
 body > div:not(:first-child) > div > div:first-child h3,
 main section > div > div:first-child h2 {
