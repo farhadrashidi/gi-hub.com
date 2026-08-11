@@ -60,6 +60,16 @@ html {
   }
 }
 
+.marketplace-field:focus {
+  border-color: #991b1b;
+  box-shadow: 0 0 0 3px rgb(153 27 27 / 0.18);
+  outline: none;
+}
+
+.marketplace-field[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
 body > div:not(:first-child) > div > div:first-child h2,
 body > div:not(:first-child) > div > div:first-child h3,
 main section > div > div:first-child h2 {
