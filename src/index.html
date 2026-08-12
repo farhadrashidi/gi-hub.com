@@ -2,6 +2,7 @@
   <html lang="en">
     <head>
       <title>Georgian Investors Hub</title>
+      <meta name="description" content="Explore GI-Hub B2B marketplace products and supplier capabilities across Georgia and the Caucasus, including HS Codes, MOQ and Incoterms." />
       <link href="assets/stylesheets/index.css" rel="stylesheet" />
       <style>
         #why-invest-cards > :nth-child(n + 11) {
@@ -116,25 +117,48 @@
                 <div>
                   <p class="text-sm font-black uppercase tracking-[0.18em] text-red-300">Marketplace directory</p>
                   <h3 class="mt-2 text-2xl font-black">Find a trade partner</h3>
-                  <p class="mt-2 max-w-2xl text-gray-300">Explore indicative supplier capabilities. GI-Hub reviews every request before making an introduction.</p>
+                  <p class="mt-2 max-w-2xl text-gray-300">Explore indicative supplier capabilities with HS Codes, minimum orders and delivery terms. Verification applies to the supplier profile review shown here, not to any individual transaction.</p>
                 </div>
                 <a href="#marketplace-request" class="inline-flex shrink-0 rounded bg-red-700 px-5 py-3 font-black text-white shadow hover:bg-red-800 focus:outline-2 focus:outline-offset-2 focus:outline-white">Submit a B2B inquiry</a>
               </div>
-              <div class="mt-6 grid gap-4 md:grid-cols-[minmax(0,1fr)_14rem]" role="search" aria-label="Search marketplace listings">
+              <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4" role="search" aria-label="Search marketplace products">
                 <div>
-                  <label for="marketplace-search" class="text-sm font-bold text-gray-200">Search products, sectors or markets</label>
-                  <input id="marketplace-search" data-marketplace-search type="search" autocomplete="off" placeholder="e.g. food, logistics, Azerbaijan" class="mt-2 w-full rounded border border-white/30 bg-white px-4 py-3 font-semibold text-gray-900 placeholder:text-gray-500 focus:border-red-300 focus:outline-2 focus:outline-offset-2 focus:outline-white" />
+                  <label for="marketplace-search" class="text-sm font-bold text-gray-200">Search products or HS Codes</label>
+                  <input id="marketplace-search" data-marketplace-search type="search" autocomplete="off" placeholder="e.g. hazelnuts or 0802.22" class="mt-2 w-full rounded border border-white/30 bg-white px-4 py-3 font-semibold text-gray-900 placeholder:text-gray-500 focus:border-red-300 focus:outline-2 focus:outline-offset-2 focus:outline-white" />
                 </div>
                 <div>
-                  <label for="marketplace-sector" class="text-sm font-bold text-gray-200">Sector</label>
-                  <select id="marketplace-sector" data-marketplace-sector class="mt-2 w-full rounded border border-white/30 bg-white px-4 py-3 font-semibold text-gray-900 focus:border-red-300 focus:outline-2 focus:outline-offset-2 focus:outline-white">
-                    <option value="">All sectors</option>
+                  <label for="marketplace-category" class="text-sm font-bold text-gray-200">Category</label>
+                  <select id="marketplace-category" data-marketplace-category class="mt-2 w-full rounded border border-white/30 bg-white px-4 py-3 font-semibold text-gray-900 focus:border-red-300 focus:outline-2 focus:outline-offset-2 focus:outline-white">
+                    <option value="">All categories</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="marketplace-supplier" class="text-sm font-bold text-gray-200">Supplier</label>
+                  <select id="marketplace-supplier" data-marketplace-supplier class="mt-2 w-full rounded border border-white/30 bg-white px-4 py-3 font-semibold text-gray-900 focus:border-red-300 focus:outline-2 focus:outline-offset-2 focus:outline-white">
+                    <option value="">All suppliers</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="marketplace-incoterm" class="text-sm font-bold text-gray-200">Incoterm</label>
+                  <select id="marketplace-incoterm" data-marketplace-incoterm class="mt-2 w-full rounded border border-white/30 bg-white px-4 py-3 font-semibold text-gray-900 focus:border-red-300 focus:outline-2 focus:outline-offset-2 focus:outline-white">
+                    <option value="">All Incoterms</option>
                   </select>
                 </div>
               </div>
-              <p data-marketplace-count class="mt-4 text-sm text-gray-300" aria-live="polite"></p>
-              <div data-marketplace-results class="mt-5 grid gap-4 lg:grid-cols-3" aria-live="polite"></div>
-              <p data-marketplace-empty class="mt-5 hidden rounded border border-dashed border-white/30 p-4 text-gray-200">No listings match that search. Send an inquiry and our team will source suitable partners.</p>
+              <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <label class="inline-flex items-center gap-2 text-sm font-bold text-gray-200"><input type="checkbox" data-marketplace-verified class="size-4 accent-red-700" /> Verified suppliers only</label>
+                <label class="inline-flex items-center gap-2 text-sm font-bold text-gray-200"><input type="checkbox" data-marketplace-favorites class="size-4 accent-red-700" /> Favorites only</label>
+                <button type="button" data-marketplace-clear class="text-sm font-black text-red-300 underline decoration-dotted hover:text-white">Clear filters</button>
+              </div>
+              <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p data-marketplace-count class="text-sm text-gray-300" aria-live="polite"></p>
+                <p data-marketplace-favorite-count class="text-sm font-bold text-red-300" aria-live="polite"></p>
+              </div>
+              <div data-marketplace-detail class="mt-5 hidden" aria-live="polite"></div>
+              <div data-marketplace-results class="mt-5 grid gap-4 lg:grid-cols-2 xl:grid-cols-3"></div>
+              <p data-marketplace-empty class="mt-5 hidden rounded border border-dashed border-white/30 p-4 text-gray-200">No products match those filters. Clear the filters or send an inquiry and our team will source suitable partners.</p>
+              <nav data-marketplace-pagination class="mt-6 flex flex-wrap items-center justify-center gap-2" aria-label="Marketplace result pages"></nav>
+              <noscript><p class="mt-5 rounded border border-red-300/40 bg-red-950/30 p-4 text-gray-200">Product search and favorites require JavaScript. Email <a class="underline" href="mailto:info@gi-hub.com">info@gi-hub.com</a> for the current catalog.</p></noscript>
             </div>
             <form id="marketplace-request" data-marketplace-form class="rounded border border-white/20 bg-white p-5 text-gray-900 sm:p-7" novalidate>
               <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
@@ -169,7 +193,6 @@
               </div>
               <p data-marketplace-form-status class="mt-4 text-sm font-bold" aria-live="polite"></p>
             </form>
-            </div>
           </div>
         </div>
       </section>
