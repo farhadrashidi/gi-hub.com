@@ -16,7 +16,6 @@ const elements = {
   verified: document.querySelector("[data-marketplace-verified]"),
   clear: document.querySelector("[data-marketplace-clear]"),
   results: document.querySelector("[data-marketplace-results]"),
-  count: document.querySelector("[data-marketplace-count]"),
   empty: document.querySelector("[data-marketplace-empty]"),
   pagination: document.querySelector("[data-marketplace-pagination]"),
   detail: document.querySelector("[data-marketplace-detail]"),
@@ -112,7 +111,6 @@ function renderProducts() {
   currentPage = Math.min(currentPage, pageCount);
   const start = (currentPage - 1) * PAGE_SIZE;
   elements.results.replaceChildren(...filtered.slice(start, start + PAGE_SIZE).map(createProductCard));
-  elements.count.textContent = `${filtered.length} ${filtered.length === 1 ? "product" : "products"} found${filtered.length ? ` · showing ${start + 1}–${Math.min(start + PAGE_SIZE, filtered.length)}` : ""}`;
   elements.empty.classList.toggle("hidden", filtered.length !== 0);
   renderPagination(pageCount);
 }
@@ -128,7 +126,7 @@ function renderPagination(pageCount) {
     button.addEventListener("click", () => {
       currentPage = page;
       renderProducts();
-      elements.count.scrollIntoView({ behavior: "smooth", block: "center" });
+      elements.results.scrollIntoView({ behavior: "smooth", block: "start" });
     });
     elements.pagination.append(button);
   }
