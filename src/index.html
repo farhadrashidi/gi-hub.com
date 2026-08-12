@@ -1,516 +1,110 @@
-  <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Georgian Investors Hub | Investment &amp; B2B Marketplace</title>
-      <meta name="description" content="Connect with investors, verified supplier profiles, products and business opportunities across Georgia and the Caucasus through Georgian Investors Hub." />
-      <meta name="robots" content="index, follow, max-image-preview:large" />
-      <meta name="theme-color" content="#991b1b" />
-      <link rel="canonical" href="https://gi-hub.com/" />
-      <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Georgian Investors Hub" />
-      <meta property="og:title" content="Georgian Investors Hub | Investment &amp; B2B Marketplace" />
-      <meta property="og:description" content="Investment, trade and verified supplier connections across Georgia and the Caucasus." />
-      <meta property="og:url" content="https://gi-hub.com/" />
-      <meta property="og:image" content="https://gi-hub.com/assets/images/tbilisi-global-network-hero-1672.webp" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <link href="assets/stylesheets/index.css" rel="stylesheet" />
-      <meta name="referrer" content="strict-origin-when-cross-origin" />
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'; font-src 'self'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
-    </head>
-    <body>
-      <a href="#main-content" class="skip-link rounded bg-white px-4 py-3 font-black text-red-800 shadow">Skip to main content</a>
-      <div style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABV1JREFUWEeFl+uSFUUQhKt65uwzLyheUFh/Di4LIiAIangJRV5vZ6bbyMyq7jlAhITtHJY9k19lVVdX+9Uv75uZWTGzyc2mYja72amYndxsxrM0/mzyFsvMvZkbvtr4XzWzimcz25rZXt22prXyc+HnPVd82z8CSNGAmEsLEIgLomAZAPCnCaM1iktAz/8FaGb+8O37hhcV10KkXCEMJ2Zv/Hu6AABEnwDAqAFQzW2vcGEAZPT6WSEcYPEGAigFGeFIAYTTfkJECtIBGsD49X85cB59ih7FCWBa/uDNvwKAvawDRXrKJyMfC+IT2I81kPnnU3keDiD3xTYb0e9W+HsQ9m9/fvdJAEZvEhYMHKqqAdOygGiqQxYiawBpiKKTeEDAfosUZBHef/2OLKwBM5tDFM8Unq0OAIpXFmLugtgLih7iCZDCFJ0Icg7g5l+/+odFiJfBWlQ6BQFAGHzWogMJwDQgZkUvB4Y4hCQo4a1NEo+F32URfvXT3zQQ0cNWOsA1hE8Nwlg7IehAl1URAqU5AFJEghsB+M146tsd4IuXf8mBhiKEC9XmlgC7QXzG1wmB17CEgj8c8HSgWPUA8BSdbfcBsTu+DZVw4N7zP/s2LE1pmCHaIL7LiQaAzSY8yY8s6xVsRARwigtgoujus21OfH7Onw8P3fyzH/8IB6IGQpwQdbe5becATSbnTu4AIU4AiBHgFJ8HSA1nmquX+t1nvzdvqugJDsBqRA7xBKiAgAObFQA07Gq1EhYhHHA4MFktE597SfGTXIhV+cyN7OZ3nv42HKB4tYnCANhirTbVAKisaSutmnEXoB8AoBzEZ6sEONkWzyMAQVHGDoAnv6orZ/Q1ALr4ZlNdba6CKG2lC9pwB4CC/MOBmdET4AMI/ptzQ7NWmILLm7fdAUSF6OkAAHY4sNq0JwDEsTZzQHQH3BoAYH+J6MuFAPBELURKlIKJjmHz++XjN81atFdEj0rfBwCj32/pAlcHUB3wSEQKCADxIwAgAqRDIHp0mkjB5fXrhh7AdtwBlPspHBgAAlERKg0DQAXYwvpK4QvbPgKYlaqYKPzO96/OaqBkCs7sv2UahgNrrwGciigm6ynI/Gf0SIFcwG7oKYh+6ncfvWQjQhGOGggHWAcQvo0iVA0gDVmEADCPGoC1vQjDgS6uXYH8ywHUARrRoxecqZBPAWCh8o9bEEWY9q/s6ijCgiJMABQV8o8oz4rvwjZsx0NTYj/NXfD58lyHEZpR7wPa8+oDsp5PNqO1n3NsRlmEBMCLkQJUuqp/iEdDwsnC8yB2wb3l2dk2pAvRhASxRheU9YSIM08AkQIARB9QnqMRWULMtulYUxriSPMvlx/OawDZQSECItrv3AICByracR66Hg5gD6EOMr8JYDgDThQeK8/UnAeWp2MbZh3QBfF2iHjFGCswFeE8UB+waCw6bKL3H4RXfo5jOUYzdsL7y5MoQjUj1ieP3XCBr0vzcrRQAbKZajbXToCtUeGBz0koxVeOZRPnxZwq/JvlZtRAjFs5/Wgqkijd4EQUMwEAOBeGA2plkdsUCnFCTILpgyl+18wfLDdxRdBIlvMKJyOIeohzHhwAeUPSUHJwgANozIKImKJDHCC6PQXAw+WxijBGbV1QcgiNiQgQAcBnRJ8pUBZyRgoAjuUpXgiB6LH67QjfuiKArKQDMfkSIhedkPCHABjn8w/942guCABsVaIEiM95SeXN6Gq5jrEct6NIQVxCdB+oNpch3gEIqyJMB1pcuZiCiFSiB/HDTZk18N1yPVIQtx5dz85FB0jckBJA6Y8bsltj/nFBTbtDnH/HVX1c0+HAfzYw+Bz5bvwbAAAAAElFTkSuQmCC);" class="min-h-lvh bg-cover bg-center">
-        <div class="hero-background min-h-lvh bg-cover bg-center flex flex-col justify-center items-center gap-y-4">
-          <div class="hero-icon-nav flex flex-wrap justify-center gap-3 px-4" aria-label="Core services" data-hero-icons>
-            <a href="#investment-opportunities" class="hero-icon inline-flex size-28 items-center justify-center rounded bg-white/90 px-2 text-center text-xs leading-tight font-black text-red-800 shadow" title="Investment Opportunities" data-hero-icon data-section-target="investment-opportunities">
-              Investment Opportunities
-            </a>
-            <a href="#b2b-marketplace" class="hero-icon inline-flex size-28 items-center justify-center rounded bg-white/90 px-2 text-center text-xs leading-tight font-black text-red-800 shadow" title="B2B Marketplace" data-hero-icon data-section-target="b2b-marketplace">
-              B2B
-            </a>
-            <a href="#product-supply" class="hero-icon inline-flex size-28 items-center justify-center rounded bg-white/90 px-2 text-center text-xs leading-tight font-black text-red-800 shadow" title="Product Supply" data-hero-icon data-section-target="product-supply">
-              Product Supply
-            </a>
-            <a href="#services" class="hero-icon inline-flex size-28 items-center justify-center rounded bg-white/90 px-2 text-center text-xs leading-tight font-black text-red-800 shadow" title="Services" data-hero-icon data-section-target="services">
-              Services
-            </a>
-          </div>
-          <h1 class="font-black text-5xl lg:text-7xl text-center text-white px-4 py-2 bg-gray-800/60">Georgian Investors Hub</h1>
-          <h2 class="font-extrabold text-xl lg:text-2xl text-center text-white px-4 py-2 bg-gray-800/60">Platform connecting manufacturers, investors, exporters and buyers of the Caucasus region</h2>
-        </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GI-Hub | Global Trade & Investment Marketplace</title>
+  <meta name="description" content="Source verified products, connect with suppliers, submit RFQs and discover investment opportunities across Georgia and the Caucasus.">
+  <meta name="theme-color" content="#071c18">
+  <link rel="canonical" href="https://gi-hub.com/">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="GI-Hub">
+  <meta property="og:title" content="GI-Hub | Global Trade & Investment Marketplace">
+  <meta property="og:description" content="Trade beyond borders. Invest with confidence.">
+  <meta property="og:url" content="https://gi-hub.com/"><meta property="og:image" content="https://gi-hub.com/assets/images/tbilisi-global-network-hero-1672.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="assets/stylesheets/index.css" rel="stylesheet">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="GI-Hub home"><span class="brand-mark">GI</span><span>GI-HUB<small>GEORGIAN INVESTORS HUB</small></span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#marketplace">Marketplace</a><a href="#categories">Categories</a><a href="#suppliers">Suppliers</a><a href="#investments">Investments</a><a href="#about">About</a>
+      </nav>
+      <div class="nav-actions"><a class="text-link" href="mailto:info@gi-hub.com">Sign in</a><a class="button button-sm" href="#rfq">Post an RFQ</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button></div>
+    </div>
+    <nav class="mobile-nav" aria-label="Mobile navigation"><a href="#marketplace">Marketplace</a><a href="#categories">Categories</a><a href="#suppliers">Suppliers</a><a href="#investments">Investments</a><a href="#about">About</a></nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-overlay"></div>
+      <div class="shell hero-content">
+        <p class="eyebrow light">THE GATEWAY TO EURASIAN COMMERCE</p>
+        <h1>Trade beyond borders.<br><em>Invest with confidence.</em></h1>
+        <p class="hero-copy">Discover verified suppliers, source export-ready products, and access high-potential investment opportunities across Georgia, the Caucasus, and global markets.</p>
+        <form class="hero-search" data-product-search-form role="search">
+          <label class="sr-only" for="hero-query">Search products or suppliers</label>
+          <input id="hero-query" name="query" type="search" placeholder="What are you looking for?" autocomplete="off">
+          <label class="sr-only" for="hero-category">Category</label>
+          <select id="hero-category" name="category"><option value="">All categories</option><option>Food &amp; beverage</option><option>Manufacturing</option><option>Agriculture</option><option>Logistics</option><option>Health &amp; wellness</option><option>Business services</option></select>
+          <button type="submit">Search marketplace <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="popular"><span>POPULAR:</span><button data-quick-search="mineral water">Mineral water</button><button data-quick-search="hazelnuts">Hazelnuts</button><button data-quick-search="logistics">Logistics</button><button data-quick-search="metal">Metal fabrication</button></div>
+        <div class="trust-row"><span><b>6</b> key sectors</span><span><b>3</b> strategic regions</span><span><b>1</b> trusted network</span><span class="verified-note">✓ Human-reviewed introductions</span></div>
       </div>
+    </section>
 
-      <main id="main-content">
-      <div class="p-8 lg:p-20">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h2 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">About GI-Hub</h2>
-          </div>
-          <div class="flex">
-            <div class="max-w-[50rem]">
-              <div class="flex flex-col gap-y-6">
-                <p><strong>Georgian Investors Hub (GI-Hub)</strong> is an international business platform connecting investors, manufacturers, exporters, suppliers, and buyers across Georgia, the Caucasus, and global markets.</p>
-                <p>We facilitate investment opportunities, international trade, strategic partnerships, and cross-border business development through a trusted commercial network.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="pathways shell" aria-label="Marketplace pathways">
+      <a href="#marketplace"><span class="path-icon">↗</span><span><b>Source Products</b><small>Browse export-ready offers</small></span><i>→</i></a>
+      <a href="#suppliers"><span class="path-icon">◎</span><span><b>Find Suppliers</b><small>Meet qualified partners</small></span><i>→</i></a>
+      <a href="#rfq"><span class="path-icon">＋</span><span><b>Post an RFQ</b><small>Receive tailored matches</small></span><i>→</i></a>
+      <a href="#investments"><span class="path-icon">◇</span><span><b>Explore Investments</b><small>Access regional growth</small></span><i>→</i></a>
+    </section>
+
+    <section class="section shell" id="categories">
+      <div class="section-heading"><div><p class="eyebrow">EXPLORE THE MARKETPLACE</p><h2>Trade opportunities,<br>organized for action.</h2></div><a class="arrow-link" href="#marketplace">View all products →</a></div>
+      <div class="category-grid">
+        <button data-category-filter="Food &amp; beverage"><span>01</span><b>Food &amp; Beverage</b><small>Juices, mineral water & private label</small></button>
+        <button data-category-filter="Agriculture"><span>02</span><b>Agriculture</b><small>Hazelnuts, grapes & regional produce</small></button>
+        <button data-category-filter="Manufacturing"><span>03</span><b>Manufacturing</b><small>Fabrication & industrial components</small></button>
+        <button data-category-filter="Logistics"><span>04</span><b>Trade & Logistics</b><small>Freight, customs & warehousing</small></button>
+        <button data-category-filter="Health & wellness"><span>05</span><b>Health & Wellness</b><small>Distribution & compliant sourcing</small></button>
+        <button data-category-filter="Business services"><span>06</span><b>Business Services</b><small>Market entry & representation</small></button>
       </div>
+    </section>
 
-      <div id="services" class="p-8 lg:p-20 bg-red-50">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h3 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">Our Solutions</h3>
-          </div>
-          <div class="flex">
-            <div class="flex flex-wrap gap-20">
-              <div class="flex flex-col gap-y-4 max-w-[16rem]">
-                <h3 class="font-black text-2xl">B2B Marketplace</h3>
-                <p>Connect Global Buyers &amp; Suppliers</p>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[16rem]">
-                <h3 class="font-black text-2xl">Product Supply</h3>
-                <p>Reliable International Sourcing</p>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[16rem]">
-                <h3 class="font-black text-2xl">Investment Opportunities</h3>
-                <p>High-Growth Projects</p>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[16rem]">
-                <h3 class="font-black text-2xl">Trade &amp; Export Consulting</h3>
-                <p>Expert Market Entry Support</p>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[16rem]">
-                <h3 class="font-black text-2xl">Business Development</h3>
-                <p>Expand into New Markets</p>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[16rem]">
-                <h3 class="font-black text-2xl">Strategic Partnerships</h3>
-                <p>Build Long-Term Business Relationships</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="market-section" id="marketplace">
+      <div class="shell">
+        <div class="section-heading inverse"><div><p class="eyebrow light">CURATED MARKETPLACE</p><h2>Products ready for<br>international business.</h2></div><p>Commercial listings with practical sourcing details, from MOQ to Incoterms.</p></div>
+        <div class="market-toolbar"><input data-market-query type="search" placeholder="Search name, HS code, supplier..."><select data-market-category><option value="">All categories</option><option>Food &amp; beverage</option><option>Manufacturing</option><option>Agriculture</option><option>Logistics</option><option>Health &amp; wellness</option><option>Business services</option></select><label><input data-market-verified type="checkbox"> Verified suppliers only</label><button data-clear-filters type="button">Clear</button></div>
+        <p class="result-count" data-result-count aria-live="polite"></p>
+        <div class="product-grid" data-product-grid></div>
+        <div class="empty-state" data-empty-state hidden><b>No exact matches found.</b><span>Try another keyword or submit your requirement for a tailored match.</span><a href="#rfq">Post an RFQ →</a></div>
       </div>
+    </section>
 
-      <section id="b2b-marketplace" class="bg-gray-900 p-8 text-white lg:p-20" aria-labelledby="b2b-marketplace-title">
-        <div class="grid grid-cols-1 gap-x-20 gap-y-10 lg:grid-cols-[1fr_3fr]">
-          <div class="flex justify-start lg:justify-end">
-            <h2 id="b2b-marketplace-title" class="text-left text-3xl font-black lg:text-right lg:text-5xl/13">B2B Marketplace</h2>
-          </div>
-          <div class="flex flex-col gap-y-14">
-            <div class="flex max-w-[50rem] flex-col gap-y-6 text-gray-200">
-              <p>Our B2B marketplace connects verified manufacturers, suppliers, exporters, distributors, and business buyers across Georgia, Iran, and the wider Caucasus region.</p>
-              <p>Businesses can present supply capabilities, submit purchasing requirements, and receive support in finding suitable commercial partners. Each inquiry is reviewed before introductions are made to help create relevant, practical, and trustworthy connections.</p>
-            </div>
-            <div class="flex flex-wrap gap-10">
-              <article class="max-w-[20rem] border-t-2 border-red-500 pt-5">
-                <h3 class="text-2xl font-black">For Buyers</h3>
-                <p class="mt-3 text-gray-300">Submit product specifications, target quantities, delivery location, and purchasing requirements to identify qualified suppliers.</p>
-              </article>
-              <article class="max-w-[20rem] border-t-2 border-red-500 pt-5">
-                <h3 class="text-2xl font-black">For Suppliers</h3>
-                <p class="mt-3 text-gray-300">Present products, production capacity, certifications, export readiness, and target markets to reach relevant business buyers.</p>
-              </article>
-              <article class="max-w-[20rem] border-t-2 border-red-500 pt-5">
-                <h3 class="text-2xl font-black">How It Works</h3>
-                <p class="mt-3 text-gray-300">We review the inquiry, identify potential matches, facilitate introductions, and support the next steps in commercial coordination.</p>
-              </article>
-            </div>
-            <form id="marketplace-request" data-marketplace-form class="rounded border border-white/20 bg-white p-5 text-gray-900 sm:p-7" novalidate>
-              <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p class="text-sm font-black uppercase tracking-[0.18em] text-red-800">Request a match</p>
-                  <h3 class="mt-2 text-2xl font-black">Tell us what you need</h3>
-                </div>
-                <p class="text-sm text-gray-600">Fields marked * are required.</p>
-              </div>
-              <div class="mt-6 grid gap-4 md:grid-cols-2">
-                <label class="font-bold">Your role *
-                  <select name="role" required class="marketplace-field mt-2 w-full rounded border border-gray-300 px-3 py-3 font-semibold">
-                    <option value="">Select a role</option><option>Buyer</option><option>Supplier</option><option>Distributor</option><option>Investor</option>
-                  </select>
-                </label>
-                <label class="font-bold">Company name *
-                  <input name="company" required maxlength="100" autocomplete="organization" class="marketplace-field mt-2 w-full rounded border border-gray-300 px-3 py-3 font-semibold" />
-                </label>
-                <label class="font-bold">Business email *
-                  <input name="email" type="email" required maxlength="254" autocomplete="email" class="marketplace-field mt-2 w-full rounded border border-gray-300 px-3 py-3 font-semibold" />
-                </label>
-                <label class="font-bold">Target market *
-                  <input name="market" required maxlength="100" autocomplete="country-name" placeholder="e.g. Georgia, EU, GCC" class="marketplace-field mt-2 w-full rounded border border-gray-300 px-3 py-3 font-semibold" />
-                </label>
-              </div>
-              <label class="mt-4 block font-bold">Product or requirement *
-                <textarea name="requirement" required maxlength="1200" rows="5" placeholder="Include product, quantity, specification and delivery needs." class="marketplace-field mt-2 w-full rounded border border-gray-300 px-3 py-3 font-semibold"></textarea>
-              </label>
-              <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p class="max-w-2xl text-sm text-gray-600">By sending, you ask GI-Hub to review your request. Do not include banking details, identification documents, or confidential pricing.</p>
-                <button type="submit" class="inline-flex shrink-0 justify-center rounded bg-red-800 px-5 py-3 font-black text-white shadow hover:bg-red-900 focus:outline-2 focus:outline-offset-2 focus:outline-red-800">Prepare secure inquiry</button>
-              </div>
-              <p data-marketplace-form-status class="mt-4 text-sm font-bold" aria-live="polite"></p>
-            </form>
-          </div>
-        </div>
-      </section>
+    <section class="section shell" id="suppliers">
+      <div class="section-heading"><div><p class="eyebrow">TRUSTED BUSINESS NETWORK</p><h2>Meet suppliers built<br>for cross-border trade.</h2></div><a class="arrow-link" href="#rfq">Request an introduction →</a></div>
+      <div class="supplier-grid" data-supplier-grid></div>
+      <p class="due-note">GI-Hub reviews profiles and facilitates relevant introductions. Buyers remain responsible for independent commercial and legal due diligence.</p>
+    </section>
 
-      <div id="product-supply" class="p-8 lg:p-20">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h3 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">Product Supply</h3>
-          </div>
-          <div class="flex flex-col gap-y-14">
-            <div class="max-w-[50rem]">
-              <p>Connect with trusted manufacturers and suppliers across Georgia, Iran, and global markets through our integrated sourcing, trade, and logistics network.</p>
-            </div>
-            <div>
-              <h4 class="font-black text-2xl">Core Services</h4>
-              <ul class="mt-4 list-disc space-y-2 pl-5" aria-label="Product supply core services">
-                <li>Product Sourcing</li>
-                <li>Procurement Support</li>
-                <li>Export &amp; Import Coordination</li>
-                <li>Logistics &amp; Delivery Management</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <section class="investment" id="investments">
+      <div class="shell investment-grid">
+        <div><p class="eyebrow light">INVEST IN THE REGION</p><h2>Opportunity at the crossroads of Europe and Asia.</h2><p>Connect with established businesses, growth projects, and trusted local partners across Georgia and the Caucasus.</p><a class="button button-light" href="mailto:info@gi-hub.com?subject=Investment%20Opportunity%20Inquiry">Discuss an opportunity →</a></div>
+        <div class="sector-list"><span>01 <b>Real Estate</b></span><span>02 <b>Manufacturing</b></span><span>03 <b>Trade & Logistics</b></span><span>04 <b>Tourism</b></span><span>05 <b>Agriculture</b></span><span>06 <b>Technology</b></span></div>
       </div>
+    </section>
 
-      <section id="investment-opportunities" class="p-8 lg:p-20 bg-red-50">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h2 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">Investment Opportunities</h2>
-          </div>
-          <div class="flex flex-col gap-y-14">
-            <div class="max-w-[50rem] flex flex-col gap-y-6">
-              <p>Discover high-potential investment opportunities across Georgia and the Caucasus. GI-Hub connects qualified investors with established businesses, growth projects, and trusted local partners, providing market insight and coordination throughout the investment process.</p>
-            </div>
-            <div class="flex flex-col gap-y-6">
-              <h3 class="font-black text-2xl">Investment Sectors</h3>
-              <ul class="flex flex-wrap gap-x-10 gap-y-3" aria-label="Investment sectors">
-                <li>Real Estate</li>
-                <li>Manufacturing</li>
-                <li>Trade &amp; Logistics</li>
-                <li>Tourism</li>
-                <li>Agriculture</li>
-                <li>Technology</li>
-              </ul>
-            </div>
-            <div class="flex flex-wrap gap-20">
-              <article class="flex max-w-[32rem] flex-col gap-y-3">
-                <h3 class="font-black text-2xl">Partnership Opportunities</h3>
-                <p>Connect with local companies and investors seeking capital, technology, expertise, or international market access.</p>
-              </article>
-              <article class="flex max-w-[32rem] flex-col gap-y-3">
-                <h3 class="font-black text-2xl">Our Support</h3>
-                <ul class="flex flex-col gap-y-2" aria-label="Investment support services">
-                  <li>Project Evaluation</li>
-                  <li>Market Insights</li>
-                  <li>Partner Introductions</li>
-                  <li>Investment Coordination</li>
-                </ul>
-              </article>
-            </div>
-            <p class="max-w-[50rem] border-l-4 border-red-800 pl-5 text-sm text-gray-700">We recommend independent legal, financial, and commercial due diligence before making any investment decision.</p>
-            <div>
-              <a href="mailto:info@gi-hub.com?subject=Investment%20Opportunity%20Inquiry" class="inline-flex rounded bg-red-800 px-5 py-3 font-black text-white shadow hover:bg-red-900 focus:outline-2 focus:outline-offset-2 focus:outline-red-800">Discuss an investment opportunity</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="p-8 lg:p-20">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h3 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">What We Hold</h3>
-          </div>
-          <div class="flex">
-            <div class="flex flex-wrap gap-x-30 gap-y-15">
-              <div class="flex flex-col gap-y-4 max-w-[25rem]">
-                <div>
-                  <img src="assets/images/iran-georgia-business-development-centre.jpg" alt="Iran Georgia Business Development Centre" width="179" height="169" loading="lazy" decoding="async" class="h-[169px] w-auto object-contain" />
-                </div>
-                <div class="flex flex-col gap-y-2">
-                  <h3 class="font-black text-2xl">Iran Georgia Business Development Centre</h3>
-                  <p class="text-gray-500 font-bold text-sm">ID: 404899366</p>
-                </div>
-                <div class="flex flex-col gap-y-6">
-                  <p>A trusted platform connecting businesses, investors, and entrepreneurs in Iran and Georgia to accelerate trade, investment, joint ventures, and cross-border business growth.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[25rem]">
-                <div>
-                  <img src="assets/images/iran-georgia-auto-motor-sports-club.png" alt="Iran Georgia Auto-Motor Sports Club" width="180" height="169" loading="lazy" decoding="async" class="h-[169px] w-auto object-contain" />
-                </div>
-                <div class="flex flex-col gap-y-2">
-                  <h3 class="font-black text-2xl">Iran Georgia Auto-Motor Sports Club</h3>
-                  <p class="text-gray-500 font-bold text-sm">ID: 404899366</p>
-                </div>
-                <div class="flex flex-col gap-y-6">
-                  <p>Professional motorsport training in Georgia with expert instructors, practical driving experience, and official certification for competitive racing.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[25rem]">
-                <div>
-                  <img src="assets/images/georgian-nabnoosh-int.jpg" alt="Georgian Nab Noosh International" width="170" height="169" loading="lazy" decoding="async" class="h-[169px] w-auto object-contain" />
-                </div>
-                <div class="flex flex-col gap-y-2">
-                  <h3 class="font-black text-2xl">Georgian Nab Noosh Int’l LLC</h3>
-                  <p class="text-gray-500 font-bold text-sm">ID: 404899366</p>
-                </div>
-                <div class="flex flex-col gap-y-6">
-                  <p>A trusted export and import partner connecting manufacturers, suppliers, and buyers across Iran, Georgia, and international markets through reliable trade services, commercial representation, and market expansion solutions.</p>
-                  <div>
-                    <h4 class="font-black">Core Services</h4>
-                    <ul class="mt-2 list-disc space-y-1 pl-5">
-                      <li>Export &amp; Import</li>
-                      <li>Commercial Representation</li>
-                      <li>Market Development</li>
-                      <li>International Trade Support</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-4 max-w-[25rem]">
-                <div>
-                  <img src="assets/images/health-line.jpg" alt="HealthLine" width="180" height="169" loading="lazy" decoding="async" class="h-[169px] w-auto object-contain" />
-                </div>
-                <div class="flex flex-col gap-y-2">
-                  <h3 class="font-black text-2xl">HealthLine</h3>
-                  <p class="text-gray-500 font-bold text-sm">ID: 402119603</p>
-                </div>
-                <div class="flex flex-col gap-y-6">
-                  <p>A trusted healthcare company connecting health products, wellness solutions, and international business partnerships to support innovation and sustainable growth in the global healthcare sector.</p>
-                  <div>
-                    <h4 class="font-black">Core Focus</h4>
-                    <ul class="mt-2 list-disc space-y-1 pl-5">
-                      <li>Health Products</li>
-                      <li>Wellness Solutions</li>
-                      <li>Healthcare Partnerships</li>
-                      <li>International Market Development</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="section rfq-section" id="rfq">
+      <div class="shell rfq-grid">
+        <div><p class="eyebrow">REQUEST FOR QUOTATION</p><h2>Tell us what your business needs.</h2><p>Share your product, volume, and destination. Our team will review the request and identify relevant suppliers or partners.</p><ol><li><span>01</span> Submit your requirement</li><li><span>02</span> We review and qualify it</li><li><span>03</span> Receive relevant introductions</li></ol></div>
+        <form id="marketplace-request" data-marketplace-form class="rfq-form" novalidate>
+          <div class="form-title"><h3>Start your request</h3><span>* Required fields</span></div>
+          <div class="form-grid"><label>Your role *<select name="role" required class="marketplace-field"><option value="">Select a role</option><option>Buyer</option><option>Supplier</option><option>Distributor</option><option>Investor</option></select></label><label>Company name *<input name="company" required maxlength="100" autocomplete="organization"></label><label>Business email *<input name="email" type="email" required maxlength="254" autocomplete="email"></label><label>Target market *<input name="market" required maxlength="100" placeholder="e.g. EU, GCC, Georgia"></label></div>
+          <label>Product or requirement *<textarea name="requirement" required maxlength="1200" rows="4" placeholder="Product, quantity, specification and delivery destination"></textarea></label>
+          <button class="button form-button" type="submit">Prepare secure inquiry →</button><p data-marketplace-form-status class="form-status" aria-live="polite"></p>
+        </form>
       </div>
+    </section>
 
-      <div class="p-8 lg:p-20">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h3 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">Why Invest in Georgia?</h3>
-          </div>
-          <div class="flex flex-col gap-y-20">
-            <div class="max-w-[50rem]">
-              <p>Georgia is a strategic gateway between Europe, Asia, and the Middle East, offering direct access to regional and international markets through the Black Sea and an extensive network of trade corridors.</p>
-              <h4 class="mt-8 font-black text-2xl">Key Advantages</h4>
-            </div>
-            <div id="why-invest-cards" class="flex flex-wrap gap-20">
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Strategic Location</h3>
-                <div>
-                  <p>Gateway to Europe, Asia, and the Caucasus.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">100% Foreign Ownership</h3>
-                <div>
-                  <p>Full ownership and control for foreign investors.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Business-Friendly Environment</h3>
-                <div>
-                  <p>Transparent regulations and strong investor protection.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Global Trade Access</h3>
-                <div>
-                  <p>WTO member with Free Trade Agreements and preferential access to EU and major international markets.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Tax &amp; Customs Benefits</h3>
-                <div>
-                  <p>Competitive tax regime with attractive export and re-export incentives.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Modern Customs System</h3>
-                <div>
-                  <p>Fast and efficient cross-border trade procedures.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Skilled &amp; Cost-Competitive Workforce</h3>
-                <div>
-                  <p>Highly educated talent at competitive labor costs.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Growing Industrial Base</h3>
-                <div>
-                  <p>Expanding opportunities in manufacturing, logistics, agriculture, tourism, technology, and renewable energy.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Investment Stability</h3>
-                <div>
-                  <p>Open-market policies supporting long-term business growth and international investment.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Why Choose Georgia?</h3>
-                <div>
-                  <p>Invest in a country that combines strategic location, international market access, investor-friendly regulations, and a competitive business environment—making it one of the region's most attractive destinations for trade, manufacturing, and investment.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Deep and Comprehensive Free Trade Area (DCFTA)</h3>
-                <div>
-                  <p>A DCFTA agreement with EU countries, signed on June 27, 2014, enhances Georgia’s integration into European markets.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Skilled Workforce</h3>
-                <div>
-                  <p>Over 30% of the workforce holds a university degree, and the average monthly salary is below the European average, providing access to a highly educated yet cost-effective labor pool. Additionally, 50% of the unemployed population is between the ages of 20 and 34, representing a large pool of potential talent.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Open Trade Policies</h3>
-                <div>
-                  <p>Georgia has no trade restrictions with countries around the world and is committed to a free trade policy, supporting sustained economic growth and investment stability.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 fill-green-700"><path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12ZM12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.4571 9.45711L16.0429 8.04289L11 13.0858L8.20711 10.2929L6.79289 11.7071L11 15.9142L17.4571 9.45711Z"></path></svg>
-                <h3 class="font-black text-2xl">Growing Industrial Sector</h3>
-                <div>
-                  <p>The industrial sector plays a crucial role in the Georgian economy. In recent years, there has been substantial growth, with efforts to establish new factories and production facilities. Key industries include food and beverage packaging, which form a significant portion of Georgia’s industrial output.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="p-8 lg:p-20 bg-red-50">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h3 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">Best Investment Opportunities in Georgia</h3>
-          </div>
-          <div class="flex flex-col gap-y-20">
-            <div class="max-w-[50rem]">
-              <h4 class="font-black text-2xl">Investment Sectors</h4>
-              <ul class="mt-4 list-disc space-y-2 pl-5" aria-label="Investment sectors">
-                <li>Real Estate</li>
-                <li>Tourism &amp; Hospitality</li>
-                <li>Agriculture</li>
-                <li>Renewable Energy</li>
-                <li>Technology &amp; Startups</li>
-                <li>Free Industrial Zones</li>
-                <li>Capital Markets</li>
-              </ul>
-            </div>
-            <div class="hidden flex flex-wrap gap-20" aria-hidden="true">
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10"><path d="M21 19H23V21H1V19H3V4C3 3.44772 3.44772 3 4 3H14C14.5523 3 15 3.44772 15 4V19H19V11H17V9H20C20.5523 9 21 9.44772 21 10V19ZM5 5V19H13V5H5ZM7 11H11V13H7V11ZM7 7H11V9H7V7Z"></path></svg>
-                <h3 class="font-black text-2xl">Real Estate</h3>
-                <div>
-                  <p>Growing opportunities in residential, commercial, and rental properties, particularly in Tbilisi and other major destinations.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10"><path d="M15 3C15.5523 3 16 3.44772 16 4V6H21C21.5523 6 22 6.44772 22 7V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V7C2 6.44772 2.44772 6 3 6H8V4C8 3.44772 8.44772 3 9 3H15ZM16 8H8V19H16V8ZM4 8V19H6V8H4ZM14 5H10V6H14V5ZM18 8V19H20V8H18Z"></path></svg>
-                <h3 class="font-black text-2xl">Tourism &amp; Hospitality</h3>
-                <div>
-                  <p>Investment potential in hotels, resorts, and hospitality projects across Tbilisi, Batumi, and Georgia's tourism regions.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10"><path d="M5.99805 2C8.68733 2 11.0224 3.51653 12.1947 5.74104C13.372 4.08252 15.3086 3 17.498 3H20.998V5.5C20.998 9.08985 18.0879 12 14.498 12H12.998V13H17.998V20C17.998 21.1046 17.1026 22 15.998 22H7.99805C6.89348 22 5.99805 21.1046 5.99805 20V13H10.998V11H8.99805C5.13205 11 1.99805 7.86599 1.99805 4V2H5.99805ZM15.998 15H7.99805V20H15.998V15ZM18.998 5H17.498C15.0128 5 12.998 7.01472 12.998 9.5V10H14.498C16.9833 10 18.998 7.98528 18.998 5.5V5ZM5.99805 4H3.99805C3.99805 6.76142 6.23662 9 8.99805 9H10.998C10.998 6.23858 8.75947 4 5.99805 4Z"></path></svg>
-                <h3 class="font-black text-2xl">Agriculture</h3>
-                <div>
-                  <p>Opportunities in agribusiness, vineyards, food production, and agricultural exports.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10"><path d="M9.97308 18H14.0269C14.1589 16.7984 14.7721 15.8065 15.7676 14.7226C15.8797 14.6006 16.5988 13.8564 16.6841 13.7501C17.5318 12.6931 18 11.385 18 10C18 6.68629 15.3137 4 12 4C8.68629 4 6 6.68629 6 10C6 11.3843 6.46774 12.6917 7.31462 13.7484C7.40004 13.855 8.12081 14.6012 8.23154 14.7218C9.22766 15.8064 9.84103 16.7984 9.97308 18ZM14 20H10V21H14V20ZM5.75395 14.9992C4.65645 13.6297 4 11.8915 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.8925 19.3428 13.6315 18.2443 15.0014C17.624 15.7748 16 17 16 18.5V21C16 22.1046 15.1046 23 14 23H10C8.89543 23 8 22.1046 8 21V18.5C8 17 6.37458 15.7736 5.75395 14.9992ZM13 10.0048H15.5L11 16.0048V12.0048H8.5L13 6V10.0048Z"></path></svg>
-                <h3 class="font-black text-2xl">Renewable Energy</h3>
-                <div>
-                  <p>Growing potential in hydropower, renewable energy, and energy infrastructure.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10"><path d="M4 16H20V5H4V16ZM13 18V20H17V22H7V20H11V18H2.9918C2.44405 18 2 17.5511 2 16.9925V4.00748C2 3.45107 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44892 22 4.00748V16.9925C22 17.5489 21.5447 18 21.0082 18H13Z"></path></svg>
-                <h3 class="font-black text-2xl">Technology &amp; Startups</h3>
-                <div>
-                  <p>A developing technology ecosystem offering opportunities in startups, IT services, and innovation.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10"><path d="M12.0049 22.0027C6.48204 22.0027 2.00488 17.5256 2.00488 12.0027C2.00488 6.4799 6.48204 2.00275 12.0049 2.00275C17.5277 2.00275 22.0049 6.4799 22.0049 12.0027C22.0049 17.5256 17.5277 22.0027 12.0049 22.0027ZM12.0049 20.0027C16.4232 20.0027 20.0049 16.421 20.0049 12.0027C20.0049 7.58447 16.4232 4.00275 12.0049 4.00275C7.5866 4.00275 4.00488 7.58447 4.00488 12.0027C4.00488 16.421 7.5866 20.0027 12.0049 20.0027ZM10.0549 11.0027H15.0049V13.0027H10.0549C10.2865 14.1439 11.2954 15.0027 12.5049 15.0027C13.1201 15.0027 13.6833 14.7806 14.1188 14.412L15.8198 15.546C14.9973 16.4415 13.8166 17.0027 12.5049 17.0027C10.1886 17.0027 8.28107 15.2527 8.03235 13.0027H7.00488V11.0027H8.03235C8.28107 8.75277 10.1886 7.00275 12.5049 7.00275C13.8166 7.00275 14.9973 7.56402 15.8198 8.45951L14.1189 9.59351C13.6834 9.22496 13.1201 9.00275 12.5049 9.00275C11.2954 9.00275 10.2865 9.86163 10.0549 11.0027Z"></path></svg>
-                <h3 class="font-black text-2xl">Free Industrial Zones</h3>
-                <div>
-                  <p>Attractive environments for manufacturing, logistics, and export-oriented businesses, supported by available tax incentives.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-y-3 max-w-[32rem]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10"><path d="M4.41085 14.5258L7.81249 11.1241L10.6409 13.9526L13.7978 10.7957L12.0049 9.00281H17.0049V14.0028L15.212 12.2099L10.6409 16.781L7.81249 13.9526L5.33834 16.4267C6.77158 18.5822 9.22233 20.0028 12.0049 20.0028C16.4232 20.0028 20.0049 16.4211 20.0049 12.0028C20.0049 7.58453 16.4232 4.00281 12.0049 4.00281C7.5866 4.00281 4.00488 7.58453 4.00488 12.0028C4.00488 12.8844 4.14747 13.7326 4.41085 14.5258ZM2.87288 16.084L2.86275 16.0739L2.86662 16.07C2.31276 14.8274 2.00488 13.4511 2.00488 12.0028C2.00488 6.47996 6.48204 2.00281 12.0049 2.00281C17.5277 2.00281 22.0049 6.47996 22.0049 12.0028C22.0049 17.5257 17.5277 22.0028 12.0049 22.0028C7.93574 22.0028 4.43426 19.5724 2.87288 16.084Z"></path></svg>
-                <h3 class="font-black text-2xl">Capital Markets</h3>
-                <div>
-                  <p>Investment options including listed companies, government bonds, and other financial instruments.</p>
-                </div>
-              </div>
-            </div>
-            <div class="max-w-[50rem]">
-              <p class="border-l-4 border-red-800 pl-5 text-sm text-gray-700">Professional due diligence is recommended before any investment commitment.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="p-8 lg:p-20">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-x-20 gap-y-10">
-          <div class="flex justify-start lg:justify-end">
-            <h3 class="font-black text-3xl lg:text-5xl/13 text-gray-700 text-left lg:text-right">Contact</h3>
-          </div>
-          <div class="flex flex-col gap-y-20">
-            <div>
-              <div class="flex flex-wrap gap-x-20 gap-y-10">
-                <div class="flex flex-col gap-y-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M21 3C21.5523 3 22 3.44772 22 4V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V19H20V7.3L12 14.5L2 5.5V4C2 3.44772 2.44772 3 3 3H21ZM8 15V17H0V15H8ZM5 10V12H0V10H5ZM19.5659 5H4.43414L12 11.8093L19.5659 5Z"></path></svg>
-                  <a href="mailto:info@gi-hub.com" class="font-black text-xl underline decoration-dotted hover:text-red-800">info@gi-hub.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </main>
-      <footer class="h-10" aria-label="Site footer"></footer>
-      <script src="assets/scripts/index.js" defer></script>
-      <script type="module" src="assets/scripts/marketplace.js"></script>
-    </body>
-  </html>
+    <section class="about" id="about"><div class="shell about-grid"><p class="eyebrow light">ABOUT GI-HUB</p><h2>Local intelligence.<br>International ambition.</h2><div><p>Georgian Investors Hub is an international business platform connecting investors, manufacturers, exporters, suppliers, and buyers across Georgia, the Caucasus, and global markets.</p><a href="mailto:info@gi-hub.com">info@gi-hub.com →</a></div></div></section>
+  </main>
+  <footer><div class="shell footer-grid"><a class="brand footer-brand" href="#top"><span class="brand-mark">GI</span><span>GI-HUB<small>GEORGIAN INVESTORS HUB</small></span></a><p>Connecting markets. Building partnerships. Creating growth.</p><div><a href="#marketplace">Marketplace</a><a href="#rfq">Post an RFQ</a><a href="#investments">Investments</a></div></div><div class="shell legal"><span>© 2026 Georgian Investors Hub</span><span>Trade and investment opportunities are subject to independent due diligence.</span></div></footer>
+  <script src="assets/scripts/index.js" defer></script><script type="module" src="assets/scripts/marketplace.js"></script>
+</body>
+</html>
