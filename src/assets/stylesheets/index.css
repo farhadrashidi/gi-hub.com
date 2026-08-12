@@ -8,6 +8,29 @@ html {
   scroll-behavior: smooth;
 }
 
+.skip-link {
+  left: 1rem;
+  position: fixed;
+  top: 1rem;
+  transform: translateY(-200%);
+  z-index: 50;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.hero-background {
+  background-image: image-set(
+    url("../images/tbilisi-global-network-hero-960.webp") 1x,
+    url("../images/tbilisi-global-network-hero-1672.webp") 2x
+  );
+}
+
+#why-invest-cards > :nth-child(n + 11) {
+  display: none;
+}
+
 :target {
   scroll-margin-top: 1.5rem;
 }
@@ -54,6 +77,10 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .hero-icon,
   .hero-icon::after {
     transition: none;

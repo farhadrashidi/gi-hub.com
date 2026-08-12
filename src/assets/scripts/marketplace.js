@@ -239,7 +239,7 @@ function updateSeo(item, type) {
   if (description) {
     description.content = item
       ? `${item.description} ${type === "product" ? `HS Code ${item.hsCode}.` : `Based in ${item.location}.`}`
-      : "Explore GI-Hub B2B marketplace products and supplier capabilities across Georgia and the Caucasus, including HS Codes, MOQ and Incoterms.";
+      : "Connect with investors, verified supplier profiles, products and business opportunities across Georgia and the Caucasus through Georgian Investors Hub.";
   }
   let canonical = document.querySelector('link[rel="canonical"]');
   if (!canonical) {
@@ -248,16 +248,6 @@ function updateSeo(item, type) {
     document.head.append(canonical);
   }
   canonical.href = item ? new URL(marketplaceUrl(type, item.slug), window.location.origin).href.replace(/#.*$/, "") : `${window.location.origin}${window.location.pathname}`;
-  document.querySelector("[data-marketplace-schema]")?.remove();
-  if (!item) return;
-  const schema = document.createElement("script");
-  schema.type = "application/ld+json";
-  schema.dataset.marketplaceSchema = "";
-  schema.textContent = JSON.stringify(type === "product" ? {
-    "@context": "https://schema.org", "@type": "Product", name: item.name, description: item.description, sku: item.hsCode, countryOfOrigin: item.origin, url: canonical.href,
-    brand: { "@type": "Organization", name: getSupplierBySlug(item.supplier).company },
-  } : { "@context": "https://schema.org", "@type": "Organization", name: item.company, description: item.description, address: item.location, url: canonical.href });
-  document.head.append(schema);
 }
 
 function renderRoute() {
