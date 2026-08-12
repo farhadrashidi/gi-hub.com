@@ -14,11 +14,9 @@ const elements = {
   supplier: document.querySelector("[data-marketplace-supplier]"),
   incoterm: document.querySelector("[data-marketplace-incoterm]"),
   verified: document.querySelector("[data-marketplace-verified]"),
-  favoritesOnly: document.querySelector("[data-marketplace-favorites]"),
   clear: document.querySelector("[data-marketplace-clear]"),
   results: document.querySelector("[data-marketplace-results]"),
   count: document.querySelector("[data-marketplace-count]"),
-  favoriteCount: document.querySelector("[data-marketplace-favorite-count]"),
   empty: document.querySelector("[data-marketplace-empty]"),
   pagination: document.querySelector("[data-marketplace-pagination]"),
   detail: document.querySelector("[data-marketplace-detail]"),
@@ -27,27 +25,8 @@ const elements = {
 };
 
 const PAGE_SIZE = 6;
-const FAVORITES_KEY = "gi-hub-marketplace-favorites";
 const originalTitle = document.title;
 let currentPage = 1;
-let favorites = loadFavorites();
-
-function loadFavorites() {
-  try {
-    const stored = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
-    return new Set(stored.filter((slug) => getProductBySlug(slug)));
-  } catch {
-    return new Set();
-  }
-}
-
-function saveFavorites() {
-  try {
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
-  } catch {
-    // The catalog remains usable when storage is unavailable or blocked.
-  }
-}
 
 function createElement(tag, className, text) {
   const node = document.createElement(tag);
@@ -84,16 +63,9 @@ function verificationBadge(supplier) {
 function createProductCard(product) {
   const supplier = getSupplierBySlug(product.supplier);
   const card = createElement("article", "flex flex-col rounded border border-white/20 bg-gray-800 p-5 shadow-sm");
-  const top = createElement("div", "flex items-start justify-between gap-3");
+  const top = createElement("div", "flex items-start gap-3");
   const category = createElement("p", "text-xs font-black uppercase tracking-[0.15em] text-red-300", product.category);
-  const favorite = createElement("button", "shrink-0 rounded p-2 text-xl leading-none text-red-200 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white");
-  const isFavorite = favorites.has(product.slug);
-  favorite.type = "button";
-  favorite.textContent = isFavorite ? "♥" : "♡";
-  favorite.setAttribute("aria-label", `${isFavorite ? "Remove" : "Add"} ${product.name} ${isFavorite ? "from" : "to"} favorites`);
-  favorite.setAttribute("aria-pressed", String(isFavorite));
-  favorite.addEventListener("click", () => toggleFavorite(product.slug));
-  top.append(category, favorite);
+  top.append(category);
 
   const title = createElement("h4", "mt-2 text-xl font-black text-white");
   const productLink = createElement("a", "hover:text-red-200 hover:underline", product.name);
@@ -124,23 +96,14 @@ function createProductCard(product) {
   return card;
 }
 
-function toggleFavorite(slug) {
-  favorites.has(slug) ? favorites.delete(slug) : favorites.add(slug);
-  saveFavorites();
-  renderProducts();
-  renderRoute();
-}
-
 function getFilteredProducts() {
-  let products = filterMarketplaceProducts(marketplaceProducts, {
+  return filterMarketplaceProducts(marketplaceProducts, {
     query: elements.search.value,
     category: elements.category.value,
     supplier: elements.supplier.value,
     incoterm: elements.incoterm.value,
     verified: elements.verified.checked,
   });
-  if (elements.favoritesOnly.checked) products = products.filter(({ slug }) => favorites.has(slug));
-  return products;
 }
 
 function renderProducts() {
@@ -150,7 +113,6 @@ function renderProducts() {
   const start = (currentPage - 1) * PAGE_SIZE;
   elements.results.replaceChildren(...filtered.slice(start, start + PAGE_SIZE).map(createProductCard));
   elements.count.textContent = `${filtered.length} ${filtered.length === 1 ? "product" : "products"} found${filtered.length ? ` · showing ${start + 1}–${Math.min(start + PAGE_SIZE, filtered.length)}` : ""}`;
-  elements.favoriteCount.textContent = `${favorites.size} saved ${favorites.size === 1 ? "favorite" : "favorites"}`;
   elements.empty.classList.toggle("hidden", filtered.length !== 0);
   renderPagination(pageCount);
 }
@@ -197,12 +159,9 @@ function renderProductDetail(product) {
   supplierLink.addEventListener("click", handleDetailLink);
   supplierRow.append(createElement("span", "text-gray-300", "Supplier:"), supplierLink, verificationBadge(supplier));
   const actions = createElement("div", "mt-6 flex flex-wrap gap-3");
-  const favorite = createElement("button", "rounded border border-red-300 px-5 py-3 font-black text-white hover:bg-white/10", favorites.has(product.slug) ? "♥ Remove favorite" : "♡ Save favorite");
-  favorite.type = "button";
-  favorite.addEventListener("click", () => toggleFavorite(product.slug));
   const inquire = createElement("a", "rounded bg-red-700 px-5 py-3 font-black text-white hover:bg-red-800", "Inquire about this product");
   inquire.href = "#marketplace-request";
-  actions.append(favorite, inquire);
+  actions.append(inquire);
   shell.append(facts, supplierRow, actions);
   return shell;
 }
@@ -273,7 +232,7 @@ function configureCatalog() {
   appendOptions(elements.category, marketplaceCategories, (value) => value);
   appendOptions(elements.supplier, marketplaceSuppliers, ({ slug }) => slug, ({ company }) => company);
   appendOptions(elements.incoterm, marketplaceIncoterms, (value) => value);
-  [elements.search, elements.category, elements.supplier, elements.incoterm, elements.verified, elements.favoritesOnly].forEach((control) => {
+  [elements.search, elements.category, elements.supplier, elements.incoterm, elements.verified].forEach((control) => {
     control.addEventListener(control === elements.search ? "input" : "change", () => { currentPage = 1; renderProducts(); });
   });
   elements.clear.addEventListener("click", () => {
@@ -282,7 +241,6 @@ function configureCatalog() {
     elements.supplier.value = "";
     elements.incoterm.value = "";
     elements.verified.checked = false;
-    elements.favoritesOnly.checked = false;
     currentPage = 1;
     renderProducts();
     elements.search.focus();
