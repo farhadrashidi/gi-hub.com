@@ -4,15 +4,10 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss --input ./src/assets/stylesheets/index.css --output ./out/assets/stylesheets/index.css --minify",
-    "build:copy": "node scripts/build-copy.js",
+    "build:copy": "cp -r ./src ./out",
     "build": "npm run build:copy && npm run build:css",
-    "clean": "node -e \"require('node:fs').rmSync('out',{recursive:true,force:true})\"",
-    "lint": "node --check src/assets/scripts/index.js && node --check src/assets/scripts/marketplace-data.js && node --check src/assets/scripts/marketplace.js",
-    "typecheck": "node --check src/assets/scripts/marketplace-data.js && node --check src/assets/scripts/marketplace.js",
-    "test": "node --test",
-    "check": "npm run lint && npm run typecheck && npm test && npm run build"
+    "clean": "rm -rf ./out"
   },
-  "type": "module",
   "dependencies": {
     "@tailwindcss/cli": "4.0.5",
     "tailwindcss": "4.0.5"

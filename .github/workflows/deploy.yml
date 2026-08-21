@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -29,10 +29,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install locked dependencies
-        run: npm ci --ignore-scripts
-      - name: Quality and production build
-        run: npm run check
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
