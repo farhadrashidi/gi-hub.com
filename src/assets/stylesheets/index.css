@@ -450,6 +450,65 @@
     line-height: 1.35;
   }
 
+  body[data-page="suppliers"] [data-supplier-verification] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.55rem;
+    gap: .14rem;
+    border-radius: 999px;
+    padding: .32rem .55rem;
+    background: #e7edcf;
+    color: #547000;
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  body[data-page="suppliers"] [data-supplier-verification][data-level="reviewed"] {
+    background: #f0ead8;
+    color: #887343;
+  }
+
+  body[data-page="suppliers"] [data-supplier-company-info] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="suppliers"] [data-supplier-company-info] > div {
+    min-width: 0;
+  }
+
+  body[data-page="suppliers"] [data-supplier-company-info] dt,
+  body[data-page="suppliers"] [data-supplier-products] > span {
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+  }
+
+  body[data-page="suppliers"] [data-supplier-company-info] dd {
+    overflow-wrap: anywhere;
+    color: #334d45;
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+
+  body[data-page="suppliers"] [data-supplier-products] > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  body[data-page="suppliers"] [data-supplier-products] > div > span {
+    border: 1px solid #e2e5de;
+    border-radius: .45rem;
+    padding: .35rem .55rem;
+    background: #f4f1e9;
+    color: #465b54;
+    font-size: .68rem;
+    line-height: 1.25;
+  }
+
   body[data-page="suppliers"] [data-supplier-card],
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
   body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a {

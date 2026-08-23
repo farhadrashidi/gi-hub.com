@@ -153,7 +153,10 @@
       });
       const count = document.querySelector('[data-supplier-count]');
       const empty = document.querySelector('[data-supplier-empty]');
-      if (count) count.textContent = visible + ' ' + (visible === 1 ? 'supplier' : 'suppliers') + ' match your filters';
+      if (count) {
+        count.textContent = visible + ' ' + (visible === 1 ? 'supplier' : 'suppliers') + ' match your filters';
+        count.hidden = visible === 0;
+      }
       if (empty) empty.hidden = visible !== 0;
     };
 
