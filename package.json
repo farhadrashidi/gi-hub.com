@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss --input ./src/assets/stylesheets/index.css --output ./out/assets/stylesheets/index.css --minify",
-    "build:copy": "cp -r ./src ./out",
+    "build:copy": "node ./scripts/copy-static.mjs",
     "build": "npm run build:copy && npm run build:css",
     "clean": "rm -rf ./out"
   },
