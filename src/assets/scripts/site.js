@@ -104,7 +104,10 @@
         if (matches) visible += 1;
       });
 
-      if (resultCount) resultCount.textContent = visible + ' ' + (visible === 1 ? 'listing' : 'listings') + ' available';
+      if (resultCount) {
+        resultCount.textContent = visible + ' ' + (visible === 1 ? 'listing' : 'listings') + ' available';
+        resultCount.hidden = visible === 0;
+      }
       if (emptyState) emptyState.hidden = visible !== 0;
     };
 

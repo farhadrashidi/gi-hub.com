@@ -402,6 +402,54 @@
     overflow: hidden;
   }
 
+  body[data-page="marketplace"] [data-marketplace-category],
+  body[data-page="marketplace"] [data-marketplace-verification] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.55rem;
+    border-radius: 999px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  body[data-page="marketplace"] [data-marketplace-category] {
+    border: 1px solid rgba(155, 190, 175, .3);
+    padding: .32rem .55rem;
+    background: rgba(255, 255, 255, .06);
+    color: #c4d8d0;
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+  }
+
+  body[data-page="marketplace"] [data-marketplace-verification] {
+    gap: .14rem;
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+  }
+
+  body[data-page="marketplace"] [data-marketplace-details] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="marketplace"] [data-marketplace-details] > div {
+    min-width: 0;
+  }
+
+  body[data-page="marketplace"] [data-marketplace-details] dt {
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+  }
+
+  body[data-page="marketplace"] [data-marketplace-details] dd {
+    overflow-wrap: anywhere;
+    color: #e0ebe6;
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+
   body[data-page="suppliers"] [data-supplier-card],
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
   body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a {
