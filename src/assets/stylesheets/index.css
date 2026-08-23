@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@layer components {
+  header nav[aria-label="Primary navigation"] a[data-nav] {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid transparent;
+    padding: .45rem .75rem;
+    transition: background-color .2s, border-color .2s, color .2s;
+  }
+
+  header nav[aria-label="Primary navigation"] a[data-nav]:hover,
+  header nav[aria-label="Primary navigation"] a[data-nav]:focus-visible {
+    border-color: #cbdf3b;
+    background: #f4f1e9;
+    color: #547000;
+  }
+
+  header nav[aria-label="Primary navigation"] a[data-nav][aria-current="page"] {
+    border-color: #cbdf3b;
+    background: #f4f1e9;
+    color: #547000;
+    box-shadow: 0 2px 0 rgba(203, 223, 59, .22);
+  }
+
+  header nav[aria-label="Mobile navigation"] a[data-nav] {
+    display: block;
+    border-left: 4px solid transparent;
+    padding: .55rem .75rem;
+    transition: background-color .2s, border-color .2s, color .2s;
+  }
+
+  header nav[aria-label="Mobile navigation"] a[data-nav]:hover,
+  header nav[aria-label="Mobile navigation"] a[data-nav]:focus-visible,
+  header nav[aria-label="Mobile navigation"] a[data-nav][aria-current="page"] {
+    border-left-color: #cbdf3b;
+    background: #f4f1e9;
+    color: #547000;
+  }
+}
