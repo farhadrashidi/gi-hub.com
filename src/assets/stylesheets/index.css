@@ -9,6 +9,7 @@
   body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child,
   body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child,
   body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child,
+  body[data-page="investments"] [data-investment-project] > div:first-child > span:first-child,
   body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child,
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
     --icon-bg: #f4f1e9;
@@ -37,6 +38,7 @@
   body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child::before,
   body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child::before,
   body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child::before,
+  body[data-page="investments"] [data-investment-project] > div:first-child > span:first-child::before,
   body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child::before,
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child::before {
     position: absolute;
@@ -152,6 +154,8 @@
   body[data-page="marketplace"] [data-product-card]:hover > div:first-child > span:first-child,
   body[data-page="categories"] main > section:nth-of-type(2) a:hover > span:first-child,
   body[data-page="categories"] main > section:nth-of-type(2) a:focus-visible > span:first-child,
+  body[data-page="investments"] [data-investment-project]:hover > div:first-child > span:first-child,
+  body[data-page="investments"] [data-investment-project]:focus-within > div:first-child > span:first-child,
   body[data-page="home"] main > section:nth-of-type(4) a:hover > span:first-child,
   body[data-page="home"] main > section:nth-of-type(4) a:focus-visible > span:first-child {
     transform: translateY(-3px) scale(1.035);
@@ -223,6 +227,7 @@
 
   body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child,
   body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child,
+  body[data-page="investments"] [data-investment-project] > div:first-child > span:first-child,
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
     display: grid;
     width: 2.75rem;
@@ -271,6 +276,7 @@
     body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child,
     body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child,
     body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child,
+    body[data-page="investments"] [data-investment-project] > div:first-child > span:first-child,
     body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child,
     body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
       transition: none;
@@ -509,6 +515,59 @@
     line-height: 1.25;
   }
 
+  body[data-page="investments"] [data-investment-project] {
+    transition: background-color .22s ease, box-shadow .22s ease;
+  }
+
+  body[data-page="investments"] [data-investment-project]:hover {
+    background: rgba(244, 241, 233, .42);
+  }
+
+  body[data-page="investments"] [data-investment-stage] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.55rem;
+    border: 1px solid #d9e5b0;
+    border-radius: 999px;
+    padding: .32rem .55rem;
+    background: #f2f6df;
+    color: #547000;
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  body[data-page="investments"] [data-investment-metrics] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-page="investments"] [data-investment-metrics] > div {
+    min-width: 0;
+  }
+
+  body[data-page="investments"] [data-investment-metrics] dt {
+    color: #7a8984;
+    font-size: .61rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    line-height: 1.25;
+  }
+
+  body[data-page="investments"] [data-investment-metrics] dd {
+    margin: .35rem 0 0;
+    overflow-wrap: anywhere;
+    color: #334d45;
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+
+  body[data-page="investments"] [data-investment-metrics] > div:nth-child(-n+5) dd {
+    color: #547000;
+    font-weight: 800;
+  }
+
   body[data-page="suppliers"] [data-supplier-card],
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
   body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a {
@@ -536,6 +595,16 @@
   main button[type="submit"],
   main a.inline-flex {
     border-radius: .7rem;
+  }
+
+  @media (max-width: 700px) {
+    body[data-page="investments"] [data-investment-metrics] {
+      grid-template-columns: 1fr;
+    }
+
+    body[data-page="investments"] [data-investment-metrics] .col-span-2 {
+      grid-column: auto;
+    }
   }
 
   @media (max-width: 600px) {
