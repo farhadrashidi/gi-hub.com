@@ -1,6 +1,260 @@
 @import "tailwindcss";
 
-@layer components {
+@layer utilities {
+  /* Shared embossed icon language: restrained metallic/glass depth, not decorative noise. */
+  .pathway-icon,
+  header a[aria-label="GI-Hub home"] > span:first-child,
+  footer a[href="index.html"] > span:first-child,
+  body[data-page="suppliers"] [data-supplier-card] > div:first-child > span:first-child,
+  body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child,
+  body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child,
+  body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child,
+  body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child,
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
+    --icon-bg: #f4f1e9;
+    --icon-ink: #547000;
+    --icon-edge: #cbdf3b;
+    position: relative;
+    isolation: isolate;
+    border: 1px solid color-mix(in srgb, var(--icon-edge) 52%, var(--icon-ink) 48%);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, .88) 0%, rgba(255, 255, 255, .22) 38%, rgba(6, 23, 19, .12) 100%),
+      var(--icon-bg);
+    box-shadow:
+      inset 1px 1px 0 rgba(255, 255, 255, .92),
+      inset -2px -3px 5px rgba(6, 23, 19, .17),
+      0 3px 0 rgba(6, 23, 19, .12),
+      0 10px 20px rgba(6, 23, 19, .11);
+    color: var(--icon-ink);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+  }
+
+  .pathway-icon::before,
+  header a[aria-label="GI-Hub home"] > span:first-child::before,
+  footer a[href="index.html"] > span:first-child::before,
+  body[data-page="suppliers"] [data-supplier-card] > div:first-child > span:first-child::before,
+  body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child::before,
+  body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child::before,
+  body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child::before,
+  body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child::before,
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child::before {
+    position: absolute;
+    inset: 1px 10% 52% 1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(115deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, 0));
+    content: "";
+    pointer-events: none;
+  }
+
+  .pathway-icon {
+    display: inline-grid;
+    width: 3.25rem;
+    height: 3.25rem;
+    flex: 0 0 3.25rem;
+    place-items: center;
+    border-radius: 1.05rem;
+    font-size: 0;
+  }
+
+  .pathway-icon::after {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--icon-ink);
+    content: "";
+    -webkit-mask: var(--icon-mask) center / contain no-repeat;
+    mask: var(--icon-mask) center / contain no-repeat;
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .48));
+  }
+
+  .icon-arrow {
+    display: inline-grid;
+    width: 1.15em;
+    height: 1.15em;
+    margin-left: .22em;
+    place-items: center;
+    border: 1px solid rgba(84, 112, 0, .28);
+    border-radius: .34em;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .85), rgba(203, 223, 59, .3)), #f4f1e9;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .92), inset -1px -1px 2px rgba(6, 23, 19, .14), 0 2px 4px rgba(6, 23, 19, .12);
+    color: #547000;
+    vertical-align: -.18em;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .icon-arrow svg {
+    width: .72em;
+    height: .72em;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  a:hover .icon-arrow,
+  a:focus-visible .icon-arrow,
+  button:hover .icon-arrow,
+  button:focus-visible .icon-arrow {
+    transform: translateX(2px) translateY(-1px);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .98), inset -1px -1px 2px rgba(6, 23, 19, .12), 0 4px 7px rgba(6, 23, 19, .18);
+  }
+
+  .pathway-icon--source {
+    --icon-bg: #d9ebe5;
+    --icon-ink: #28645a;
+    --icon-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M9 5h10v10' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .pathway-icon--suppliers {
+    --icon-bg: #e7edcf;
+    --icon-ink: #547000;
+    --icon-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='6.5' fill='none' stroke='black' stroke-width='1.8'/%3E%3Ccircle cx='12' cy='12' r='2' fill='black'/%3E%3Cpath d='M12 3v3M21 12h-3M12 21v-3M3 12h3' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+
+  .pathway-icon--rfq {
+    --icon-bg: #e6eee7;
+    --icon-ink: #2e6656;
+    --icon-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' rx='3' fill='none' stroke='black' stroke-width='1.8'/%3E%3Cpath d='M12 8v8M8 12h8' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+
+  .pathway-icon--investments {
+    --icon-bg: #eee6c9;
+    --icon-ink: #806b2b;
+    --icon-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m12 3 9 9-9 9-9-9 9-9Z' fill='none' stroke='black' stroke-width='1.7' stroke-linejoin='round'/%3E%3Cpath d='m8 14 3-3 2 2 3-4' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  section[aria-label="Marketplace pathways"] > a:hover > .pathway-icon,
+  section[aria-label="Marketplace pathways"] > a:focus-visible > .pathway-icon,
+  body[data-page="suppliers"] [data-supplier-card]:hover > div:first-child > span:first-child,
+  body[data-page="marketplace"] [data-product-card]:hover > div:first-child > span:first-child,
+  body[data-page="categories"] main > section:nth-of-type(2) a:hover > span:first-child,
+  body[data-page="categories"] main > section:nth-of-type(2) a:focus-visible > span:first-child,
+  body[data-page="home"] main > section:nth-of-type(4) a:hover > span:first-child,
+  body[data-page="home"] main > section:nth-of-type(4) a:focus-visible > span:first-child {
+    transform: translateY(-3px) scale(1.035);
+    box-shadow:
+      inset 1px 1px 0 rgba(255, 255, 255, .98),
+      inset -2px -3px 5px rgba(6, 23, 19, .14),
+      0 4px 0 rgba(6, 23, 19, .14),
+      0 16px 26px rgba(6, 23, 19, .18);
+    filter: saturate(1.08);
+  }
+
+  header a[aria-label="GI-Hub home"] > span:first-child,
+  footer a[href="index.html"] > span:first-child {
+    --icon-bg: #0a2520;
+    --icon-ink: #cbdf3b;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+  }
+
+  footer a[href="index.html"] > span:first-child {
+    --icon-bg: #cbdf3b;
+    --icon-ink: #071c18;
+  }
+
+  header a[aria-label="GI-Hub home"]:hover > span:first-child,
+  header a[aria-label="GI-Hub home"]:focus-visible > span:first-child,
+  footer a[href="index.html"]:hover > span:first-child,
+  footer a[href="index.html"]:focus-visible > span:first-child {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow:
+      inset 1px 1px 0 rgba(255, 255, 255, .98),
+      inset -2px -3px 5px rgba(6, 23, 19, .16),
+      0 4px 0 rgba(6, 23, 19, .18),
+      0 12px 22px rgba(6, 23, 19, .22);
+  }
+
+  body[data-page="suppliers"] [data-supplier-card] > div:first-child > span:first-child {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .95rem;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  body[data-page="suppliers"] [data-supplier-card]:nth-child(1) > div:first-child > span:first-child { --icon-bg: #dbe9ed; --icon-ink: #2c6864; }
+  body[data-page="suppliers"] [data-supplier-card]:nth-child(2) > div:first-child > span:first-child { --icon-bg: #ece5c8; --icon-ink: #8b6f28; }
+  body[data-page="suppliers"] [data-supplier-card]:nth-child(3) > div:first-child > span:first-child { --icon-bg: #dce1e4; --icon-ink: #52636b; }
+  body[data-page="suppliers"] [data-supplier-card]:nth-child(4) > div:first-child > span:first-child { --icon-bg: #d9eee6; --icon-ink: #28645a; }
+  body[data-page="suppliers"] [data-supplier-card]:nth-child(5) > div:first-child > span:first-child { --icon-bg: #e7e5d3; --icon-ink: #747354; }
+  body[data-page="suppliers"] [data-supplier-card]:nth-child(6) > div:first-child > span:first-child { --icon-bg: #eee0d9; --icon-ink: #87594b; }
+
+  body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child {
+    display: grid;
+    width: 3.55rem;
+    height: 3.55rem;
+    place-items: center;
+    border-radius: 1.05rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  body[data-page="marketplace"] [data-product-card]:nth-child(2) > div:first-child > span:first-child { --icon-bg: #b5a56b; --icon-ink: #f7efcf; }
+  body[data-page="marketplace"] [data-product-card]:nth-child(3) > div:first-child > span:first-child { --icon-bg: #51626a; --icon-ink: #d9e4e4; }
+  body[data-page="marketplace"] [data-product-card]:nth-child(4) > div:first-child > span:first-child { --icon-bg: #2c6864; --icon-ink: #c9efdf; }
+  body[data-page="marketplace"] [data-product-card]:nth-child(5) > div:first-child > span:first-child { --icon-bg: #777a61; --icon-ink: #e9ebcf; }
+  body[data-page="marketplace"] [data-product-card]:nth-child(6) > div:first-child > span:first-child { --icon-bg: #805d4c; --icon-ink: #f4d9c7; }
+
+  body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child,
+  body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child,
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border-radius: .85rem;
+    font-size: .72rem;
+    font-weight: 800;
+  }
+
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
+    --icon-bg: #edf1e8;
+  }
+
+  body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child {
+    display: inline-grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    margin-right: .75rem;
+    border-radius: .65rem;
+    font-size: .65rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 600px) {
+    .pathway-icon {
+      width: 2.9rem;
+      height: 2.9rem;
+      flex-basis: 2.9rem;
+    }
+
+    body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .icon-arrow,
+    .pathway-icon,
+    header a[aria-label="GI-Hub home"] > span:first-child,
+    footer a[href="index.html"] > span:first-child,
+    body[data-page="suppliers"] [data-supplier-card] > div:first-child > span:first-child,
+    body[data-page="marketplace"] [data-product-card] > div:first-child > span:first-child,
+    body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a > span:first-child,
+    body[data-page="investments"] main > section:nth-of-type(2) [class*="grid-cols-2"] > div > span:first-child,
+    body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child,
+    body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
+      transition: none;
+    }
+  }
+
   header nav[aria-label="Primary navigation"] a[data-nav] {
     display: inline-flex;
     align-items: center;

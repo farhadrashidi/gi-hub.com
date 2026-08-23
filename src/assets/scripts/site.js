@@ -3,6 +3,33 @@
 
   const page = document.body.dataset.page || '';
 
+  const enhanceTextArrows = function () {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    let currentNode;
+    while ((currentNode = walker.nextNode())) {
+      if (currentNode.nodeValue && currentNode.nodeValue.includes('→')) textNodes.push(currentNode);
+    }
+
+    textNodes.forEach(function (textNode) {
+      const parts = textNode.nodeValue.split('→');
+      const fragment = document.createDocumentFragment();
+      parts.forEach(function (part, index) {
+        if (part) fragment.appendChild(document.createTextNode(part));
+        if (index < parts.length - 1) {
+          const arrow = document.createElement('span');
+          arrow.className = 'icon-arrow';
+          arrow.setAttribute('aria-hidden', 'true');
+          arrow.innerHTML = '<svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>';
+          fragment.appendChild(arrow);
+        }
+      });
+      textNode.parentNode.replaceChild(fragment, textNode);
+    });
+  };
+
+  enhanceTextArrows();
+
   document.querySelectorAll('[data-nav]').forEach(function (link) {
     if (link.dataset.nav === page) {
       link.setAttribute('aria-current', 'page');
