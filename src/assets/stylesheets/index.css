@@ -472,11 +472,6 @@
     white-space: nowrap;
   }
 
-  body[data-page="suppliers"] [data-supplier-verification][data-level="reviewed"] {
-    background: #f0ead8;
-    color: #887343;
-  }
-
   body[data-page="suppliers"] [data-supplier-company-info] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -513,6 +508,61 @@
     color: #465b54;
     font-size: .68rem;
     line-height: 1.25;
+  }
+
+  body[data-page="suppliers"] [data-supplier-verification],
+  body[data-page="marketplace"] [data-marketplace-verification],
+  body[data-page="suppliers"] [data-verification-badge],
+  body[data-page="marketplace"] [data-verification-badge] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.55rem;
+    gap: .14rem;
+    border: 1px solid #d9ddd6;
+    border-radius: 999px;
+    padding: .32rem .55rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .86), rgba(237, 240, 237, .96));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), 0 2px 5px rgba(6, 23, 19, .08);
+    color: #65716d;
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  body[data-page="suppliers"] [data-verification-level="registered"],
+  body[data-page="marketplace"] [data-verification-level="registered"] {
+    border-color: #d9ddd6;
+    background: linear-gradient(145deg, #fff, #edf0ed);
+    color: #65716d;
+  }
+
+  body[data-page="suppliers"] [data-verification-level="business-verified"],
+  body[data-page="marketplace"] [data-verification-level="business-verified"] {
+    border-color: #b9d7cb;
+    background: linear-gradient(145deg, #f6fffb, #e4efeb);
+    color: #28645a;
+  }
+
+  body[data-page="suppliers"] [data-verification-level="gi-hub-verified"],
+  body[data-page="marketplace"] [data-verification-level="gi-hub-verified"] {
+    border-color: #d9e5b0;
+    background: linear-gradient(145deg, #fbffe9, #e7edcf);
+    color: #547000;
+  }
+
+  body[data-page="suppliers"] [data-verification-card],
+  body[data-page="marketplace"] [data-verification-card] {
+    border-radius: 1rem;
+    box-shadow: 0 12px 30px rgba(6, 23, 19, .08), 0 2px 5px rgba(6, 23, 19, .06);
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+
+  body[data-page="suppliers"] [data-verification-card]:hover,
+  body[data-page="marketplace"] [data-verification-card]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(6, 23, 19, .12), 0 3px 7px rgba(6, 23, 19, .08);
   }
 
   body[data-page="investments"] [data-investment-project] {
@@ -635,6 +685,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     body[data-page="suppliers"] [data-supplier-card],
+    body[data-page="suppliers"] [data-verification-card],
+    body[data-page="marketplace"] [data-verification-card],
     body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
     body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a {
       transition: none;

@@ -28,6 +28,24 @@
     });
   };
 
+  const standardizeVerificationBadges = function () {
+    const labels = {
+      registered: 'Registered',
+      'business-verified': 'Business Verified',
+      'gi-hub-verified': 'GI-Hub Verified'
+    };
+    document.querySelectorAll('[data-supplier-verification], [data-marketplace-verification]').forEach(function (badge) {
+      const card = badge.closest('[data-supplier-card], [data-product-card]');
+      const explicitLevel = (card && card.dataset.verificationLevel) || badge.dataset.verificationLevel;
+      const level = Object.prototype.hasOwnProperty.call(labels, explicitLevel) ? explicitLevel : (card && card.dataset.verified === 'true' ? 'gi-hub-verified' : 'business-verified');
+      if (card) card.dataset.verificationLevel = level;
+      badge.dataset.verificationLevel = level;
+      badge.setAttribute('aria-label', 'Verification level: ' + labels[level]);
+      badge.textContent = level === 'registered' ? 'REGISTERED' : '✓ ' + labels[level].toUpperCase();
+    });
+  };
+
+  standardizeVerificationBadges();
   enhanceTextSymbols('→', 'icon-arrow', 'arrow');
   enhanceTextSymbols('✓', 'icon-check', 'check');
 
@@ -98,7 +116,8 @@
       productCards.forEach(function (card) {
         const matchesQuery = !query || (card.dataset.search || '').toLowerCase().includes(query);
         const matchesCategory = !category || (card.dataset.category || '').toLowerCase() === category;
-        const matchesVerified = !verifiedOnly || card.dataset.verified === 'true';
+        const verificationLevel = card.dataset.verificationLevel || (card.dataset.verified === 'true' ? 'gi-hub-verified' : 'registered');
+        const matchesVerified = !verifiedOnly || verificationLevel !== 'registered';
         const matches = matchesQuery && matchesCategory && matchesVerified;
         card.hidden = !matches;
         if (matches) visible += 1;
@@ -144,10 +163,11 @@
 
       supplierCards.forEach(function (card) {
         const haystack = (card.dataset.search || '').toLowerCase();
+        const verificationLevel = card.dataset.verificationLevel || (card.dataset.verified === 'true' ? 'gi-hub-verified' : 'registered');
         const matches = (!query || haystack.includes(query)) &&
           (!sector || (card.dataset.sector || '').toLowerCase() === sector) &&
           (!country || (card.dataset.country || '').toLowerCase() === country) &&
-          (!verifiedOnly || card.dataset.verified === 'true');
+          (!verifiedOnly || verificationLevel !== 'registered');
         card.hidden = !matches;
         if (matches) visible += 1;
       });
