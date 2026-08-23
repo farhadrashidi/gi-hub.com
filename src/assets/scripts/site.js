@@ -3,32 +3,33 @@
 
   const page = document.body.dataset.page || '';
 
-  const enhanceTextArrows = function () {
+  const enhanceTextSymbols = function (symbol, className, iconId) {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     const textNodes = [];
     let currentNode;
     while ((currentNode = walker.nextNode())) {
-      if (currentNode.nodeValue && currentNode.nodeValue.includes('→')) textNodes.push(currentNode);
+      if (currentNode.nodeValue && currentNode.nodeValue.includes(symbol)) textNodes.push(currentNode);
     }
 
     textNodes.forEach(function (textNode) {
-      const parts = textNode.nodeValue.split('→');
+      const parts = textNode.nodeValue.split(symbol);
       const fragment = document.createDocumentFragment();
       parts.forEach(function (part, index) {
         if (part) fragment.appendChild(document.createTextNode(part));
         if (index < parts.length - 1) {
-          const arrow = document.createElement('span');
-          arrow.className = 'icon-arrow';
-          arrow.setAttribute('aria-hidden', 'true');
-          arrow.innerHTML = '<svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>';
-          fragment.appendChild(arrow);
+          const icon = document.createElement('span');
+          icon.className = className;
+          icon.setAttribute('aria-hidden', 'true');
+          icon.innerHTML = '<svg viewBox="0 0 24 24" focusable="false"><use href="assets/images/icons.svg#' + iconId + '"></use></svg>';
+          fragment.appendChild(icon);
         }
       });
       textNode.parentNode.replaceChild(fragment, textNode);
     });
   };
 
-  enhanceTextArrows();
+  enhanceTextSymbols('→', 'icon-arrow', 'arrow');
+  enhanceTextSymbols('✓', 'icon-check', 'check');
 
   document.querySelectorAll('[data-nav]').forEach(function (link) {
     if (link.dataset.nav === page) {
