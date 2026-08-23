@@ -313,4 +313,155 @@
     background: #f4f1e9;
     color: #547000;
   }
+
+  /* Visual refinement: preserve the existing palette and layout while
+     normalising typography, spacing, cards, and responsive rhythm. */
+  body {
+    font-size: 1rem;
+    line-height: 1.58;
+  }
+
+  body h1,
+  body h2,
+  body h3,
+  body h1[class],
+  body h2[class],
+  body h3[class] {
+    font-family: Georgia, serif;
+    font-weight: 400;
+  }
+
+  body h1,
+  body h1[class] {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.04;
+    letter-spacing: -.04em;
+  }
+
+  body h2,
+  body h2[class] {
+    font-size: clamp(1.875rem, 3.5vw, 2.25rem);
+    line-height: 1.08;
+    letter-spacing: -.035em;
+  }
+
+  body h3,
+  body h3[class] {
+    font-size: clamp(1.25rem, 2.3vw, 1.5rem);
+    line-height: 1.16;
+    letter-spacing: -.02em;
+  }
+
+  main p:not([class*="tracking"]):not([aria-live]):not([data-result-count]):not([data-supplier-count]):not([data-marketplace-form-status]) {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  main p[class*="tracking"] {
+    line-height: 1.35;
+  }
+
+  main small {
+    line-height: 1.45;
+  }
+
+  main > section:not([id="top"]):not([aria-label="Marketplace pathways"]) {
+    padding-block: clamp(4.5rem, 8vw, 6.5rem);
+  }
+
+  body[data-page="home"] main > section[aria-label="Marketplace pathways"] {
+    padding-block: 0;
+  }
+
+  body[data-page="marketplace"] [data-product-grid],
+  body[data-page="suppliers"] [data-supplier-grid] {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  body[data-page="marketplace"] [data-product-card],
+  body[data-page="suppliers"] [data-supplier-card],
+  body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a,
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
+  body[data-page="rfq"] form[data-marketplace-form] {
+    border-radius: 1rem;
+    box-shadow:
+      0 12px 30px rgba(6, 23, 19, .08),
+      0 2px 5px rgba(6, 23, 19, .06);
+  }
+
+  body[data-page="marketplace"] [data-product-card] > div:nth-child(2),
+  body[data-page="suppliers"] [data-supplier-card],
+  body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a,
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a {
+    padding: clamp(1.25rem, 2.4vw, 1.5rem);
+  }
+
+  body[data-page="marketplace"] [data-product-card],
+  body[data-page="suppliers"] [data-supplier-card] {
+    overflow: hidden;
+  }
+
+  body[data-page="suppliers"] [data-supplier-card],
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
+  body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a {
+    transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
+  }
+
+  body[data-page="suppliers"] [data-supplier-card]:hover,
+  body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a:hover,
+  body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a:hover {
+    box-shadow:
+      0 16px 34px rgba(6, 23, 19, .12),
+      0 3px 7px rgba(6, 23, 19, .08);
+  }
+
+  body[data-page="rfq"] form[data-marketplace-form] {
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+  }
+
+  main input,
+  main select,
+  main textarea {
+    border-radius: .7rem;
+  }
+
+  main button[type="submit"],
+  main a.inline-flex {
+    border-radius: .7rem;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      line-height: 1.55;
+    }
+
+    body h1,
+    body h1[class] {
+      font-size: 2.5rem;
+      line-height: 1.05;
+    }
+
+    body h2,
+    body h2[class] {
+      font-size: 1.875rem;
+    }
+
+    body h3,
+    body h3[class] {
+      font-size: 1.25rem;
+    }
+
+    main > section:not([id="top"]):not([aria-label="Marketplace pathways"]) {
+      padding-block: 4rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body[data-page="suppliers"] [data-supplier-card],
+    body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
+    body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a {
+      transition: none;
+    }
+  }
 }
