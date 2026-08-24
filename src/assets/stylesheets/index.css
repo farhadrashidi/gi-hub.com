@@ -177,6 +177,46 @@
     text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
   }
 
+  header a[aria-label="GI-Hub home"] {
+    flex-shrink: 1;
+    min-width: 0;
+    gap: .55rem;
+  }
+
+  header a[aria-label="GI-Hub home"] > span:first-child {
+    flex: 0 0 auto;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    transition: none;
+  }
+
+  header a[aria-label="GI-Hub home"] > span:first-child::before {
+    display: none;
+  }
+
+  header a[aria-label="GI-Hub home"] > span:first-child img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  header a[aria-label="GI-Hub home"] > span:nth-child(2) {
+    min-width: 0;
+  }
+
+  @media (max-width: 1100px) {
+    header nav[aria-label="Primary navigation"] {
+      display: none;
+    }
+
+    header [data-menu-toggle] {
+      display: block;
+    }
+  }
+
   footer a[href="index.html"] > span:first-child {
     --icon-bg: #cbdf3b;
     --icon-ink: #071c18;
@@ -192,6 +232,12 @@
       inset -2px -3px 5px rgba(6, 23, 19, .16),
       0 4px 0 rgba(6, 23, 19, .18),
       0 12px 22px rgba(6, 23, 19, .22);
+  }
+
+  header a[aria-label="GI-Hub home"]:hover > span:first-child,
+  header a[aria-label="GI-Hub home"]:focus-visible > span:first-child {
+    transform: none;
+    box-shadow: none;
   }
 
   body[data-page="suppliers"] [data-supplier-card] > div:first-child > span:first-child {
