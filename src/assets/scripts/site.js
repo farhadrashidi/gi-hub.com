@@ -209,4 +209,51 @@
       form.reset();
     });
   });
+
+  const lightbox = document.querySelector('[data-lightbox]');
+  const lightboxTriggers = Array.from(document.querySelectorAll('[data-lightbox-trigger]'));
+  if (lightbox && lightboxTriggers.length) {
+    const lightboxImage = lightbox.querySelector('[data-lightbox-image]');
+    const lightboxCaption = lightbox.querySelector('[data-lightbox-caption]');
+    const lightboxCloseButtons = lightbox.querySelectorAll('[data-lightbox-close]');
+    let previousFocus = null;
+
+    const closeLightbox = function () {
+      lightbox.hidden = true;
+      document.body.classList.remove('source-product-lightbox-open');
+      if (lightboxImage) lightboxImage.removeAttribute('src');
+      if (previousFocus) previousFocus.focus();
+      previousFocus = null;
+    };
+
+    const openLightbox = function (trigger) {
+      if (!lightboxImage) return;
+      previousFocus = trigger;
+      lightboxImage.src = trigger.dataset.lightboxSrc || '';
+      lightboxImage.alt = trigger.dataset.lightboxAlt || '';
+      if (lightboxCaption) lightboxCaption.textContent = trigger.dataset.lightboxCaption || '';
+      lightbox.hidden = false;
+      document.body.classList.add('source-product-lightbox-open');
+      const closeButton = lightbox.querySelector('[data-lightbox-close]');
+      if (closeButton) closeButton.focus();
+    };
+
+    lightboxTriggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        openLightbox(trigger);
+      });
+    });
+
+    lightboxCloseButtons.forEach(function (button) {
+      button.addEventListener('click', closeLightbox);
+    });
+
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (!lightbox.hidden && event.key === 'Escape') closeLightbox();
+    });
+  }
 })();
