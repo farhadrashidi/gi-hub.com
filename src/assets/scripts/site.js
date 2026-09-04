@@ -100,10 +100,11 @@
   const marketCategory = document.querySelector('[data-market-category]');
   const marketVerified = document.querySelector('[data-market-verified]');
   const productCards = Array.from(document.querySelectorAll('[data-product-card]'));
+  const sourceProductShowcase = document.querySelector('[data-source-product-showcase]');
   const resultCount = document.querySelector('[data-result-count]');
   const emptyState = document.querySelector('[data-empty-state]');
 
-  if (marketQuery && marketCategory && productCards.length) {
+  if (marketQuery && marketCategory && (productCards.length || sourceProductShowcase)) {
     marketQuery.value = params.get('q') || '';
     marketCategory.value = params.get('category') || '';
 
@@ -122,6 +123,15 @@
         card.hidden = !matches;
         if (matches) visible += 1;
       });
+
+      if (sourceProductShowcase) {
+        const sourceMatchesQuery = !query || (sourceProductShowcase.dataset.marketSearch || '').toLowerCase().includes(query);
+        const sourceMatchesCategory = !category || (sourceProductShowcase.dataset.marketCategory || '').toLowerCase() === category;
+        const sourceMatchesVerified = !verifiedOnly || sourceProductShowcase.dataset.marketVerified !== 'false';
+        const sourceMatches = sourceMatchesQuery && sourceMatchesCategory && sourceMatchesVerified;
+        sourceProductShowcase.hidden = !sourceMatches;
+        if (sourceMatches) visible += 1;
+      }
 
       if (resultCount) {
         resultCount.textContent = visible + ' ' + (visible === 1 ? 'listing' : 'listings') + ' available';
@@ -153,6 +163,8 @@
   const supplierCountry = document.querySelector('[data-supplier-country]');
   const supplierCards = Array.from(document.querySelectorAll('[data-supplier-card]'));
   if (supplierQuery && supplierSector && supplierCards.length) {
+    supplierSector.value = params.get('sector') || '';
+
     const applySupplierFilters = function () {
       const query = supplierQuery.value.trim().toLowerCase();
       const sector = supplierSector.value.toLowerCase();
