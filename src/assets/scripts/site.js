@@ -154,27 +154,99 @@
   };
 
   const createLanguageSwitcher = function (mobile) {
-    const wrapper = document.createElement('label');
+    const wrapper = document.createElement('div');
     wrapper.className = 'site-language-switcher' + (mobile ? ' site-language-switcher--mobile' : '');
-    const label = document.createElement('span');
-    label.className = 'sr-only';
-    label.textContent = 'Language';
-    const select = document.createElement('select');
-    select.setAttribute('aria-label', 'Language');
-    select.dataset.languageSwitcher = 'true';
+    const trigger = document.createElement('button');
+    const menuId = 'language-menu-' + (mobile ? 'mobile' : 'desktop');
+    trigger.className = 'site-language-switcher__trigger';
+    trigger.type = 'button';
+    trigger.setAttribute('aria-label', 'Choose language');
+    trigger.setAttribute('aria-haspopup', 'listbox');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', menuId);
+    trigger.dataset.languageSwitcher = 'true';
+
+    const icon = document.createElement('span');
+    icon.className = 'site-language-switcher__icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.innerHTML = '<svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-6.5-3.5-9S9.7 5.5 12 3Z"></path></svg>';
+    const code = document.createElement('span');
+    code.textContent = 'EN';
+    const chevron = document.createElement('span');
+    chevron.className = 'site-language-switcher__chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.textContent = '▾';
+    trigger.appendChild(icon);
+    trigger.appendChild(code);
+    trigger.appendChild(chevron);
+
+    const menu = document.createElement('div');
+    menu.className = 'site-language-switcher__menu';
+    menu.id = menuId;
+    menu.hidden = true;
+    menu.setAttribute('role', 'listbox');
+    menu.setAttribute('aria-label', 'Languages');
     const currentLocale = getCurrentLocale();
     localeOptions.forEach(function (locale) {
-      const option = document.createElement('option');
-      option.value = locale.code;
+      const option = document.createElement('button');
+      option.className = 'site-language-switcher__option';
+      option.type = 'button';
       option.textContent = locale.label;
-      option.selected = locale.code === currentLocale;
-      select.appendChild(option);
+      option.dataset.locale = locale.code;
+      option.setAttribute('role', 'option');
+      option.setAttribute('aria-selected', String(locale.code === currentLocale));
+      option.addEventListener('click', function () {
+        window.location.href = localizedPageHref(locale.code, getCurrentPageName());
+      });
+      menu.appendChild(option);
     });
-    select.addEventListener('change', function () {
-      window.location.href = localizedPageHref(select.value, getCurrentPageName());
+
+    const closeMenu = function (restoreFocus) {
+      menu.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      if (restoreFocus) trigger.focus();
+    };
+
+    trigger.addEventListener('click', function () {
+      const isOpen = !menu.hidden;
+      menu.hidden = isOpen;
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      if (isOpen) trigger.focus();
     });
-    wrapper.appendChild(label);
-    wrapper.appendChild(select);
+
+    trigger.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (menu.hidden) {
+          menu.hidden = false;
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+        const selected = menu.querySelector('[aria-selected="true"]');
+        (selected || menu.querySelector('[role="option"]')).focus();
+      }
+    });
+
+    menu.addEventListener('keydown', function (event) {
+      const options = Array.from(menu.querySelectorAll('[role="option"]'));
+      const currentIndex = options.indexOf(document.activeElement);
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeMenu(true);
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        options[(currentIndex + 1) % options.length].focus();
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        options[(currentIndex - 1 + options.length) % options.length].focus();
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!wrapper.contains(event.target)) closeMenu(false);
+    });
+
+    wrapper.appendChild(trigger);
+    wrapper.appendChild(menu);
     return wrapper;
   };
 
