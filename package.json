@@ -5,7 +5,8 @@
   "scripts": {
     "build:css": "tailwindcss --input ./src/assets/stylesheets/index.css --output ./out/assets/stylesheets/index.css --minify",
     "build:copy": "node ./scripts/copy-static.mjs",
-    "build": "npm run build:copy && npm run build:css",
+    "build:locales": "node ./scripts/build-locales.mjs",
+    "build": "npm run build:copy && npm run build:css && npm run build:locales",
     "clean": "rm -rf ./out"
   },
   "dependencies": {

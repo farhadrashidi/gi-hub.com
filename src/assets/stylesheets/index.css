@@ -1,5 +1,120 @@
 @import "tailwindcss";
 
+@layer components {
+  .site-language-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    color: #65716d;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+
+  .site-language-switcher select {
+    min-width: 5.9rem;
+    border: 1px solid #d9ddd6;
+    border-radius: 999px;
+    padding: .38rem 1.6rem .38rem .65rem;
+    background: #fff;
+    color: #334d45;
+    font-size: .7rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .site-language-switcher--mobile {
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #edf0ed;
+    padding-top: .8rem;
+  }
+
+  .site-language-switcher select:focus-visible {
+    outline: 2px solid #cbdf3b;
+    outline-offset: 2px;
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+
+  html[dir="rtl"] body {
+    direction: rtl;
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: right;
+  }
+
+  html[dir="rtl"] body h1,
+  html[dir="rtl"] body h2,
+  html[dir="rtl"] body h3,
+  html[dir="rtl"] body h4,
+  html[dir="rtl"] body button,
+  html[dir="rtl"] body input,
+  html[dir="rtl"] body select,
+  html[dir="rtl"] body textarea {
+    font-family: Tahoma, Arial, sans-serif;
+    letter-spacing: 0;
+  }
+
+  html[dir="rtl"] header,
+  html[dir="rtl"] main,
+  html[dir="rtl"] footer,
+  html[dir="rtl"] nav,
+  html[dir="rtl"] form,
+  html[dir="rtl"] article,
+  html[dir="rtl"] section,
+  html[dir="rtl"] [role="table"],
+  html[dir="rtl"] table {
+    direction: rtl;
+  }
+
+  html[dir="rtl"] input,
+  html[dir="rtl"] select,
+  html[dir="rtl"] textarea,
+  html[dir="rtl"] th,
+  html[dir="rtl"] td {
+    text-align: right;
+  }
+
+  html[dir="rtl"] [data-product-search-form] select {
+    border-left: 0;
+    border-right: 1px solid #d9ddd6;
+  }
+
+  html[dir="rtl"] .icon-arrow {
+    transform: scaleX(-1);
+  }
+
+  html[dir="rtl"] .ml-auto {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  html[dir="rtl"] .ml-2 {
+    margin-right: .5rem;
+    margin-left: 0;
+  }
+
+  html[dir="rtl"] .mr-1 {
+    margin-right: 0;
+    margin-left: .25rem;
+  }
+
+  html[dir="rtl"] .site-language-switcher select {
+    padding-right: .65rem;
+    padding-left: 1.6rem;
+    text-align: right;
+  }
+
+  html[dir="rtl"] [data-supplier-verification],
+  html[dir="rtl"] [data-marketplace-verification],
+  html[dir="rtl"] [data-verification-badge] {
+    direction: rtl;
+  }
+}
+
 @layer utilities {
   /* Shared embossed icon language: restrained metallic/glass depth, not decorative noise. */
   .pathway-icon,
