@@ -169,6 +169,9 @@
   const marketVerified = document.querySelector('[data-market-verified]');
   const productCards = Array.from(document.querySelectorAll('[data-product-card]'));
   const sourceProductShowcase = document.querySelector('[data-source-product-showcase]');
+  const sourceProductSearchTerms = sourceProductShowcase && sourceProductShowcase.id === 'natural-stone'
+    ? ' iranian natural stone stone type origin size thickness finish moq capacity packaging incoterm marble travertine onyx limestone iran large slabs custom slab tile sizes 1 cm 1.5 cm 2 cm 3 cm polished honed tumbled brushed chiseled leathered 1 x 20 ft container project-specific export supply seaworthy wooden crates fumigation to be agreed per rfq'
+    : '';
   const resultCount = document.querySelector('[data-result-count]');
   const emptyState = document.querySelector('[data-empty-state]');
 
@@ -193,7 +196,8 @@
       });
 
       if (sourceProductShowcase) {
-        const sourceMatchesQuery = !query || (sourceProductShowcase.dataset.marketSearch || '').toLowerCase().includes(query);
+        const sourceSearchIndex = ((sourceProductShowcase.dataset.marketSearch || '') + sourceProductSearchTerms).toLowerCase();
+        const sourceMatchesQuery = !query || sourceSearchIndex.includes(query);
         const sourceMatchesCategory = !category || (sourceProductShowcase.dataset.marketCategory || '').toLowerCase() === category;
         const sourceMatchesVerified = !verifiedOnly || sourceProductShowcase.dataset.marketVerified !== 'false';
         const sourceMatches = sourceMatchesQuery && sourceMatchesCategory && sourceMatchesVerified;
