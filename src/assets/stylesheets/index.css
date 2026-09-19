@@ -9,6 +9,46 @@
   --font-weight-bold: 700;
 }
 
+@layer base {
+  :root {
+    --color-brand-primary: #cbdf3b;
+    --color-brand-primary-hover: #e2ef67;
+    --color-brand-deep: #071c18;
+    --color-brand-secondary: #123f35;
+    --color-brand-link: #547000;
+    --color-brand-link-strong: #799000;
+    --color-corporate-dark: #061713;
+    --color-surface: #fff;
+    --color-surface-subtle: #f4f1e9;
+    --color-text: #0a2520;
+    --color-text-secondary: #334d45;
+    --color-text-muted: #65716d;
+    --color-text-soft: #798681;
+    --color-text-meta: #7a8984;
+    --color-text-eyebrow: #58706a;
+    --color-border: #d9ddd6;
+    --color-border-subtle: #edf0ed;
+    --color-accent-gold: #b89b4b;
+    --color-accent-gold-muted: #d7bf6d;
+    --color-accent-gold-soft: #fff1a9;
+    --color-success: #28645a;
+    --color-warning: #887343;
+    --radius-control: .7rem;
+    --radius-card: 1rem;
+    --shadow-card: 0 12px 30px rgba(6, 23, 19, .08), 0 2px 5px rgba(6, 23, 19, .06);
+  }
+
+  html {
+    color: var(--color-text);
+    background: var(--color-surface);
+  }
+
+  body {
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+}
+
 @layer components {
   .site-language-switcher {
     position: relative;
@@ -24,11 +64,11 @@
     align-items: center;
     gap: .4rem;
     min-height: 2.25rem;
-    border: 1px solid #d9ddd6;
+    border: 1px solid var(--color-border);
     border-radius: 999px;
     padding: .38rem .7rem;
     background: #fbfcf8;
-    color: #334d45;
+    color: var(--color-text-secondary);
     font-size: .74rem;
     font-weight: 700;
     line-height: 1.2;
@@ -39,14 +79,14 @@
 
   .site-language-switcher__trigger:hover,
   .site-language-switcher__trigger[aria-expanded="true"] {
-    border-color: #cbdf3b;
-    background: #f4f1e9;
-    color: #547000;
+    border-color: var(--color-brand-primary);
+    background: var(--color-surface-subtle);
+    color: var(--color-brand-link);
     box-shadow: 0 3px 10px rgba(7, 28, 24, .08);
   }
 
   .site-language-switcher__trigger:focus-visible {
-    outline: 2px solid #cbdf3b;
+    outline: 2px solid var(--color-brand-primary);
     outline-offset: 2px;
   }
 
@@ -55,7 +95,7 @@
     width: 1.08rem;
     height: 1.08rem;
     flex: 0 0 1.08rem;
-    color: #547000;
+    color: var(--color-brand-link);
   }
 
   .site-language-switcher__icon svg {
@@ -82,9 +122,9 @@
     display: grid;
     min-width: 12rem;
     padding: .35rem;
-    border: 1px solid #d9ddd6;
+    border: 1px solid var(--color-border);
     border-radius: .7rem;
-    background: #fff;
+    background: var(--color-surface);
     box-shadow: 0 14px 32px rgba(7, 28, 24, .14);
   }
 
@@ -99,7 +139,7 @@
     border-radius: .45rem;
     padding: .62rem .7rem;
     background: transparent;
-    color: #334d45;
+    color: var(--color-text-secondary);
     font: inherit;
     font-size: .76rem;
     letter-spacing: 0;
@@ -111,19 +151,19 @@
   .site-language-switcher__option:hover,
   .site-language-switcher__option:focus-visible,
   .site-language-switcher__option[aria-selected="true"] {
-    background: #f4f1e9;
-    color: #547000;
+    background: var(--color-surface-subtle);
+    color: var(--color-brand-link);
   }
 
   .site-language-switcher__option:focus-visible {
-    outline: 2px solid #cbdf3b;
+    outline: 2px solid var(--color-brand-primary);
     outline-offset: -2px;
   }
 
   .site-language-switcher--mobile {
     justify-content: space-between;
     width: 100%;
-    border-top: 1px solid #edf0ed;
+    border-top: 1px solid var(--color-border-subtle);
     padding-top: .8rem;
   }
 
@@ -202,7 +242,7 @@
 
   html[dir="rtl"] [data-product-search-form] select {
     border-left: 0;
-    border-right: 1px solid #d9ddd6;
+    border-right: 1px solid var(--color-border);
   }
 
   html[dir="rtl"] .icon-arrow {
@@ -234,6 +274,17 @@
   html[dir="rtl"] [data-verification-badge] {
     direction: rtl;
   }
+
+  html[dir="rtl"] header nav[aria-label="Mobile navigation"] a[data-nav] {
+    border-left: 0;
+    border-right: 4px solid transparent;
+  }
+
+  html[dir="rtl"] header nav[aria-label="Mobile navigation"] a[data-nav]:hover,
+  html[dir="rtl"] header nav[aria-label="Mobile navigation"] a[data-nav]:focus-visible,
+  html[dir="rtl"] header nav[aria-label="Mobile navigation"] a[data-nav][aria-current="page"] {
+    border-right-color: var(--color-brand-primary);
+  }
 }
 
 @layer utilities {
@@ -248,9 +299,9 @@
   body[data-page="investments"] [data-investment-project] > div:first-child > span:first-child,
   body[data-page="rfq"] main > section:first-of-type ol > li > span:first-child,
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
-    --icon-bg: #f4f1e9;
-    --icon-ink: #547000;
-    --icon-edge: #cbdf3b;
+    --icon-bg: var(--color-surface-subtle);
+    --icon-ink: var(--color-brand-link);
+    --icon-edge: var(--color-brand-primary);
     position: relative;
     isolation: isolate;
     border: 1px solid color-mix(in srgb, var(--icon-edge) 52%, var(--icon-ink) 48%);
@@ -313,9 +364,9 @@
     place-items: center;
     border: 1px solid rgba(84, 112, 0, .28);
     border-radius: .34em;
-    background: linear-gradient(145deg, rgba(255, 255, 255, .85), rgba(203, 223, 59, .3)), #f4f1e9;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .85), rgba(203, 223, 59, .3)), var(--color-surface-subtle);
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .92), inset -1px -1px 2px rgba(6, 23, 19, .14), 0 2px 4px rgba(6, 23, 19, .12);
-    color: #547000;
+    color: var(--color-brand-link);
     vertical-align: -.18em;
     transition: transform .2s ease, box-shadow .2s ease;
   }
@@ -341,7 +392,7 @@
     border-radius: .38em;
     background: linear-gradient(145deg, rgba(255, 255, 255, .88), rgba(203, 223, 59, .32)), #edf1e8;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .94), inset -1px -1px 2px rgba(6, 23, 19, .12), 0 2px 4px rgba(6, 23, 19, .12);
-    color: #799000;
+    color: var(--color-brand-link-strong);
     vertical-align: -.22em;
   }
 
@@ -366,12 +417,12 @@
 
   .pathway-icon--source {
     --icon-bg: #d9ebe5;
-    --icon-ink: #28645a;
+    --icon-ink: var(--color-success);
   }
 
   .pathway-icon--suppliers {
     --icon-bg: #e7edcf;
-    --icon-ink: #547000;
+    --icon-ink: var(--color-brand-link);
   }
 
   .pathway-icon--rfq {
@@ -405,8 +456,8 @@
 
   header a[aria-label="GI-Hub home"] > span:first-child,
   footer a[href="index.html"] > span:first-child {
-    --icon-bg: #0a2520;
-    --icon-ink: #cbdf3b;
+    --icon-bg: var(--color-text);
+    --icon-ink: var(--color-brand-primary);
     display: grid;
     place-items: center;
     border-radius: 50%;
@@ -454,8 +505,8 @@
   }
 
   footer a[href="index.html"] > span:first-child {
-    --icon-bg: #cbdf3b;
-    --icon-ink: #071c18;
+    --icon-bg: var(--color-brand-primary);
+    --icon-ink: var(--color-brand-deep);
   }
 
   header a[aria-label="GI-Hub home"]:hover > span:first-child,
@@ -487,7 +538,7 @@
   body[data-page="suppliers"] [data-supplier-card]:nth-child(1) > div:first-child > span:first-child { --icon-bg: #dbe9ed; --icon-ink: #2c6864; }
   body[data-page="suppliers"] [data-supplier-card]:nth-child(2) > div:first-child > span:first-child { --icon-bg: #ece5c8; --icon-ink: #8b6f28; }
   body[data-page="suppliers"] [data-supplier-card]:nth-child(3) > div:first-child > span:first-child { --icon-bg: #dce1e4; --icon-ink: #52636b; }
-  body[data-page="suppliers"] [data-supplier-card]:nth-child(4) > div:first-child > span:first-child { --icon-bg: #d9eee6; --icon-ink: #28645a; }
+  body[data-page="suppliers"] [data-supplier-card]:nth-child(4) > div:first-child > span:first-child { --icon-bg: #d9eee6; --icon-ink: var(--color-success); }
   body[data-page="suppliers"] [data-supplier-card]:nth-child(5) > div:first-child > span:first-child { --icon-bg: #e7e5d3; --icon-ink: #747354; }
   body[data-page="suppliers"] [data-supplier-card]:nth-child(6) > div:first-child > span:first-child { --icon-bg: #eee0d9; --icon-ink: #87594b; }
 
@@ -575,15 +626,15 @@
 
   header nav[aria-label="Primary navigation"] a[data-nav]:hover,
   header nav[aria-label="Primary navigation"] a[data-nav]:focus-visible {
-    border-color: #cbdf3b;
-    background: #f4f1e9;
-    color: #547000;
+    border-color: var(--color-brand-primary);
+    background: var(--color-surface-subtle);
+    color: var(--color-brand-link);
   }
 
   header nav[aria-label="Primary navigation"] a[data-nav][aria-current="page"] {
-    border-color: #cbdf3b;
-    background: #f4f1e9;
-    color: #547000;
+    border-color: var(--color-brand-primary);
+    background: var(--color-surface-subtle);
+    color: var(--color-brand-link);
     box-shadow: 0 2px 0 rgba(203, 223, 59, .22);
   }
 
@@ -597,9 +648,9 @@
   header nav[aria-label="Mobile navigation"] a[data-nav]:hover,
   header nav[aria-label="Mobile navigation"] a[data-nav]:focus-visible,
   header nav[aria-label="Mobile navigation"] a[data-nav][aria-current="page"] {
-    border-left-color: #cbdf3b;
-    background: #f4f1e9;
-    color: #547000;
+    border-left-color: var(--color-brand-primary);
+    background: var(--color-surface-subtle);
+    color: var(--color-brand-link);
   }
 
   /* Visual refinement: preserve the existing palette and layout while
@@ -672,10 +723,8 @@
   body[data-page="categories"] main > section:nth-of-type(2) [class*="grid-cols-3"] > a,
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a,
   body[data-page="rfq"] form[data-marketplace-form] {
-    border-radius: 1rem;
-    box-shadow:
-      0 12px 30px rgba(6, 23, 19, .08),
-      0 2px 5px rgba(6, 23, 19, .06);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
   }
 
   body[data-page="marketplace"] [data-product-card] > div:nth-child(2),
@@ -746,7 +795,7 @@
     border-radius: 999px;
     padding: .32rem .55rem;
     background: #e7edcf;
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .62rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -768,7 +817,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: .12rem;
-    color: #798681;
+    color: var(--color-text-soft);
     font-size: .56rem;
     line-height: 1.1;
     text-align: right;
@@ -782,20 +831,20 @@
   }
 
   body[data-page="suppliers"] .supplier-last-reviewed b {
-    color: #334d45;
+    color: var(--color-text-secondary);
     font-size: .62rem;
     font-weight: 700;
   }
 
   body[data-page="suppliers"] .supplier-verification-summary {
     margin-top: 1.25rem;
-    border-top: 1px solid #d9ddd6;
+    border-top: 1px solid var(--color-border);
     padding-top: 1rem;
   }
 
   body[data-page="suppliers"] .supplier-verification-summary > p {
     margin: 0 0 .7rem;
-    color: #798681;
+    color: var(--color-text-soft);
     font-size: .62rem;
     font-weight: 700;
     letter-spacing: .12em;
@@ -813,7 +862,7 @@
   }
 
   body[data-page="suppliers"] .supplier-verification-summary dt {
-    color: #798681;
+    color: var(--color-text-soft);
     font-size: .56rem;
     font-weight: 700;
     letter-spacing: .08em;
@@ -823,7 +872,7 @@
 
   body[data-page="suppliers"] .supplier-verification-summary dd {
     margin: .18rem 0 0;
-    color: #28645a;
+    color: var(--color-success);
     font-size: .72rem;
     font-weight: 700;
   }
@@ -845,7 +894,7 @@
 
   body[data-page="suppliers"] [data-supplier-company-info] dd {
     overflow-wrap: anywhere;
-    color: #334d45;
+    color: var(--color-text-secondary);
     font-size: .82rem;
     line-height: 1.35;
   }
@@ -860,7 +909,7 @@
     border: 1px solid #e2e5de;
     border-radius: .45rem;
     padding: .35rem .55rem;
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
     color: #465b54;
     font-size: .68rem;
     line-height: 1.25;
@@ -874,12 +923,12 @@
     align-items: center;
     min-height: 1.55rem;
     gap: .14rem;
-    border: 1px solid #d9ddd6;
+    border: 1px solid var(--color-border);
     border-radius: 999px;
     padding: .32rem .55rem;
     background: linear-gradient(145deg, rgba(255, 255, 255, .86), rgba(237, 240, 237, .96));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), 0 2px 5px rgba(6, 23, 19, .08);
-    color: #65716d;
+    color: var(--color-text-muted);
     font-size: .62rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -889,29 +938,29 @@
 
   body[data-page="suppliers"] [data-verification-level="registered"],
   body[data-page="marketplace"] [data-verification-level="registered"] {
-    border-color: #d9ddd6;
-    background: linear-gradient(145deg, #fff, #edf0ed);
-    color: #65716d;
+    border-color: var(--color-border);
+    background: linear-gradient(145deg, var(--color-surface), var(--color-border-subtle));
+    color: var(--color-text-muted);
   }
 
   body[data-page="suppliers"] [data-verification-level="business-verified"],
   body[data-page="marketplace"] [data-verification-level="business-verified"] {
     border-color: #b9d7cb;
     background: linear-gradient(145deg, #f6fffb, #e4efeb);
-    color: #28645a;
+    color: var(--color-success);
   }
 
   body[data-page="suppliers"] [data-verification-level="gi-hub-verified"],
   body[data-page="marketplace"] [data-verification-level="gi-hub-verified"] {
     border-color: #d9e5b0;
     background: linear-gradient(145deg, #fbffe9, #e7edcf);
-    color: #547000;
+    color: var(--color-brand-link);
   }
 
   body[data-page="suppliers"] [data-verification-card],
   body[data-page="marketplace"] [data-verification-card] {
-    border-radius: 1rem;
-    box-shadow: 0 12px 30px rgba(6, 23, 19, .08), 0 2px 5px rgba(6, 23, 19, .06);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
     transition: transform .22s ease, box-shadow .22s ease;
   }
 
@@ -934,12 +983,12 @@
     justify-content: space-between;
     gap: 2rem;
     padding: clamp(1.5rem, 4vw, 2.5rem);
-    background: linear-gradient(135deg, #123f35, #102e28);
+    background: linear-gradient(135deg, var(--color-brand-secondary), #102e28);
   }
 
   body[data-page="marketplace"] .source-product-showcase__eyebrow {
     margin: 0 0 .65rem;
-    color: #cbdf3b;
+    color: var(--color-brand-primary);
     font-size: .65rem;
     font-weight: 700;
     letter-spacing: .18em;
@@ -948,7 +997,7 @@
 
   body[data-page="marketplace"] .source-product-showcase__header h2 {
     margin: 0;
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 600;
@@ -986,8 +1035,8 @@
     overflow: hidden;
     border: 0;
     padding: 0;
-    background: #071c18;
-    color: #fff;
+    background: var(--color-brand-deep);
+    color: var(--color-surface);
     cursor: zoom-in;
     text-align: left;
   }
@@ -1025,14 +1074,14 @@
     border-radius: .6rem;
     padding: .7rem .85rem;
     background: rgba(7, 28, 24, .78);
-    color: #fff;
+    color: var(--color-surface);
     font-size: .7rem;
     font-weight: 700;
     backdrop-filter: blur(8px);
   }
 
   body[data-page="marketplace"] .source-product-gallery__overlay span:last-child {
-    color: #cbdf3b;
+    color: var(--color-brand-primary);
     font-size: 1rem;
     line-height: 1;
   }
@@ -1052,7 +1101,7 @@
   body[data-page="marketplace"] .source-product-video__heading h3 {
     max-width: 330px;
     margin: 0;
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: clamp(1.35rem, 3vw, 2rem);
     font-weight: 600;
@@ -1077,7 +1126,7 @@
     overflow: hidden;
     border: 1px solid #39504a;
     border-radius: .8rem;
-    background: #061713;
+    background: var(--color-corporate-dark);
     box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
   }
 
@@ -1085,7 +1134,7 @@
     display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
-    background: #061713;
+    background: var(--color-corporate-dark);
     object-fit: contain;
   }
 
@@ -1107,7 +1156,7 @@
     position: relative;
     max-width: min(1200px, 96vw);
     max-height: 94vh;
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: .9rem;
     padding: .75rem;
     background: #09231e;
@@ -1147,7 +1196,7 @@
     border: 1px solid rgba(255, 241, 169, .7);
     border-radius: 50%;
     background: rgba(7, 28, 24, .88);
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     cursor: pointer;
     font-size: 1.35rem;
     line-height: 1;
@@ -1155,8 +1204,8 @@
 
   body[data-page="marketplace"] .source-product-lightbox__close:hover,
   body[data-page="marketplace"] .source-product-lightbox__close:focus-visible {
-    background: #cbdf3b;
-    color: #071c18;
+    background: var(--color-brand-primary);
+    color: var(--color-brand-deep);
   }
 
   body[data-page="marketplace"].source-product-lightbox-open {
@@ -1220,7 +1269,7 @@
     border-radius: 999px;
     padding: .32rem .55rem;
     background: #f2f6df;
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .62rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -1237,7 +1286,7 @@
   }
 
   body[data-page="investments"] [data-investment-metrics] dt {
-    color: #7a8984;
+    color: var(--color-text-meta);
     font-size: .61rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -1247,30 +1296,30 @@
   body[data-page="investments"] [data-investment-metrics] dd {
     margin: .35rem 0 0;
     overflow-wrap: anywhere;
-    color: #334d45;
+    color: var(--color-text-secondary);
     font-size: .82rem;
     line-height: 1.35;
   }
 
   body[data-page="investments"] [data-investment-metrics] > div:nth-child(-n+5) dd {
-    color: #547000;
+    color: var(--color-brand-link);
     font-weight: 700;
   }
 
   body[data-page="investments"] .investment-project-card {
     overflow: hidden;
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 1.1rem;
     background: #09231e;
     box-shadow: 0 18px 38px rgba(6, 23, 19, .18), 0 3px 8px rgba(6, 23, 19, .12);
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="investments"] .investment-project-card__image-wrap {
     position: relative;
     overflow: hidden;
     aspect-ratio: 2 / 3;
-    background: #071c18;
+    background: var(--color-brand-deep);
   }
 
   body[data-page="investments"] .investment-project-card__image {
@@ -1306,7 +1355,7 @@
     border-radius: 999px;
     padding: .42rem .65rem;
     background: rgba(7, 28, 24, .78);
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-size: .58rem;
     font-weight: 700;
     letter-spacing: .15em;
@@ -1318,7 +1367,7 @@
     padding: 1.35rem;
     background:
       radial-gradient(circle at 100% 0, rgba(184, 155, 75, .16), transparent 34%),
-      linear-gradient(145deg, #123f35, #09231e 62%);
+      linear-gradient(145deg, var(--color-brand-secondary), #09231e 62%);
   }
 
   body[data-page="investments"] .investment-project-card__eyebrow {
@@ -1340,7 +1389,7 @@
 
   body[data-page="investments"] .investment-project-card h4 {
     margin: 1.1rem 0 .55rem;
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
@@ -1357,7 +1406,7 @@
   }
 
   body[data-page="investments"] .investment-project-card__lead {
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-weight: 700;
   }
 
@@ -1366,7 +1415,7 @@
   }
 
   body[data-page="investments"] .investment-project-card__description strong {
-    color: #fff;
+    color: var(--color-surface);
     font-weight: 700;
   }
 
@@ -1395,7 +1444,7 @@
   }
 
   body[data-page="investments"] .investment-project-card__facts strong {
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-family: var(--font-sans);
     font-size: 1.1rem;
     font-weight: 600;
@@ -1413,7 +1462,7 @@
 
   body[data-page="investments"] .investment-project-card__tagline {
     margin: 1.1rem 0 .9rem;
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: 1.04rem;
     font-style: italic;
@@ -1425,7 +1474,7 @@
     gap: .2rem;
     border-bottom: 1px solid #d7bf6d;
     padding-bottom: .2rem;
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-size: .72rem;
     font-weight: 700;
     transition: color .2s ease, border-color .2s ease;
@@ -1433,8 +1482,8 @@
 
   body[data-page="investments"] .investment-project-card__link:hover,
   body[data-page="investments"] .investment-project-card__link:focus-visible {
-    border-color: #fff;
-    color: #fff;
+    border-color: var(--color-surface);
+    color: var(--color-surface);
   }
 
   @media (max-width: 700px) {
@@ -1564,7 +1613,7 @@
 
   body[data-page="product"] .product-hero-aside__label,
   body[data-page="product"] .product-hero-aside__item span {
-    color: #58706a;
+    color: var(--color-text-eyebrow);
     font-size: .64rem;
     font-weight: 700;
     letter-spacing: .16em;
@@ -1610,12 +1659,12 @@
     width: 100%;
     margin-top: 1.2rem;
     background: var(--product-deep);
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="product"] .product-button--hero:hover,
   body[data-page="product"] .product-button--hero:focus-visible {
-    background: #123f35;
+    background: var(--color-brand-secondary);
   }
 
   body[data-page="product"] .product-section-nav {
@@ -1648,7 +1697,7 @@
 
   body[data-page="product"] .product-section-nav a:hover,
   body[data-page="product"] .product-section-nav a:focus-visible {
-    background: #123f35;
+    background: var(--color-brand-secondary);
     color: var(--product-lime);
   }
 
@@ -1656,20 +1705,20 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px;
-    border: 1px solid #d9ddd6;
-    background: #d9ddd6;
+    border: 1px solid var(--color-border);
+    background: var(--color-border);
   }
 
   body[data-page="product"] .product-gallery-meta__item {
     min-width: 0;
     padding: 1.15rem 1rem;
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="product"] .product-gallery-meta__item > span {
     display: block;
     margin-bottom: 1.1rem;
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .65rem;
     font-weight: 700;
     letter-spacing: .12em;
@@ -1694,7 +1743,7 @@
 
   body[data-page="product"] .product-attribute-section {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="product"] .product-attribute-grid {
@@ -1708,13 +1757,13 @@
   body[data-page="product"] .product-attribute-card {
     min-height: 230px;
     padding: 1.5rem;
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="product"] .product-attribute-card__number {
     display: block;
     margin-bottom: 3.5rem;
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .65rem;
     font-weight: 700;
     letter-spacing: .12em;
@@ -1745,7 +1794,7 @@
 
   body[data-page="product"] .product-materials-section {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="product"] .product-materials-grid {
@@ -1768,7 +1817,7 @@
   }
 
   body[data-page="product"] .product-origin-card h3 {
-    color: #fff;
+    color: var(--color-surface);
     font-size: clamp(3rem, 6vw, 5rem);
   }
 
@@ -1804,7 +1853,7 @@
 
   body[data-page="product"] .product-origin-card dd {
     margin: 0;
-    color: #fff;
+    color: var(--color-surface);
     font-size: .82rem;
   }
 
@@ -1860,11 +1909,11 @@
     margin-top: 1.1rem;
     border-left: 3px solid var(--product-lime);
     padding: .75rem 0 .75rem 1rem;
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="product"] .product-packaging-note span {
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .65rem;
     font-weight: 700;
     letter-spacing: .12em;
@@ -1878,7 +1927,7 @@
   body[data-page="product"] .product-video-section {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
     background: var(--product-deep);
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="product"] .product-video-heading {
@@ -1895,7 +1944,7 @@
 
   body[data-page="product"] .product-video-heading h2 {
     margin: 0;
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 600;
@@ -1924,7 +1973,7 @@
 
   body[data-page="product"] .product-video-frame {
     min-width: 0;
-    background: #061713;
+    background: var(--color-corporate-dark);
   }
 
   body[data-page="product"] .product-video-frame video {
@@ -1933,7 +1982,7 @@
     height: 100%;
     min-height: 330px;
     aspect-ratio: 16 / 10;
-    background: #061713;
+    background: var(--color-corporate-dark);
     object-fit: contain;
   }
 
@@ -1953,7 +2002,7 @@
 
   body[data-page="product"] .product-video-copy h3 {
     margin-top: 2rem;
-    color: #fff;
+    color: var(--color-surface);
     font-size: clamp(1.7rem, 3vw, 2.5rem);
   }
 
@@ -2039,7 +2088,7 @@
 @layer utilities {
   body[data-page="home"] .home-featured-investment {
     padding: 0 0 clamp(4.5rem, 8vw, 6.5rem);
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="home"] .home-featured-investment__card {
@@ -2047,11 +2096,11 @@
     grid-template-columns: 145px minmax(0, 1fr) auto;
     align-items: stretch;
     overflow: hidden;
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 1rem;
     background: #09231e;
     box-shadow: 0 16px 34px rgba(6, 23, 19, .14), 0 3px 8px rgba(6, 23, 19, .08);
-    color: #fff;
+    color: var(--color-surface);
     transition: transform .22s ease, box-shadow .22s ease;
   }
 
@@ -2064,7 +2113,7 @@
   body[data-page="home"] .home-featured-investment__image {
     min-height: 178px;
     overflow: hidden;
-    background: #071c18;
+    background: var(--color-brand-deep);
   }
 
   body[data-page="home"] .home-featured-investment__image img {
@@ -2085,7 +2134,7 @@
   body[data-page="home"] .home-featured-investment__body {
     min-width: 0;
     padding: 1.65rem 1.8rem;
-    background: radial-gradient(circle at 100% 0, rgba(184, 155, 75, .14), transparent 36%), linear-gradient(145deg, #123f35, #09231e 70%);
+    background: radial-gradient(circle at 100% 0, rgba(184, 155, 75, .14), transparent 36%), linear-gradient(145deg, var(--color-brand-secondary), #09231e 70%);
   }
 
   body[data-page="home"] .home-featured-investment__eyebrow,
@@ -2103,7 +2152,7 @@
 
   body[data-page="home"] .home-featured-investment__body h2 {
     margin: .75rem 0 .45rem;
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: clamp(1.6rem, 3vw, 2.45rem);
     font-weight: 600;
@@ -2135,7 +2184,7 @@
   }
 
   body[data-page="home"] .home-featured-investment__facts strong {
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 600;
@@ -2151,7 +2200,7 @@
     margin: 0 1.8rem;
     border-bottom: 1px solid #d7bf6d;
     padding-bottom: .3rem;
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-size: .72rem;
     font-weight: 700;
     white-space: nowrap;
@@ -2164,7 +2213,7 @@
 
   body[data-page="home"] .home-featured-investment__card:hover .home-featured-investment__link,
   body[data-page="home"] .home-featured-investment__card:focus-visible .home-featured-investment__link {
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="investments"] .investment-project-card h4 a {
@@ -2173,17 +2222,17 @@
 
   body[data-page="investments"] .investment-project-card h4 a:hover,
   body[data-page="investments"] .investment-project-card h4 a:focus-visible {
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
   }
 
   body[data-page="investment-project"] {
-    --unique-ink: #0a2520;
-    --unique-deep: #071c18;
-    --unique-green: #123f35;
-    --unique-muted: #65716d;
-    --unique-line: #d9ddd6;
-    --unique-gold: #d7bf6d;
-    --unique-lime: #cbdf3b;
+    --unique-ink: var(--color-text);
+    --unique-deep: var(--color-brand-deep);
+    --unique-green: var(--color-brand-secondary);
+    --unique-muted: var(--color-text-muted);
+    --unique-line: var(--color-border);
+    --unique-gold: var(--color-accent-gold-muted);
+    --unique-lime: var(--color-brand-primary);
   }
 
   body[data-page="investment-project"] .unique-land-container {
@@ -2194,8 +2243,8 @@
 
   body[data-page="investment-project"] .unique-land-hero {
     padding: clamp(2rem, 5vw, 4rem) 0 clamp(5rem, 9vw, 7.5rem);
-    background: radial-gradient(circle at 80% 8%, rgba(203, 223, 59, .13), transparent 27%), linear-gradient(135deg, #123f35, #071c18 72%);
-    color: #fff;
+    background: radial-gradient(circle at 80% 8%, rgba(203, 223, 59, .13), transparent 27%), linear-gradient(135deg, var(--color-brand-secondary), var(--color-brand-deep) 72%);
+    color: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-breadcrumbs {
@@ -2211,7 +2260,7 @@
 
   body[data-page="investment-project"] .unique-land-breadcrumbs a {
     border-bottom: 1px solid rgba(215, 191, 109, .7);
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
   }
 
   body[data-page="investment-project"] .unique-land-breadcrumbs span[aria-hidden="true"] {
@@ -2219,7 +2268,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-breadcrumbs [aria-current="page"] {
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-hero__grid {
@@ -2237,7 +2286,7 @@
   body[data-page="investment-project"] .unique-land-eyebrow,
   body[data-page="investment-project"] .unique-land-card-label {
     margin: 0 0 1.1rem;
-    color: #58706a;
+    color: var(--color-text-eyebrow);
     font-size: .68rem;
     font-weight: 700;
     letter-spacing: .2em;
@@ -2253,7 +2302,7 @@
 
   body[data-page="investment-project"] .unique-land-hero h1 {
     margin: 0;
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: clamp(3.7rem, 8vw, 7.4rem);
     font-weight: 600;
@@ -2262,7 +2311,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-hero h1 em {
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-style: normal;
   }
 
@@ -2285,7 +2334,7 @@
     border: 1px solid rgba(215, 191, 109, .55);
     border-radius: 999px;
     padding: .55rem .72rem;
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-size: .66rem;
     font-weight: 700;
     line-height: 1;
@@ -2296,7 +2345,7 @@
     overflow: hidden;
     border: 1px solid var(--unique-gold);
     border-radius: 1.1rem;
-    background: #061713;
+    background: var(--color-corporate-dark);
     box-shadow: 0 25px 60px rgba(0, 0, 0, .3);
   }
 
@@ -2320,12 +2369,12 @@
   body[data-page="investment-project"] .unique-land-masterplan,
   body[data-page="investment-project"] .unique-land-gallery {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-masterplan,
   body[data-page="investment-project"] .unique-land-gallery {
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="investment-project"] .unique-land-section-heading {
@@ -2369,7 +2418,7 @@
     border-right: 1px solid var(--unique-line);
     border-bottom: 1px solid var(--unique-line);
     padding: 1.4rem 1.25rem;
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="investment-project"] .unique-land-stats strong,
@@ -2378,7 +2427,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-stats strong {
-    color: #547000;
+    color: var(--color-brand-link);
     font-family: var(--font-sans);
     font-size: clamp(1.6rem, 3vw, 2.5rem);
     font-weight: 600;
@@ -2388,7 +2437,7 @@
 
   body[data-page="investment-project"] .unique-land-stats span {
     margin-top: .6rem;
-    color: #7a8984;
+    color: var(--color-text-meta);
     font-size: .6rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -2406,11 +2455,11 @@
     border: 1px solid var(--unique-line);
     border-radius: 1rem;
     padding: clamp(1.35rem, 3vw, 2.2rem);
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-card-label {
-    color: #58706a;
+    color: var(--color-text-eyebrow);
     font-size: .62rem;
     letter-spacing: .14em;
   }
@@ -2439,11 +2488,11 @@
   body[data-page="investment-project"] .unique-land-cta {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
     background: var(--unique-deep);
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-section-heading--dark h2 {
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-section-heading--dark > p {
@@ -2471,7 +2520,7 @@
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem 1.15rem;
-    color: #cbdf3b;
+    color: var(--color-brand-primary);
     font-size: .6rem;
     font-weight: 700;
     letter-spacing: .13em;
@@ -2516,14 +2565,14 @@
   }
 
   body[data-page="investment-project"] .unique-land-map__point {
-    stroke: #071c18;
+    stroke: var(--color-brand-deep);
     stroke-width: 4;
   }
 
   body[data-page="investment-project"] .unique-land-map__point--airport,
   body[data-page="investment-project"] .unique-land-map__point--city,
   body[data-page="investment-project"] .unique-land-map__point--east {
-    fill: #cbdf3b;
+    fill: var(--color-brand-primary);
   }
 
   body[data-page="investment-project"] .unique-land-map__point--sea {
@@ -2531,14 +2580,14 @@
   }
 
   body[data-page="investment-project"] .unique-land-map__point--project {
-    fill: #fff1a9;
+    fill: var(--color-accent-gold-soft);
     stroke: #d7bf6d;
     stroke-width: 5;
   }
 
   body[data-page="investment-project"] .unique-land-map__pulse {
     fill: none;
-    stroke: #fff1a9;
+    stroke: var(--color-accent-gold-soft);
     stroke-width: 2;
     opacity: .7;
   }
@@ -2557,12 +2606,12 @@
   }
 
   body[data-page="investment-project"] .unique-land-map__label--project rect {
-    fill: #cbdf3b;
-    stroke: #fff1a9;
+    fill: var(--color-brand-primary);
+    stroke: var(--color-accent-gold-soft);
   }
 
   body[data-page="investment-project"] .unique-land-map__label--project text {
-    fill: #071c18;
+    fill: var(--color-brand-deep);
   }
 
   body[data-page="investment-project"] .unique-land-map__caption {
@@ -2581,11 +2630,11 @@
   }
 
   body[data-page="investment-project"] .unique-land-location-notes .unique-land-card-label {
-    color: #cbdf3b;
+    color: var(--color-brand-primary);
   }
 
   body[data-page="investment-project"] .unique-land-location-notes h3 {
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-location-notes ul {
@@ -2602,7 +2651,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-location-notes li strong {
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-family: var(--font-sans);
     font-size: 1.15rem;
     font-weight: 600;
@@ -2624,9 +2673,9 @@
   body[data-page="investment-project"] .unique-land-masterplan__visual {
     margin: 0;
     overflow: hidden;
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 1rem;
-    background: #071c18;
+    background: var(--color-brand-deep);
   }
 
   body[data-page="investment-project"] .unique-land-masterplan__visual img {
@@ -2649,7 +2698,7 @@
   body[data-page="investment-project"] .unique-land-landuse article {
     min-width: 0;
     padding: clamp(1.15rem, 3vw, 2rem);
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-landuse article:nth-child(2) {
@@ -2670,7 +2719,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-landuse strong {
-    color: #547000;
+    color: var(--color-brand-link);
     font-family: var(--font-sans);
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     font-weight: 600;
@@ -2680,7 +2729,7 @@
 
   body[data-page="investment-project"] .unique-land-landuse span {
     margin-top: .65rem;
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .6rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -2689,7 +2738,7 @@
 
   body[data-page="investment-project"] .unique-land-landuse p {
     margin: .85rem 0 0;
-    color: #65716d;
+    color: var(--color-text-muted);
     font-size: .78rem;
     line-height: 1.55;
   }
@@ -2697,7 +2746,7 @@
   body[data-page="investment-project"] .unique-land-concept,
   body[data-page="investment-project"] .unique-land-structure {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-concept-grid {
@@ -2708,12 +2757,12 @@
 
   body[data-page="investment-project"] .unique-land-concept-grid article {
     min-width: 0;
-    border-top: 2px solid #cbdf3b;
+    border-top: 2px solid var(--color-brand-primary);
     padding-top: 1rem;
   }
 
   body[data-page="investment-project"] .unique-land-concept-grid article > span {
-    color: #7a8984;
+    color: var(--color-text-meta);
     font-size: .65rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -2739,13 +2788,13 @@
   body[data-page="investment-project"] .unique-land-disclaimer,
   body[data-page="investment-project"] .unique-land-financial-note {
     margin: 2rem 0 0;
-    color: #7a8984;
+    color: var(--color-text-meta);
     font-size: .68rem;
     line-height: 1.55;
   }
 
   body[data-page="investment-project"] .unique-land-financials {
-    background: linear-gradient(135deg, #123f35, #071c18 70%);
+    background: linear-gradient(135deg, var(--color-brand-secondary), var(--color-brand-deep) 70%);
   }
 
   body[data-page="investment-project"] .unique-land-financial-grid {
@@ -2780,7 +2829,7 @@
 
   body[data-page="investment-project"] .unique-land-financial-grid strong {
     margin-top: .8rem;
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-family: var(--font-sans);
     font-size: clamp(1.25rem, 2.5vw, 1.7rem);
     font-weight: 600;
@@ -2816,10 +2865,10 @@
     width: 2.1rem;
     height: 2.1rem;
     place-items: center;
-    border: 1px solid #cbdf3b;
+    border: 1px solid var(--color-brand-primary);
     border-radius: .65rem;
-    background: #f4f1e9;
-    color: #547000;
+    background: var(--color-surface-subtle);
+    color: var(--color-brand-link);
     font-size: .65rem;
     font-weight: 700;
   }
@@ -2841,10 +2890,10 @@
   }
 
   body[data-page="investment-project"] .unique-land-structure-card {
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 1rem;
     padding: clamp(1.35rem, 4vw, 2.4rem);
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="investment-project"] .unique-land-structure-card h3 {
@@ -2862,7 +2911,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-structure-card dt {
-    color: #7a8984;
+    color: var(--color-text-meta);
     font-size: .6rem;
     font-weight: 700;
     letter-spacing: .1em;
@@ -2871,7 +2920,7 @@
 
   body[data-page="investment-project"] .unique-land-structure-card dd {
     margin: .35rem 0 0;
-    color: #334d45;
+    color: var(--color-text-secondary);
     font-size: .82rem;
     line-height: 1.4;
   }
@@ -2887,9 +2936,9 @@
     position: relative;
     display: block;
     overflow: hidden;
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 1rem;
-    background: #071c18;
+    background: var(--color-brand-deep);
   }
 
   body[data-page="investment-project"] .unique-land-gallery-image img {
@@ -2911,7 +2960,7 @@
     border-radius: .6rem;
     padding: .7rem .8rem;
     background: rgba(7, 28, 24, .84);
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     font-size: .7rem;
     font-weight: 700;
     line-height: 1.3;
@@ -2932,10 +2981,10 @@
     grid-template-columns: 2rem minmax(0, 1fr) auto;
     align-items: center;
     gap: 1rem;
-    border: 1px solid #d9ddd6;
+    border: 1px solid var(--color-border);
     border-radius: .85rem;
     padding: 1.15rem 1.25rem;
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-documents article > span {
@@ -2943,10 +2992,10 @@
     width: 2rem;
     height: 2rem;
     place-items: center;
-    border: 1px solid #cbdf3b;
+    border: 1px solid var(--color-brand-primary);
     border-radius: .6rem;
     background: #edf1e8;
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .62rem;
     font-weight: 700;
   }
@@ -2971,8 +3020,8 @@
     display: inline-flex;
     align-items: center;
     gap: .25rem;
-    border-bottom: 1px solid #547000;
-    color: #547000;
+    border-bottom: 1px solid var(--color-brand-link);
+    color: var(--color-brand-link);
     font-size: .7rem;
     font-weight: 700;
     white-space: nowrap;
@@ -2984,7 +3033,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-cta {
-    background: linear-gradient(135deg, #123f35, #071c18 70%);
+    background: linear-gradient(135deg, var(--color-brand-secondary), var(--color-brand-deep) 70%);
   }
 
   body[data-page="investment-project"] .unique-land-cta__inner {
@@ -2995,7 +3044,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-cta h2 {
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="investment-project"] .unique-land-cta__inner > div:first-child > p:not(.unique-land-eyebrow) {
@@ -3014,8 +3063,8 @@
     margin-top: 2rem;
     border-radius: .65rem;
     padding: .95rem 1.15rem;
-    background: #cbdf3b;
-    color: #071c18;
+    background: var(--color-brand-primary);
+    color: var(--color-brand-deep);
     font-size: .76rem;
     font-weight: 700;
     line-height: 1.2;
@@ -3025,7 +3074,7 @@
   body[data-page="investment-project"] .unique-land-button:hover,
   body[data-page="investment-project"] .unique-land-button:focus-visible {
     transform: translateY(-2px);
-    background: #e2ef67;
+    background: var(--color-brand-primary-hover);
   }
 
   body[data-page="investment-project"] .unique-land-button > span {
@@ -3037,10 +3086,10 @@
     display: grid;
     min-width: 220px;
     gap: .65rem;
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 1rem;
     padding: 1.4rem;
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
     text-align: center;
   }
 
@@ -3052,7 +3101,7 @@
   }
 
   body[data-page="investment-project"] .unique-land-cta__stamp strong {
-    color: #fff;
+    color: var(--color-surface);
     font-family: var(--font-sans);
     font-size: 1.7rem;
     font-weight: 600;
@@ -3234,11 +3283,11 @@
 
 @layer utilities {
   body[data-page="product"] {
-    --product-ink: #0a2520;
-    --product-deep: #071c18;
-    --product-muted: #65716d;
-    --product-line: #d9ddd6;
-    --product-lime: #cbdf3b;
+    --product-ink: var(--color-text);
+    --product-deep: var(--color-brand-deep);
+    --product-muted: var(--color-text-muted);
+    --product-line: var(--color-border);
+    --product-lime: var(--color-brand-primary);
   }
 
   body[data-page="product"] .product-detail-container {
@@ -3251,7 +3300,7 @@
     padding: clamp(2rem, 5vw, 4rem) 0 clamp(5rem, 9vw, 7.5rem);
     background:
       radial-gradient(circle at 90% 20%, rgba(203, 223, 59, .16), transparent 28%),
-      #f4f1e9;
+      var(--color-surface-subtle);
   }
 
   body[data-page="product"] .product-breadcrumbs {
@@ -3259,7 +3308,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: .55rem;
-    color: #65716d;
+    color: var(--color-text-muted);
     font-size: .72rem;
     font-weight: 700;
     letter-spacing: .03em;
@@ -3267,7 +3316,7 @@
 
   body[data-page="product"] .product-breadcrumbs a {
     border-bottom: 1px solid rgba(84, 112, 0, .42);
-    color: #547000;
+    color: var(--color-brand-link);
   }
 
   body[data-page="product"] .product-breadcrumbs span[aria-hidden="true"] {
@@ -3275,7 +3324,7 @@
   }
 
   body[data-page="product"] .product-breadcrumbs [aria-current="page"] {
-    color: #0a2520;
+    color: var(--color-text);
   }
 
   body[data-page="product"] .product-detail-hero__content {
@@ -3285,7 +3334,7 @@
 
   body[data-page="product"] .product-detail-eyebrow {
     margin: 0 0 1.15rem;
-    color: #58706a;
+    color: var(--color-text-eyebrow);
     font-size: .68rem;
     font-weight: 700;
     letter-spacing: .2em;
@@ -3303,7 +3352,7 @@
   }
 
   body[data-page="product"] .product-detail-hero h1 em {
-    color: #547000;
+    color: var(--color-brand-link);
     font-style: normal;
   }
 
@@ -3327,7 +3376,7 @@
     border-radius: 999px;
     padding: .55rem .75rem;
     background: rgba(255, 255, 255, .5);
-    color: #547000;
+    color: var(--color-brand-link);
     font-size: .68rem;
     font-weight: 700;
     line-height: 1;
@@ -3335,7 +3384,7 @@
 
   body[data-page="product"] .product-detail-overview {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="product"] .product-detail-section-heading {
@@ -3386,7 +3435,7 @@
     overflow: hidden;
     border: 1px solid #39504a;
     border-radius: 1rem;
-    background: #071c18;
+    background: var(--color-brand-deep);
     box-shadow: 0 18px 42px rgba(6, 23, 19, .13);
   }
 
@@ -3405,34 +3454,34 @@
   }
 
   body[data-page="product"] .product-detail-gallery__video {
-    border-color: #d9ddd6;
-    background: #f4f1e9;
+    border-color: var(--color-border);
+    background: var(--color-surface-subtle);
     box-shadow: none;
   }
 
   body[data-page="product"] .product-detail-gallery__video-frame {
     overflow: hidden;
-    background: #061713;
+    background: var(--color-corporate-dark);
   }
 
   body[data-page="product"] .product-detail-gallery__video video {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
-    background: #061713;
+    background: var(--color-corporate-dark);
     object-fit: contain;
   }
 
   body[data-page="product"] .product-detail-gallery__video figcaption {
-    color: #65716d;
+    color: var(--color-text-muted);
   }
 
   body[data-page="product"] .product-detail-spec-card {
     min-width: 0;
-    border: 1px solid #d9ddd6;
+    border: 1px solid var(--color-border);
     border-radius: 1rem;
     padding: clamp(1.35rem, 3vw, 2.2rem);
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="product"] .product-detail-spec-card h3 {
@@ -3459,7 +3508,7 @@
   }
 
   body[data-page="product"] .product-detail-specs dt {
-    color: #7a8984;
+    color: var(--color-text-meta);
     font-size: .61rem;
     font-weight: 700;
     letter-spacing: .12em;
@@ -3469,28 +3518,28 @@
   body[data-page="product"] .product-detail-specs dd {
     margin: 0;
     overflow-wrap: anywhere;
-    color: #334d45;
+    color: var(--color-text-secondary);
     font-size: .84rem;
     line-height: 1.4;
   }
 
   body[data-page="product"] .product-detail-spec-card__note {
     margin: 1.35rem 0 0;
-    color: #65716d;
+    color: var(--color-text-muted);
     font-size: .78rem;
     line-height: 1.6;
   }
 
   body[data-page="product"] .product-brochure-section {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
-    background: #f4f1e9;
+    background: var(--color-surface-subtle);
   }
 
   body[data-page="product"] .product-brochure-card {
     display: grid;
     grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
     overflow: hidden;
-    border: 1px solid #b89b4b;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 1.1rem;
     background: #09231e;
     box-shadow: 0 18px 42px rgba(6, 23, 19, .18);
@@ -3503,7 +3552,7 @@
     padding: clamp(1.25rem, 4vw, 2.5rem);
     background:
       radial-gradient(circle at 50% 10%, rgba(184, 155, 75, .18), transparent 45%),
-      #071c18;
+      var(--color-brand-deep);
   }
 
   body[data-page="product"] .product-brochure-cover img {
@@ -3523,7 +3572,7 @@
     padding: clamp(2rem, 6vw, 5rem);
     background:
       radial-gradient(circle at 100% 0, rgba(184, 155, 75, .16), transparent 38%),
-      linear-gradient(145deg, #123f35, #09231e 68%);
+      linear-gradient(145deg, var(--color-brand-secondary), #09231e 68%);
   }
 
   body[data-page="product"] .product-brochure-content .product-detail-eyebrow {
@@ -3531,7 +3580,7 @@
   }
 
   body[data-page="product"] .product-brochure-content h2 {
-    color: #fff;
+    color: var(--color-surface);
   }
 
   body[data-page="product"] .product-brochure-content > p:not(.product-detail-eyebrow):not(.product-brochure-meta) {
@@ -3575,26 +3624,26 @@
   }
 
   body[data-page="product"] .product-button--primary {
-    background: #cbdf3b;
-    color: #071c18;
+    background: var(--color-brand-primary);
+    color: var(--color-brand-deep);
   }
 
   body[data-page="product"] .product-button--primary:hover,
   body[data-page="product"] .product-button--primary:focus-visible,
   body[data-page="product"] .product-button--quote:hover,
   body[data-page="product"] .product-button--quote:focus-visible {
-    background: #e2ef67;
+    background: var(--color-brand-primary-hover);
   }
 
   body[data-page="product"] .product-button--secondary {
     border-color: #6d8250;
     background: transparent;
-    color: #fff1a9;
+    color: var(--color-accent-gold-soft);
   }
 
   body[data-page="product"] .product-button--secondary:hover,
   body[data-page="product"] .product-button--secondary:focus-visible {
-    border-color: #fff1a9;
+    border-color: var(--color-accent-gold-soft);
     background: rgba(255, 241, 169, .1);
   }
 
@@ -3609,7 +3658,7 @@
 
   body[data-page="product"] .product-rfq-section {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
-    background: #fff;
+    background: var(--color-surface);
   }
 
   body[data-page="product"] .product-rfq-section__inner {
@@ -3626,7 +3675,7 @@
   body[data-page="product"] .product-rfq-section__inner > div > p:last-child {
     max-width: 510px;
     margin: 1.25rem 0 0;
-    color: #65716d;
+    color: var(--color-text-muted);
     font-size: .95rem;
     line-height: 1.65;
   }
@@ -3634,8 +3683,8 @@
   body[data-page="product"] .product-button--quote {
     flex: 0 0 auto;
     min-width: 190px;
-    background: #cbdf3b;
-    color: #071c18;
+    background: var(--color-brand-primary);
+    color: var(--color-brand-deep);
   }
 
   @media (max-width: 900px) {
@@ -3721,5 +3770,56 @@
     body[data-page="product"] .product-button {
       transition: none;
     }
+  }
+}
+
+@layer utilities {
+  /* Shared brand geometry: keep existing dimensions while standardising the visual language. */
+  header a[aria-label="GI-Hub home"] > span:first-child {
+    aspect-ratio: 1;
+    max-width: 48px;
+    max-height: 48px;
+    overflow: hidden;
+  }
+
+  main button[type="submit"],
+  main a.inline-flex,
+  header > div > div > a[href="rfq.html"],
+  body[data-page="product"] .product-button,
+  body[data-page="investment-project"] .unique-land-button {
+    border-radius: var(--radius-control);
+    font-weight: 700;
+  }
+
+  html[dir="rtl"] .icon-arrow {
+    margin-right: .22em;
+    margin-left: 0;
+  }
+
+  html[dir="rtl"] body[data-page="product"] .product-hero-aside {
+    border-right: 1px solid var(--color-border);
+    border-left: 0;
+    padding: 0 2rem .15rem 0;
+  }
+
+  html[dir="rtl"] body[data-page="product"] .product-packaging-note {
+    border-right: 3px solid var(--product-lime);
+    border-left: 0;
+    padding: .75rem 1rem .75rem 0;
+  }
+
+  html[dir="rtl"] body[data-page="investments"] .investment-project-card__badge {
+    right: 1rem;
+    left: auto;
+  }
+
+  html[dir="rtl"] body[data-page="investment-project"] .unique-land-stats {
+    border-right: 1px solid var(--unique-line);
+    border-left: 0;
+  }
+
+  html[dir="rtl"] body[data-page="investment-project"] .unique-land-stats > div {
+    border-right: 0;
+    border-left: 1px solid var(--unique-line);
   }
 }

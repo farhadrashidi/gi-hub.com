@@ -135,7 +135,7 @@
     document.querySelectorAll('header nav:not([data-mobile-nav])').forEach(function (nav) {
       if (nav.querySelector('[data-nav="contact"]')) return;
       const contact = document.createElement('a');
-      contact.className = 'hover:text-[#547000]';
+      contact.className = 'hover:text-[var(--color-brand-link)]';
       contact.href = localizedPageHref(getCurrentLocale(), 'contact.html');
       contact.dataset.nav = 'contact';
       contact.textContent = 'Contact';
@@ -144,7 +144,7 @@
     document.querySelectorAll('header [data-mobile-nav]').forEach(function (nav) {
       if (nav.querySelector('[data-nav="contact"]')) return;
       const contact = document.createElement('a');
-      contact.className = 'hover:text-[#547000]';
+      contact.className = 'hover:text-[var(--color-brand-link)]';
       contact.href = localizedPageHref(getCurrentLocale(), 'contact.html');
       contact.dataset.nav = 'contact';
       contact.textContent = 'Contact';
@@ -370,7 +370,7 @@
   document.querySelectorAll('[data-nav]').forEach(function (link) {
     if (link.dataset.nav === page) {
       link.setAttribute('aria-current', 'page');
-      link.classList.add('text-[#547000]');
+      link.classList.add('text-[var(--color-brand-link)]');
     }
   });
 
