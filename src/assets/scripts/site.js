@@ -45,7 +45,66 @@
     });
   };
 
+  const supplierVerificationDetails = {
+    'Caucasus Mineral Co.': { reviewed: '19 Sep 2026' },
+    'Kartli Harvest': { reviewed: '19 Sep 2026' },
+    'Tbilisi Fabrication Works': { reviewed: '19 Sep 2026' },
+    'Health Line Georgia': { reviewed: '19 Sep 2026' },
+    Valinezhad: { reviewed: '19 Sep 2026' }
+  };
+
+  const renderSupplierVerificationDetails = function () {
+    document.querySelectorAll('[data-supplier-card]').forEach(function (card) {
+      if (card.dataset.verificationLevel !== 'gi-hub-verified') return;
+
+      const name = card.querySelector('h3');
+      const badge = card.querySelector('[data-supplier-verification]');
+      const companyInfo = card.querySelector('[data-supplier-company-info]');
+      const details = name && supplierVerificationDetails[name.textContent.trim()];
+      if (!details || !badge || !companyInfo) return;
+
+      const verificationMeta = document.createElement('div');
+      verificationMeta.className = 'supplier-verification-meta';
+
+      const review = document.createElement('span');
+      review.className = 'supplier-last-reviewed';
+      review.setAttribute('data-last-reviewed', 'true');
+      const reviewLabel = document.createElement('span');
+      reviewLabel.textContent = 'Last Reviewed';
+      const reviewDate = document.createElement('b');
+      reviewDate.textContent = details.reviewed;
+      review.appendChild(reviewLabel);
+      review.appendChild(reviewDate);
+
+      badge.parentNode.insertBefore(verificationMeta, badge);
+      verificationMeta.appendChild(badge);
+      verificationMeta.appendChild(review);
+
+      const summary = document.createElement('div');
+      summary.className = 'supplier-verification-summary';
+      summary.setAttribute('data-verification-summary', 'gi-hub-verified');
+      const summaryTitle = document.createElement('p');
+      summaryTitle.textContent = 'VERIFICATION SUMMARY';
+      summary.appendChild(summaryTitle);
+
+      const summaryList = document.createElement('dl');
+      ['Company Registration', 'Business Activity', 'Product Evidence', 'Export Capability'].forEach(function (item) {
+        const summaryItem = document.createElement('div');
+        const label = document.createElement('dt');
+        const status = document.createElement('dd');
+        label.textContent = item;
+        status.textContent = 'Reviewed';
+        summaryItem.appendChild(label);
+        summaryItem.appendChild(status);
+        summaryList.appendChild(summaryItem);
+      });
+      summary.appendChild(summaryList);
+      companyInfo.insertAdjacentElement('afterend', summary);
+    });
+  };
+
   standardizeVerificationBadges();
+  renderSupplierVerificationDetails();
   enhanceTextSymbols('→', 'icon-arrow', 'arrow');
   enhanceTextSymbols('✓', 'icon-check', 'check');
 
