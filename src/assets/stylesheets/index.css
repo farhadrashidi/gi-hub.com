@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+
+@theme static {
+  --font-sans: "Inter", "Noto Sans Georgian", "Noto Sans SC", "Noto Sans Arabic", "Noto Sans", Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
 
 @layer components {
   .site-language-switcher {
@@ -21,7 +30,7 @@
     background: #fbfcf8;
     color: #334d45;
     font-size: .74rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     letter-spacing: .08em;
     cursor: pointer;
@@ -133,9 +142,29 @@
     direction: rtl;
   }
 
+  html[lang="ka"] {
+    --font-sans: "Noto Sans Georgian", "Noto Sans", Inter, Arial, sans-serif;
+  }
+
+  html[lang="ru"] {
+    --font-sans: Inter, "Noto Sans", Arial, sans-serif;
+  }
+
+  html[lang="zh"] {
+    --font-sans: "Noto Sans SC", Inter, "Noto Sans", Arial, sans-serif;
+  }
+
+  html[lang="ar"] {
+    --font-sans: "Noto Sans Arabic", "Noto Sans", Inter, Arial, sans-serif;
+  }
+
+  html[lang="tr"] {
+    --font-sans: Inter, "Noto Sans", Arial, sans-serif;
+  }
+
   html[dir="rtl"] body {
     direction: rtl;
-    font-family: Tahoma, Arial, sans-serif;
+    font-family: var(--font-sans);
     text-align: right;
   }
 
@@ -147,7 +176,7 @@
   html[dir="rtl"] body input,
   html[dir="rtl"] body select,
   html[dir="rtl"] body textarea {
-    font-family: Tahoma, Arial, sans-serif;
+    font-family: var(--font-sans);
     letter-spacing: 0;
   }
 
@@ -452,7 +481,7 @@
     height: 3rem;
     border-radius: .95rem;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   body[data-page="suppliers"] [data-supplier-card]:nth-child(1) > div:first-child > span:first-child { --icon-bg: #dbe9ed; --icon-ink: #2c6864; }
@@ -488,7 +517,7 @@
     place-items: center;
     border-radius: .85rem;
     font-size: .72rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   body[data-page="home"] main > section:nth-of-type(4) [class*="grid-cols-3"] > a > span:first-child {
@@ -503,7 +532,7 @@
     margin-right: .75rem;
     border-radius: .65rem;
     font-size: .65rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   @media (max-width: 600px) {
@@ -586,8 +615,8 @@
   body h1[class],
   body h2[class],
   body h3[class] {
-    font-family: Georgia, serif;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-weight: 600;
   }
 
   body h1,
@@ -677,14 +706,14 @@
     background: rgba(255, 255, 255, .06);
     color: #c4d8d0;
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
   }
 
   body[data-page="marketplace"] [data-marketplace-verification] {
     gap: .14rem;
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
   }
 
@@ -698,7 +727,7 @@
 
   body[data-page="marketplace"] [data-marketplace-details] dt {
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
   }
 
@@ -719,7 +748,7 @@
     background: #e7edcf;
     color: #547000;
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1;
     white-space: nowrap;
@@ -747,7 +776,7 @@
   }
 
   body[data-page="suppliers"] .supplier-last-reviewed span {
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
   }
@@ -768,7 +797,7 @@
     margin: 0 0 .7rem;
     color: #798681;
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
   }
 
@@ -786,7 +815,7 @@
   body[data-page="suppliers"] .supplier-verification-summary dt {
     color: #798681;
     font-size: .56rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .08em;
     line-height: 1.25;
     text-transform: uppercase;
@@ -810,7 +839,7 @@
   body[data-page="suppliers"] [data-supplier-company-info] dt,
   body[data-page="suppliers"] [data-supplier-products] > span {
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
   }
 
@@ -852,7 +881,7 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), 0 2px 5px rgba(6, 23, 19, .08);
     color: #65716d;
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1;
     white-space: nowrap;
@@ -912,7 +941,7 @@
     margin: 0 0 .65rem;
     color: #cbdf3b;
     font-size: .65rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .18em;
     line-height: 1.3;
   }
@@ -920,9 +949,9 @@
   body[data-page="marketplace"] .source-product-showcase__header h2 {
     margin: 0;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
   }
@@ -998,7 +1027,7 @@
     background: rgba(7, 28, 24, .78);
     color: #fff;
     font-size: .7rem;
-    font-weight: 800;
+    font-weight: 700;
     backdrop-filter: blur(8px);
   }
 
@@ -1024,9 +1053,9 @@
     max-width: 330px;
     margin: 0;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.35rem, 3vw, 2rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.03em;
     line-height: 1.05;
   }
@@ -1038,7 +1067,7 @@
     padding: .38rem .55rem;
     color: #91aaa1;
     font-size: .56rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .08em;
     line-height: 1.2;
     text-align: center;
@@ -1193,7 +1222,7 @@
     background: #f2f6df;
     color: #547000;
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1;
     white-space: nowrap;
@@ -1210,7 +1239,7 @@
   body[data-page="investments"] [data-investment-metrics] dt {
     color: #7a8984;
     font-size: .61rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1.25;
   }
@@ -1225,7 +1254,7 @@
 
   body[data-page="investments"] [data-investment-metrics] > div:nth-child(-n+5) dd {
     color: #547000;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   body[data-page="investments"] .investment-project-card {
@@ -1279,7 +1308,7 @@
     background: rgba(7, 28, 24, .78);
     color: #fff1a9;
     font-size: .58rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .15em;
     line-height: 1;
     backdrop-filter: blur(8px);
@@ -1299,7 +1328,7 @@
     gap: .8rem;
     color: #d7bf6d;
     font-size: .57rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
     line-height: 1.25;
   }
@@ -1312,9 +1341,9 @@
   body[data-page="investments"] .investment-project-card h4 {
     margin: 1.1rem 0 .55rem;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.03em;
     line-height: 1.05;
   }
@@ -1338,7 +1367,7 @@
 
   body[data-page="investments"] .investment-project-card__description strong {
     color: #fff;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   body[data-page="investments"] .investment-project-card__facts {
@@ -1367,9 +1396,9 @@
 
   body[data-page="investments"] .investment-project-card__facts strong {
     color: #fff1a9;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.1;
   }
 
@@ -1377,7 +1406,7 @@
     margin-top: .32rem;
     color: #a9c1b8;
     font-size: .53rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1.2;
   }
@@ -1385,7 +1414,7 @@
   body[data-page="investments"] .investment-project-card__tagline {
     margin: 1.1rem 0 .9rem;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.04rem;
     font-style: italic;
   }
@@ -1398,7 +1427,7 @@
     padding-bottom: .2rem;
     color: #fff1a9;
     font-size: .72rem;
-    font-weight: 800;
+    font-weight: 700;
     transition: color .2s ease, border-color .2s ease;
   }
 
@@ -1537,7 +1566,7 @@
   body[data-page="product"] .product-hero-aside__item span {
     color: #58706a;
     font-size: .64rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .16em;
     line-height: 1.35;
     text-transform: uppercase;
@@ -1550,9 +1579,9 @@
   body[data-page="product"] .product-hero-aside__supplier {
     display: block;
     color: var(--product-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
   }
@@ -1612,7 +1641,7 @@
     padding: .7rem .8rem;
     color: #dbe8e2;
     font-size: .7rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     text-align: center;
   }
@@ -1642,16 +1671,16 @@
     margin-bottom: 1.1rem;
     color: #547000;
     font-size: .65rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
   }
 
   body[data-page="product"] .product-gallery-meta__item b {
     display: block;
     color: var(--product-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.08rem;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.025em;
     line-height: 1.05;
   }
@@ -1687,7 +1716,7 @@
     margin-bottom: 3.5rem;
     color: #547000;
     font-size: .65rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
   }
 
@@ -1696,8 +1725,8 @@
   body[data-page="product"] .product-origin-card h3,
   body[data-page="product"] .product-video-copy h3 {
     margin: 0;
-    font-family: Georgia, serif;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
   }
@@ -1768,7 +1797,7 @@
   body[data-page="product"] .product-origin-card dt {
     color: #78958b;
     font-size: .64rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
   }
@@ -1818,7 +1847,7 @@
     padding: .5rem .7rem;
     color: #476342;
     font-size: .72rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1;
   }
 
@@ -1837,7 +1866,7 @@
   body[data-page="product"] .product-packaging-note span {
     color: #547000;
     font-size: .65rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
   }
 
@@ -1867,9 +1896,9 @@
   body[data-page="product"] .product-video-heading h2 {
     margin: 0;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.055em;
     line-height: .97;
   }
@@ -1918,7 +1947,7 @@
   body[data-page="product"] .product-video-copy__meta {
     color: var(--product-lime);
     font-size: .64rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .14em;
   }
 
@@ -2062,7 +2091,7 @@
   body[data-page="home"] .home-featured-investment__eyebrow,
   body[data-page="home"] .home-featured-investment__facts span {
     font-size: .6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
     line-height: 1.3;
   }
@@ -2075,9 +2104,9 @@
   body[data-page="home"] .home-featured-investment__body h2 {
     margin: .75rem 0 .45rem;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.6rem, 3vw, 2.45rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
   }
@@ -2107,9 +2136,9 @@
 
   body[data-page="home"] .home-featured-investment__facts strong {
     color: #fff1a9;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 1;
   }
@@ -2124,7 +2153,7 @@
     padding-bottom: .3rem;
     color: #fff1a9;
     font-size: .72rem;
-    font-weight: 800;
+    font-weight: 700;
     white-space: nowrap;
   }
 
@@ -2176,7 +2205,7 @@
     gap: .55rem;
     color: #a9c1b8;
     font-size: .7rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .03em;
   }
 
@@ -2210,7 +2239,7 @@
     margin: 0 0 1.1rem;
     color: #58706a;
     font-size: .68rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .2em;
     line-height: 1.35;
   }
@@ -2225,9 +2254,9 @@
   body[data-page="investment-project"] .unique-land-hero h1 {
     margin: 0;
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(3.7rem, 8vw, 7.4rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.065em;
     line-height: .9;
   }
@@ -2258,7 +2287,7 @@
     padding: .55rem .72rem;
     color: #fff1a9;
     font-size: .66rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1;
   }
 
@@ -2311,9 +2340,9 @@
   body[data-page="investment-project"] .unique-land-cta h2 {
     margin: 0;
     color: var(--unique-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.055em;
     line-height: .97;
   }
@@ -2350,9 +2379,9 @@
 
   body[data-page="investment-project"] .unique-land-stats strong {
     color: #547000;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.6rem, 3vw, 2.5rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
   }
@@ -2361,7 +2390,7 @@
     margin-top: .6rem;
     color: #7a8984;
     font-size: .6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1.3;
   }
@@ -2391,9 +2420,9 @@
   body[data-page="investment-project"] .unique-land-structure-card h3 {
     margin: 0;
     color: var(--unique-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.55rem, 3vw, 2.15rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1.05;
   }
@@ -2444,7 +2473,7 @@
     padding: 1rem 1.15rem;
     color: #cbdf3b;
     font-size: .6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .13em;
     line-height: 1.3;
   }
@@ -2521,7 +2550,7 @@
 
   body[data-page="investment-project"] .unique-land-map__label text {
     fill: #dbe8e2;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .8px;
@@ -2574,9 +2603,9 @@
 
   body[data-page="investment-project"] .unique-land-location-notes li strong {
     color: #fff1a9;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.15rem;
-    font-weight: 400;
+    font-weight: 600;
   }
 
   body[data-page="investment-project"] .unique-land-location-notes li span {
@@ -2642,9 +2671,9 @@
 
   body[data-page="investment-project"] .unique-land-landuse strong {
     color: #547000;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.5rem, 3vw, 2.25rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
   }
@@ -2653,7 +2682,7 @@
     margin-top: .65rem;
     color: #547000;
     font-size: .6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1.35;
   }
@@ -2686,16 +2715,16 @@
   body[data-page="investment-project"] .unique-land-concept-grid article > span {
     color: #7a8984;
     font-size: .65rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
   }
 
   body[data-page="investment-project"] .unique-land-concept-grid h3 {
     margin: 1rem 0 0;
     color: var(--unique-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.025em;
     line-height: 1.08;
   }
@@ -2744,7 +2773,7 @@
   body[data-page="investment-project"] .unique-land-financial-grid span {
     color: #91aaa1;
     font-size: .6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1.35;
   }
@@ -2752,9 +2781,9 @@
   body[data-page="investment-project"] .unique-land-financial-grid strong {
     margin-top: .8rem;
     color: #fff1a9;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.25rem, 2.5vw, 1.7rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.02em;
     line-height: 1.1;
   }
@@ -2792,15 +2821,15 @@
     background: #f4f1e9;
     color: #547000;
     font-size: .65rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   body[data-page="investment-project"] .unique-land-structure-steps h3 {
     margin: 0;
     color: var(--unique-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.35rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.1;
   }
 
@@ -2835,7 +2864,7 @@
   body[data-page="investment-project"] .unique-land-structure-card dt {
     color: #7a8984;
     font-size: .6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1.35;
   }
@@ -2884,7 +2913,7 @@
     background: rgba(7, 28, 24, .84);
     color: #fff1a9;
     font-size: .7rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.3;
   }
 
@@ -2919,15 +2948,15 @@
     background: #edf1e8;
     color: #547000;
     font-size: .62rem;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   body[data-page="investment-project"] .unique-land-documents h3 {
     margin: 0;
     color: var(--unique-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.1;
   }
 
@@ -2945,7 +2974,7 @@
     border-bottom: 1px solid #547000;
     color: #547000;
     font-size: .7rem;
-    font-weight: 800;
+    font-weight: 700;
     white-space: nowrap;
   }
 
@@ -2988,7 +3017,7 @@
     background: #cbdf3b;
     color: #071c18;
     font-size: .76rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     transition: transform .2s ease, background-color .2s ease;
   }
@@ -3017,16 +3046,16 @@
 
   body[data-page="investment-project"] .unique-land-cta__stamp span {
     font-size: .58rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
     line-height: 1.35;
   }
 
   body[data-page="investment-project"] .unique-land-cta__stamp strong {
     color: #fff;
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: 1.7rem;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.03em;
     line-height: .95;
   }
@@ -3232,7 +3261,7 @@
     gap: .55rem;
     color: #65716d;
     font-size: .72rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .03em;
   }
 
@@ -3258,7 +3287,7 @@
     margin: 0 0 1.15rem;
     color: #58706a;
     font-size: .68rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .2em;
     line-height: 1.35;
   }
@@ -3266,9 +3295,9 @@
   body[data-page="product"] .product-detail-hero h1 {
     margin: 0;
     color: var(--product-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(3.7rem, 8vw, 7.5rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.065em;
     line-height: .9;
   }
@@ -3300,7 +3329,7 @@
     background: rgba(255, 255, 255, .5);
     color: #547000;
     font-size: .68rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1;
   }
 
@@ -3322,9 +3351,9 @@
   body[data-page="product"] .product-rfq-section h2 {
     margin: 0;
     color: var(--product-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.055em;
     line-height: .97;
   }
@@ -3409,9 +3438,9 @@
   body[data-page="product"] .product-detail-spec-card h3 {
     margin: 0 0 1.5rem;
     color: var(--product-ink);
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.7rem, 3vw, 2.35rem);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -.04em;
     line-height: 1;
   }
@@ -3432,7 +3461,7 @@
   body[data-page="product"] .product-detail-specs dt {
     color: #7a8984;
     font-size: .61rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .12em;
     line-height: 1.3;
   }
@@ -3530,7 +3559,7 @@
     border-radius: .65rem;
     padding: .85rem 1.1rem;
     font-size: .76rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     transition: transform .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease;
   }
@@ -3573,7 +3602,7 @@
     margin: 1.3rem 0 0;
     color: #a9c1b8;
     font-size: .64rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: .1em;
     line-height: 1.4;
   }
