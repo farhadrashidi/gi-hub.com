@@ -85,15 +85,83 @@
 
   const params = new URLSearchParams(window.location.search);
   const rfqProduct = params.get('product');
-  const rfqCompany = params.get('company');
+  const rfqSupplier = params.get('supplier') || params.get('company');
+  const storedRfqId = params.get('rfq');
   const rfqForm = document.querySelector('[data-marketplace-form]');
-  if (rfqForm && rfqProduct) {
+  if (rfqForm && (rfqProduct || rfqSupplier)) {
     const requirementField = rfqForm.querySelector('textarea[name="requirement"]');
-    if (requirementField) requirementField.value = 'Product: ' + rfqProduct + '\n\n';
+    const requestContext = [];
+    if (rfqProduct) requestContext.push('Product: ' + rfqProduct);
+    if (rfqSupplier) requestContext.push('Preferred supplier: ' + rfqSupplier);
+    if (requirementField) requirementField.value = requestContext.join('\n') + '\n\n';
   }
-  if (rfqForm && rfqCompany) {
-    const companyField = rfqForm.querySelector('input[name="company"]');
-    if (companyField) companyField.value = rfqCompany;
+  if (rfqForm && (rfqProduct || rfqSupplier)) {
+    const roleField = rfqForm.querySelector('select[name="role"]');
+    if (roleField && !roleField.value) roleField.value = 'Buyer';
+  }
+
+  const rfqStorageKey = 'gi-hub-rfq-records';
+  const getStoredRfq = function (id) {
+    if (!id) return null;
+    try {
+      const records = JSON.parse(window.localStorage.getItem(rfqStorageKey) || '{}');
+      return records[id] || null;
+    } catch (error) {
+      return null;
+    }
+  };
+  const saveRfq = function (record) {
+    try {
+      const records = JSON.parse(window.localStorage.getItem(rfqStorageKey) || '{}');
+      records[record.id] = record;
+      window.localStorage.setItem(rfqStorageKey, JSON.stringify(records));
+    } catch (error) {
+      // The confirmation still renders when browser storage is unavailable.
+    }
+  };
+  const createRfqId = function () {
+    const now = new Date();
+    const suffix = String(now.getTime()).slice(-6) + Math.random().toString(36).slice(2, 5).toUpperCase();
+    return 'GI-RFQ-' + now.getFullYear() + '-' + suffix;
+  };
+  const renderRfqConfirmation = function (record) {
+    const confirmation = document.querySelector('[data-rfq-confirmation]');
+    if (!confirmation || !record) return;
+    const id = confirmation.querySelector('[data-rfq-id]');
+    const summary = confirmation.querySelector('[data-rfq-summary]');
+    const nextStep = confirmation.querySelector('[data-rfq-next-step]');
+    const supplierLink = confirmation.querySelector('[data-rfq-supplier-link]');
+    const reviewStatus = confirmation.querySelector('[data-rfq-step="review"] [data-rfq-step-status]');
+    const introductionStatus = confirmation.querySelector('[data-rfq-step="introduction"] [data-rfq-step-status]');
+    if (id) id.textContent = record.id;
+    if (summary) {
+      const productSummary = record.product ? record.product : 'your business requirement';
+      const supplierSummary = record.supplier ? ' for ' + record.supplier : '';
+      summary.textContent = 'We have captured ' + productSummary + supplierSummary + '. The next step is a GI-Hub review before a supplier introduction.';
+    }
+    if (nextStep) nextStep.textContent = record.supplier ? 'GI-Hub will review the request and follow up using the business email provided before coordinating an introduction to ' + record.supplier + '.' : 'GI-Hub will review the request and follow up using the business email provided with relevant supplier options.';
+    if (reviewStatus) reviewStatus.textContent = '02 · IN REVIEW';
+    if (introductionStatus) introductionStatus.textContent = '03 · AFTER REVIEW';
+    if (supplierLink) {
+      if (record.supplier) {
+        const supplierUrl = new URL('suppliers.html', window.location.href);
+        supplierUrl.searchParams.set('company', record.supplier);
+        if (record.product) supplierUrl.searchParams.set('product', record.product);
+        supplierLink.href = 'suppliers.html?' + supplierUrl.searchParams.toString();
+        supplierLink.textContent = 'View ' + record.supplier + ' profile →';
+      } else {
+        supplierLink.href = 'suppliers.html';
+        supplierLink.textContent = 'Browse suppliers →';
+      }
+    }
+    confirmation.hidden = false;
+  };
+  if (rfqForm && storedRfqId) {
+    const storedRfq = getStoredRfq(storedRfqId);
+    if (storedRfq) {
+      rfqForm.hidden = true;
+      renderRfqConfirmation(storedRfq);
+    }
   }
 
   const marketQuery = document.querySelector('[data-market-query]');
@@ -164,6 +232,7 @@
   const supplierCards = Array.from(document.querySelectorAll('[data-supplier-card]'));
   if (supplierQuery && supplierSector && supplierCards.length) {
     supplierSector.value = params.get('sector') || '';
+    if (!supplierQuery.value && (params.get('company') || params.get('supplier'))) supplierQuery.value = params.get('company') || params.get('supplier');
 
     const applySupplierFilters = function () {
       const query = supplierQuery.value.trim().toLowerCase();
@@ -182,6 +251,17 @@
           (!verifiedOnly || verificationLevel !== 'registered');
         card.hidden = !matches;
         if (matches) visible += 1;
+        const requestLink = card.querySelector('a[href^="rfq.html?"]');
+        if (requestLink) {
+          const linkUrl = new URL(requestLink.getAttribute('href'), window.location.href);
+          const supplier = linkUrl.searchParams.get('supplier') || linkUrl.searchParams.get('company');
+          if (supplier) {
+            linkUrl.searchParams.set('supplier', supplier);
+            linkUrl.searchParams.delete('company');
+          }
+          if (rfqProduct) linkUrl.searchParams.set('product', rfqProduct);
+          requestLink.href = 'rfq.html?' + linkUrl.searchParams.toString();
+        }
       });
       const count = document.querySelector('[data-supplier-count]');
       const empty = document.querySelector('[data-supplier-empty]');
@@ -217,8 +297,27 @@
         if (status) status.textContent = 'Please complete the required fields.';
         return;
       }
-      if (status) status.textContent = 'Your request is ready. Our team will review it and contact you by email.';
-      form.reset();
+      const formData = new FormData(form);
+      const record = {
+        id: createRfqId(),
+        createdAt: new Date().toISOString(),
+        product: rfqProduct || '',
+        supplier: rfqSupplier || '',
+        role: formData.get('role') || '',
+        company: formData.get('company') || '',
+        email: formData.get('email') || '',
+        market: formData.get('market') || '',
+        requirement: formData.get('requirement') || ''
+      };
+      saveRfq(record);
+      if (status) status.textContent = 'RFQ ' + record.id + ' submitted.';
+      form.hidden = true;
+      const confirmationUrl = new URL(window.location.href);
+      confirmationUrl.search = '?rfq=' + encodeURIComponent(record.id);
+      window.history.replaceState({}, '', confirmationUrl.pathname + confirmationUrl.search);
+      renderRfqConfirmation(record);
+      const confirmation = document.querySelector('[data-rfq-confirmation]');
+      if (confirmation) confirmation.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
